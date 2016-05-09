@@ -76,7 +76,7 @@ input {
   line-height: normal;
 }
 button::-moz-focus-inner,
-input::-moz-focus-inner {
+input::-moz-focus-inner  {
   padding: 0;
   border: 0;
 }
