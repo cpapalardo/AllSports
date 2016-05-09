@@ -1,3 +1,0 @@
-Server=tcp:allsports.database.windows.net;Database=allsports;
-User ID=allsports@allsports;Password=Bandtec2016;Trusted_Connection=True;
-Encrypt=True;
