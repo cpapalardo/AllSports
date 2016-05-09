@@ -51,21 +51,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="128" y="94" name="JogadorTime">
-<row name="id_jogador" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Jogador" row="id" />
-</row>
-<row name="id_time" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Time" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id_time</part>
-<part>id_jogador</part>
-</key>
-</table>
-<table x="104" y="309" name="Time">
+<table x="181" y="220" name="Time">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -76,20 +62,17 @@
 <row name="nome" null="1" autoincrement="0">
 <datatype>VARCHAR(52)</datatype>
 <default>NULL</default></row>
-<row name="fundacao" null="1" autoincrement="0">
-<datatype>DATETIME</datatype>
-<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="395" y="292" name="Partida">
+<table x="582" y="351" name="Partida">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="id_gerente" null="1" autoincrement="0">
+<row name="id_campeonato" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Jogador" row="id" />
+<default>NULL</default><relation table="Campeonato" row="id" />
 </row>
 <row name="id_time_casa" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -118,7 +101,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="744" y="190" name="Campeonato">
+<table x="928" y="217" name="Campeonato">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -137,35 +120,6 @@
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
-</key>
-</table>
-<table x="1008" y="308" name="Rodada">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="id_campeonato" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Campeonato" row="id" />
-</row>
-<row name="numero" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="726" y="384" name="PartidaRodada">
-<row name="id_partida" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Partida" row="id" />
-</row>
-<row name="id_rodada" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Rodada" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id_partida</part>
-<part>id_rodada</part>
 </key>
 </table>
 </sql>
