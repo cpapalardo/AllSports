@@ -24,10 +24,27 @@ namespace AllSports.Views
             id = int.Parse(cookie.Values["id"]);
 
             textBoxNomeGerente.Text = Jogador.ObterPorId(id).Nome;
+            GerarPartidasIniciais();
 		}
 
         public void GerarPartidasIniciais()
         {
+            int id;
+
+            if (int.TryParse(Request.QueryString["id"], out id))
+            {
+                List<Time> times = Time.ObterPorCampeonato(id);
+
+                textBoxTime01.Text = times[0].Nome;
+                textBoxTime02.Text = times[1].Nome;
+                textBoxTime03.Text = times[2].Nome;
+                textBoxTime04.Text = times[3].Nome;
+                textBoxTime05.Text = times[4].Nome;
+                textBoxTime06.Text = times[5].Nome;
+                textBoxTime07.Text = times[6].Nome;
+                textBoxTime08.Text = times[7].Nome;
+            }
+
          //   Time.ObterPorCampeonato
         }
 	}

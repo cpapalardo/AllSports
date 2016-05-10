@@ -58,9 +58,9 @@ namespace AllSports.Models {
             using (SqlConnection conn = Sql.Open())
             {
                 using (SqlCommand cmd = new SqlCommand(
-                    "SELECT DISTINCT id, id_campeonato, nome, fundacao FROM Time " +
+                    "SELECT DISTINCT id, id_campeonato, nome FROM tbTime " +
                     "WHERE id_campeonato = @id_campeonato " +
-                    "ORDER BY Time.nome ASC",
+                    "ORDER BY tbTime.nome ASC",
                     conn))
                 {
                     cmd.Parameters.AddWithValue("@id_campeonato", id);
