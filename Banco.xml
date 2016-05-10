@@ -31,7 +31,7 @@
 		<type label="ENUM" length="1" sql="ENUM" quote=""/>
 		<type label="SET" length="1" sql="SET" quote=""/>
 	</group>
-</datatypes><table x="583" y="38" name="Jogador">
+</datatypes><table x="725" y="70" name="Jogador">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -51,13 +51,13 @@
 <part>id</part>
 </key>
 </table>
-<table x="181" y="220" name="Time">
+<table x="472" y="247" name="Time">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="id_coordenador" null="1" autoincrement="0">
+<row name="id_campeonato" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Jogador" row="id" />
+<default>NULL</default><relation table="Campeonato" row="id" />
 </row>
 <row name="nome" null="1" autoincrement="0">
 <datatype>VARCHAR(52)</datatype>
@@ -66,7 +66,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="582" y="351" name="Partida">
+<table x="468" y="420" name="Partida">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -101,7 +101,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="928" y="217" name="Campeonato">
+<table x="711" y="295" name="Campeonato">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>

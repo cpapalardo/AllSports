@@ -8,12 +8,12 @@ using AllSports.Utils;
 namespace AllSports.Models {
 	public class Time {
 		public int Id { get; set; }
-		public Jogador Coordenador { get; set; }
+		public Campeonato Campeonato { get; set; }
 		public string Nome { get; set; }
 
-		public Time(int id, Jogador coordenador, string nome) {
+		public Time(int id, Campeonato campeonato, string nome) {
 			Id = id;
-			Coordenador = coordenador;
+			Campeonato = campeonato;
 			Nome = nome;
 		}
 
@@ -21,9 +21,9 @@ namespace AllSports.Models {
 			return Nome;
 		}
 
-		private static void Validar(Jogador coordenador, ref string nome) {
-			if (coordenador == null)
-				throw new ValidationException("coordenador inexistente");
+		private static void Validar(Campeonato campeonato, ref string nome) {
+			if (campeonato == null)
+				throw new ValidationException("campeonato inexistente");
 
 			if (string.IsNullOrWhiteSpace(nome))
 				throw new ValidationException("nome vazio");
@@ -34,7 +34,7 @@ namespace AllSports.Models {
 		}
 
 		public static Time ObterPorId(int id, SqlConnection conn) {
-			using (SqlCommand cmd = new SqlCommand("SELECT id_coordenador, nome FROM tbTime WHERE id=@id", conn)) {
+			using (SqlCommand cmd = new SqlCommand("SELECT id_campeonato, nome FROM tbTime WHERE id=@id", conn)) {
 				cmd.Parameters.AddWithValue("@id", id);
 
 				using (SqlDataReader reader = cmd.ExecuteReader()) {
@@ -42,7 +42,7 @@ namespace AllSports.Models {
 						return null;
 					}
 
-					return new Time(id, Jogador.ObterPorId(reader.GetInt32(0), conn), reader.GetString(1));
+					return new Time(id, Campeonato.ObterPorId(reader.GetInt32(0), conn), reader.GetString(1));
 				}
 			}
 		}
@@ -53,42 +53,43 @@ namespace AllSports.Models {
 			}
 		}
 
-		public static List<Time> ObterPorCampeonato(int id) {
+        public static List<Time> ObterPorCampeonato(int id)
+        {
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand(
+                    "SELECT DISTINCT id, id_campeonato, nome, fundacao FROM Time " +
+                    "WHERE id_campeonato = @id_campeonato " +
+                    "ORDER BY Time.nome ASC",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@id_campeonato", id);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        List<Time> times = new List<Time>();
+
+                        while (reader.Read() == true)
+                        {
+                            times.Add(new Time(reader.GetInt32(0), Campeonato.ObterPorId(reader.GetInt32(1), conn), reader.GetString(2)));
+                        }
+
+                        return times;
+                    }
+                }
+            }
+        }
+
+		public static Time Criar(Campeonato campeonato, string nome) {
+			Validar(campeonato, ref nome);
+
 			using (SqlConnection conn = Sql.Open()) {
-				using (SqlCommand cmd = new SqlCommand(
-					"SELECT DISTINCT Time.id, Time.id_coordenador, Time.nome, Time.fundacao FROM Campeonato " +
-					"INNER JOIN Rodada ON Campeonato.id = Rodada.id_campeonato " +
-					"INNER JOIN PartidaRodada ON Rodada.id = PartidaRodada.id_rodada " +
-					"INNER JOIN Partida ON Partida.id = PartidaRodada.id_partida " +
-					"INNER JOIN Time ON Time.id = Partida.id_time_casa OR Time.id = Partida.id_time_visitante " +
-					"WHERE Campeonato.id=@id " +
-					"ORDER BY Time.nome ASC",
-					conn)) {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    using (SqlDataReader reader = cmd.ExecuteReader()) {
-						List<Time> times = new List<Time>();
-
-						while (reader.Read() == true) {
-							times.Add(new Time(reader.GetInt32(0), Jogador.ObterPorId(reader.GetInt32(1), conn), reader.GetString(2)));
-						}
-
-						return times;
-					}
-				}
-			}
-		}
-
-		public static Time Criar(Jogador coordenador, string nome) {
-			Validar(coordenador, ref nome);
-
-			using (SqlConnection conn = Sql.Open()) {
-				using (SqlCommand cmd = new SqlCommand("INSERT INTO tbTime (id_coordenador, nome) OUTPUT INSERTED.id VALUES (@id_coordenador, @nome)", conn)) {
-					cmd.Parameters.AddWithValue("@id_coordenador", coordenador.Id);
+				using (SqlCommand cmd = new SqlCommand("INSERT INTO tbTime (id_campeonato, nome) OUTPUT INSERTED.id VALUES (@id_campeonato, @nome)", conn)) {
+					cmd.Parameters.AddWithValue("@id_campeonato", campeonato.Id);
 					cmd.Parameters.AddWithValue("@nome", nome);
 
 					int id = (int)cmd.ExecuteScalar();
 
-					return new Time(id, coordenador, nome);
+					return new Time(id, campeonato, nome);
 				}
 			}
 		}

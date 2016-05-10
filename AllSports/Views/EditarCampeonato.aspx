@@ -54,10 +54,10 @@
 			<label id="labelGerente"></label>
 		</div>
 		<div>
-			<label for="textBoxNome">Nome</label>
+			<label for="textBoxNomeGerente">Nome</label>
 		</div>
 		<div>
-			<asp:TextBox ID="textBoxNome" runat="server"></asp:TextBox>
+			<asp:TextBox ID="textBoxNomeGerente" runat="server"></asp:TextBox>
 		</div>
 		<div>
 			<label for="textBoxDataInicio">Data de Início</label>

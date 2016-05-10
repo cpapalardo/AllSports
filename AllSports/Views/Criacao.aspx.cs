@@ -48,16 +48,16 @@ namespace AllSports.Views
                 Campeonato campeonato = Campeonato.Criar(jogador, txtNomeCampeonato.Text, DateTime.Parse(txtDt_Inicio.Text),
                     DateTime.Parse(txtDt_Fim.Text));
 
-                Time.Criar(jogador, time1);
-                Time.Criar(jogador, time2);
-                Time.Criar(jogador, time3);
-                Time.Criar(jogador, time4);
-                Time.Criar(jogador, time5);
-                Time.Criar(jogador, time6);
-                Time.Criar(jogador, time7);
-                Time.Criar(jogador, time8);
+                Time.Criar(campeonato, time1);
+                Time.Criar(campeonato, time2);
+                Time.Criar(campeonato, time3);
+                Time.Criar(campeonato, time4);
+                Time.Criar(campeonato, time5);
+                Time.Criar(campeonato, time6);
+                Time.Criar(campeonato, time7);
+                Time.Criar(campeonato, time8);
 
-                Response.Redirect("Views/EditarCampeonato.aspx");
+                Response.Redirect("EditarCampeonato.aspx");
              
             }
             catch(ValidationException ex)
