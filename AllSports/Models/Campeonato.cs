@@ -54,6 +54,8 @@ namespace AllSports.Models
 
         public static Campeonato ObterPorId(int id, SqlConnection conn)
         {
+            Jogador jogador = Jogador.ObterPorId(id, conn);
+
             using (SqlCommand cmd = new SqlCommand("SELECT id_gerente, nome, data_inicio, data_fim FROM tbCampeonato WHERE id=@id", conn))
             {
                 cmd.Parameters.AddWithValue("@id", id);
@@ -64,7 +66,7 @@ namespace AllSports.Models
                     {
                         return null;
                     }
-                    return new Campeonato(id, Jogador.ObterPorId(reader.GetInt32(0), conn), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3));
+                    return new Campeonato(id, jogador, reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3));
                 }
             }
         }

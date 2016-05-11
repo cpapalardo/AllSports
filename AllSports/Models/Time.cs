@@ -57,6 +57,8 @@ namespace AllSports.Models {
         {
             using (SqlConnection conn = Sql.Open())
             {
+                Campeonato campeonato = Campeonato.ObterPorId(id, conn);
+
                 using (SqlCommand cmd = new SqlCommand(
                     "SELECT DISTINCT id, id_campeonato, nome FROM tbTime " +
                     "WHERE id_campeonato = @id_campeonato " +
@@ -70,7 +72,7 @@ namespace AllSports.Models {
 
                         while (reader.Read() == true)
                         {
-                            times.Add(new Time(reader.GetInt32(0), Campeonato.ObterPorId(reader.GetInt32(1), conn), reader.GetString(2)));
+                            times.Add(new Time(reader.GetInt32(0), campeonato, reader.GetString(2)));
                         }
 
                         return times;
