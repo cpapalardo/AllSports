@@ -40,5 +40,13 @@ namespace AllSports.Views
 		{
 
 		}
-	}
+
+        protected void linkLogout_Click(object sender, EventArgs e)
+        {
+            HttpCookie cookie = Request.Cookies["allsports"];
+            cookie.Expires = DateTime.Now.AddYears(-1);
+            Response.Cookies.Set(cookie);
+            Response.Redirect("Home.aspx");
+        }
+    }
 }

@@ -34,7 +34,7 @@
 							<li class="active"><a href="#">Gerenciar Campeonato</a></li>
 							<li><a href="#">Sobre</a></li>
 							<li><a href="#">Contato</a></li>
-							<li><a href="#">Logout</a></li>
+							<li><asp:LinkButton ID="linkLogout" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton></li>
 						</ul>
 					</div>
 					<!--/.nav-collapse -->

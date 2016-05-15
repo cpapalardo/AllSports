@@ -13,6 +13,14 @@ namespace AllSports.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            HttpCookie cookie = Request.Cookies["allsports"];
+
+            if (cookie != null && cookie.Values["valor"].ToString() == "logado")
+            {
+                Response.Redirect("GerenciarCampeonato.aspx");
+                return;
+            }
+
             signupbox.Visible = false;
         }
 

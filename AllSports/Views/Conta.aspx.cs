@@ -69,5 +69,13 @@ namespace AllSports.Views
             else
                 labelResultado.Text = "Ocorreu um erro. Verifique se sua senha atual está correta.";
         }
+
+        protected void linkLogout_Click(object sender, EventArgs e)
+        {
+            HttpCookie cookie = Request.Cookies["allsports"];
+            cookie.Expires = DateTime.Now.AddYears(-1);
+            Response.Cookies.Set(cookie);
+            Response.Redirect("Home.aspx");
+        }
     }
 }
