@@ -108,8 +108,68 @@
 			<label for="textBoxTime08">8</label>
 			<asp:TextBox ID="textBoxTime08" runat="server"></asp:TextBox>
 		</div>
-		</div>
+</div>
+
+        <%-- Tabela de edição Partida --%>
+        <div class="container">
+            <div>
+                <asp:Label ID="labelPartida" runat="server" Text="Partida"></asp:Label>
+            </div>
+            <div>
+                <div>
+                    <asp:Label ID="labelTimeCasa" runat="server" Text="Time Casa"></asp:Label>
+                </div>
+                <div class="row">
+                    <asp:TextBox ID="textBoxTimeCasa" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <asp:Label ID="labelTimeCasaGols" runat="server" Text="Gols"></asp:Label>
+                </div>
+                <div>
+                    <asp:TextBox ID="textBoxTimeCasaGols" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <asp:Label ID="labelTimeVisitante" runat="server" Text="Time Visitante"></asp:Label>
+                </div>
+                <div>
+                    <asp:TextBox ID="textBoxTimeVisitante" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <asp:Label ID="labelTimeVisitanteGols" runat="server" Text="Gols"></asp:Label>
+                </div>
+                <div>
+                    <asp:TextBox ID="textBoxTimeVisitanteGols" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <asp:Label ID="labelEndereco" runat="server" Text="Endereço da partida"></asp:Label>
+                </div>
+                <div>
+                    <asp:TextBox ID="textBoxEndereco" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <asp:Label ID="labelData" runat="server" Text="Data"></asp:Label>
+                </div>
+                <div>
+                    <asp:TextBox ID="textBoxData" runat="server" TextMode="DateTime"></asp:TextBox>
+                </div>
+                <div>
+                    <asp:Label ID="labelFinalizada" runat="server" Text="Finalizada?"></asp:Label>
+                </div>
+            </div>
+        </div>
+	    <%-- Fim Tabela de edição partida --%>
 		
+        <%-- Tabela Mata-mata --%>
 			<div class="knockoutTree recur r_7538138 clearfix" style="width: 731px;">
 				<div class="knockoutMatch round_grouper rg_2 match_holder " style="margin-top: 178.5px;">
 
@@ -125,7 +185,7 @@
 								</td>
 
 								<td class="competitorRes first-res">
-									<a href="/tournaments/df80193451/matches/27096448" rel="nofollow"></a>
+									<%--<a href="/tournaments/df80193451/matches/27096448" rel="nofollow"></a>--%>
 								</td>
 							</tr>
 
@@ -570,7 +630,9 @@
 
 
 			</div>
-		
-	</form>
+		<%-- Fim tabela Mata-mata --%>
+
+
+    </form>
 </body>
 </html>
