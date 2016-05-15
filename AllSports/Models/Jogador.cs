@@ -31,7 +31,7 @@ namespace AllSports.Models {
 			if (string.IsNullOrWhiteSpace(apelido))
 				throw new ValidationException("Apelido vazio");
 
-			if (string.IsNullOrWhiteSpace(nome))
+			if (string.IsNullOrWhiteSpace(email))
 				throw new ValidationException("Email vazio");
 
 			nome = nome.Trim();
@@ -49,6 +49,56 @@ namespace AllSports.Models {
             if (!regex.IsValidEmail(email))
                 throw new ValidationException("Email inválido.");
 		}
+
+        public static int AtualizarJogador(Jogador jogador)
+        {
+            string nome = jogador.Nome;
+            string apelido = jogador.Apelido;
+            string email = jogador.Email;
+
+            Validar(ref nome, ref apelido, ref email);
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE tbJogador SET nome=@nome, apelido=@apelido, email=@email where id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@apelido", apelido);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@id", jogador.Id);
+
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static int AtualizarSenha(int id, string novaSenha, string senhaAtual)
+        {
+            string senhaBanco = "";
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT senha from tbJogador where id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                            senhaBanco = reader.GetString(0);
+                    }
+                }
+
+                if (senhaBanco != senhaAtual)
+                    return -1;
+
+                using (SqlCommand cmd = new SqlCommand("UPDATE tbJogador SET senha=@senha where id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@senha", novaSenha);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
 		public static Jogador ObterPorId(int id, SqlConnection conn) {
 			using (SqlCommand cmd = new SqlCommand("SELECT nome, apelido, email FROM tbJogador WHERE id=@id", conn)) {

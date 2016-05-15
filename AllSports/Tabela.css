@@ -1,0 +1,213 @@
+.knockoutTree .bye-match {
+  border: 1px solid #DDD !important;
+  background: #ddd;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.knockoutTree {
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+
+.knockoutMatch {
+  width: 235px;
+  /* must be equal to .bracket-column-head */
+  padding-left: 5px;
+  /* must be equal to .single-bracket width */
+  float: right;
+  position: relative;
+}
+.knockoutMatch.first-knockout-round {
+  padding-left: 0px;
+}
+
+.knockoutMatch .competitorPerMatch {
+  margin: 10px 0px;
+  position: relative;
+}
+.knockoutMatch .competitorPerMatch span.date {
+  position: absolute;
+  right: 2px;
+  top: 25px;
+}
+.knockoutMatch .bye-match .competitorCont .competitorName,
+.knockoutMatch .bye-match .competitorCont .competitorRes,
+.knockoutMatch .bye-match .placeholder {
+  color: #ddd;
+  border-top: none;
+}
+
+.single-bracket {
+  border-bottom: 2px solid #506674;
+  height: 48px;
+  left: 0;
+  position: absolute;
+  width: 5px;
+}
+
+.competitorPerMatch {
+  display: table;
+  border: 1px solid #CCc;
+  border-spacing: 0px;
+  table-layout: fixed;
+  width: 100%;
+  -webkit-box-shadow: 0 2px 2px #ddd;
+  -moz-box-shadow: 0 2px 2px #ddd;
+  box-shadow: 0 2px 2px #ddd;
+}
+.competitorPerMatch.to-hover:hover {
+  background: #f9f9f9;
+  cursor: pointer;
+}
+.competitorPerMatch .competitorCont td {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+}
+.competitorPerMatch .competitorCont:first-child td {
+  border-top: none;
+}
+.competitorPerMatch .competitorCont .competitorName {
+  padding: 10px 2px;
+  /*Non puo' esserci piu' padding, altrimenti sbrocca la configurazione*/
+}
+.competitorPerMatch .competitorCont.first .competitorRes,
+.competitorPerMatch .competitorCont.first .competitorName {
+  border-top: None;
+  height: 20px;
+}
+.competitorPerMatch .competitorCont .competitorRes {
+  display: table-cell;
+  border-spacing: 0px;
+  border-left: 1px solid #eee;
+  text-align: center;
+  word-wrap: normal;
+  width: 60px;
+}
+
+.competitorCont {
+  /*background:#FFFFFF url(../img/competitor_bg.jpg) repeat-x scroll center bottom;*/
+  font-size: 0.85em;
+  height: 26px;
+  vertical-align: middle;
+  display: table-row;
+}
+
+.competitorCont.first {
+  border-bottom: none;
+  border-top: 1px solid #BDC4C7;
+  background-position: top;
+}
+
+.match-winner .competitorName,
+.match-winner .competitorRes,
+.match-winner .placeholder {
+  font-weight: bold !important;
+}
+
+.competitorName {
+  padding: 6px 0px 6px 3px;
+  padding: 2px;
+}
+.competitorName a {
+  color: #004B6A;
+  text-decoration: none;
+}
+
+.rescontainer .competitorRes {
+  border-left: 1px solid #CCCCCC;
+  font-weight: bold;
+  margin: -7px 0;
+  padding: 7.5px 3.5px;
+  text-align: center;
+}
+.knockout .bye-match .competitorRes {
+  border-left: none;
+}
+.result_type_Set .knockoutMatch .competitorRes {
+  width: 18px;
+}
+
+.knockoutBranches {
+  float: left;
+  position: relative;
+  padding-right: 7px;
+  /* must be equal to as .brackets width + .brackets border */
+}
+
+.brackets {
+  border: 2px solid #506674;
+  border-left: 0px;
+  position: absolute;
+  right: 0px;
+  top: 42px;
+  height: 50%;
+  width: 5px;
+}
+
+.first-knockout-round .bracket-anchor {
+  left: 0px;
+}
+
+:-moz-placeholder {
+  color: #999;
+}
+::-webkit-input-placeholder {
+  color: #999;
+}
+
+.clear-match {
+  display: block;
+  clear: both;
+  line-height: 1%;
+  height: 0;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  height: 20px;
+  padding: 8px;
+  border: 1px solid #CFD9E0;
+  font-size: 14px;
+}
+
+form input,
+form textarea,
+form select,
+form .uneditable-input {
+  color: #333;
+}
+
+input,
+textarea,
+select,
+.uneditable-input {
+  /* display: inline-block; */
+  /* width: 210px; */
+  /* height: 18px; */
+  /* padding: 4px; */
+  /* margin-bottom: 9px; */
+  /* font-size: 14px; */
+  /* line-height: 18px; */
+  /* color: #828282; */
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
