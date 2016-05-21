@@ -58,6 +58,15 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.TextBox textBoxEmail;
         
         /// <summary>
+        /// buttonAlterarTudo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonAlterarTudo;
+        
+        /// <summary>
         /// textBoxSenhaAtual control.
         /// </summary>
         /// <remarks>
@@ -83,15 +92,6 @@ namespace AllSports.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button buttonAlterarSenha;
-        
-        /// <summary>
-        /// buttonAlterarTudo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttonAlterarTudo;
         
         /// <summary>
         /// labelResultado control.

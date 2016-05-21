@@ -128,6 +128,12 @@
     <Content Include="css\cover.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\foosball-581426_1280.jpg" />
+    <Content Include="images\green-467703_1280.jpg" />
+    <Content Include="images\overlay-black-pat.png" />
+    <Content Include="images\sport-1315354_1280.jpg" />
+    <Content Include="images\stadium-1082235_1280.jpg" />
+    <Content Include="images\stadium-709180_1280.jpg" />
     <Content Include="images\the-ball-488718_1280.jpg" />
     <Content Include="images\the-ball-488718_1920.jpg" />
     <Content Include="images\the-ball-488718_640.jpg" />
@@ -147,6 +153,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Conta.aspx" />
+    <Content Include="Views\Contato.aspx" />
     <Content Include="Views\Criacao.aspx" />
     <Content Include="Views\EditarCampeonato.aspx" />
     <Content Include="Views\GerenciarCampeonato.aspx" />
@@ -177,6 +185,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\RegexUtilities.cs" />
     <Compile Include="Utils\Sql.cs" />
+    <Compile Include="Views\Conta.aspx.cs">
+      <DependentUpon>Conta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Conta.aspx.designer.cs">
+      <DependentUpon>Conta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contato.aspx.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Contato.aspx.designer.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Criacao.aspx.cs">
       <DependentUpon>Criacao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

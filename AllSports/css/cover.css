@@ -207,3 +207,87 @@ img {
   align-items: center;
 }
 
+#intro {
+	background: url('http://html.wwwebinvader.com/GreenFlip/img/overlay-black-pat.png') rgba(0,0,0,0.6);
+	padding: 60px 0;
+	padding-bottom: 0;
+	width: 100%;
+	height: auto;
+}
+
+.fullscreen_gerenciar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('../images/stadium-709180_1280.jpg');
+    background-repeat:repeat;
+	overflow-y: scroll;
+ }
+
+.fullscreen_contato {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('../images/sport-1315354_1280.jpg');
+    background-repeat:repeat;
+	overflow-y: scroll;
+ }
+
+.fullscreen_criacao {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('../images/green-467703_1280.jpg');
+    background-repeat:repeat;
+	overflow-y: scroll;
+ }
+
+.fullscreen_conta {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('../images/stadium-1082235_1280.jpg');
+    background-repeat:repeat;
+	overflow-y: scroll;
+ }
+
+thead {
+	background-color: #bce8f1;
+}
+
+.painel_daora {
+	 background-color:#FFFFFF; 
+	 border-radius: 4px; 
+	 border: 1px solid #bce8f1;
+	 margin: 25px;
+}
+
+input {
+    margin: 3px !important;
+	padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;	
+}

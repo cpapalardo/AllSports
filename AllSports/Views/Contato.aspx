@@ -13,6 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+		<div id="fullscreen_contato" class="fullscreen_contato" />
 		<!-- navbar -->
 		<div>
 			<nav class="navbar navbar-inverse">
@@ -40,7 +41,7 @@
 		</div>
 		<!-- end navbar -->
 
-        <div class="panel">
+        <div class="panel-body mainbox painel_daora col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel-heading">
                 <div class="panel-title">
                     <label>Enviar e-mail</label>
@@ -77,6 +78,9 @@
                 <div>
                     <asp:Button ID="buttonEnviar" runat="server" Text="Enviar" OnClick="buttonEnviar_Click"/>
                 </div>
+				<div>
+					<asp:Label runat="server" ID="labelEmail" Visible="false"></asp:Label>
+				</div>
             </div>
         </div>
     </form>

@@ -17,6 +17,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+		<div id="fullscreen_gerenciar" class="fullscreen_gerenciar" />
         <!-- navbar -->
         <div>
             <nav class="navbar navbar-inverse">
@@ -44,7 +45,7 @@
         </div>
         <!-- end navbar -->
 
-        <div class="container">
+        <div class="container painel_daora">
             <div>
                 <a href="Criacao.aspx">Criar novo campeonato</a>
             </div>
@@ -67,7 +68,7 @@
                             {
                         %>
                         <tr>
-                            <th scope="row"><%=cont+1 %></th>
+                            <td scope="row"><%=cont+1 %></td>
                             <td><%=campeonatoList[cont].Nome %></td>
                             <td><%= GetStatus(campeonatoList[cont].Data_Fim) %></td>
                             <td>

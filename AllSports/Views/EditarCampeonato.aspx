@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarCampeonato.aspx.cs" Inherits="AllSports.Views.EditarCampeonato" %>
+﻿<%@ page language="C#" autoeventwireup="true" codebehind="EditarCampeonato.aspx.cs" inherits="AllSports.Views.EditarCampeonato" %>
 
 <!DOCTYPE html>
 
@@ -35,7 +35,9 @@
 							<li class="active"><a href="#">Gerenciar Campeonato</a></li>
 							<li><a href="#">Sobre</a></li>
 							<li><a href="#">Contato</a></li>
-							<li><asp:LinkButton ID="linkLogout" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton></li>
+							<li>
+								<asp:linkbutton id="linkLogout" runat="server" onclick="linkLogout_Click">Logout</asp:linkbutton>
+							</li>
 						</ul>
 					</div>
 					<!--/.nav-collapse -->
@@ -44,591 +46,592 @@
 		</div>
 		<!-- end navbar -->
 
-<div>
 		<div>
-			<label>Criada por:</label>
-			<label id="labelGerente"></label>
+			<div>
+				<label>Criada por:</label>
+				<label id="labelGerente"></label>
+			</div>
+			<div>
+				<label for="textBoxNomeGerente">Nome</label>
+			</div>
+			<div>
+				<asp:textbox id="textBoxNomeGerente" runat="server"></asp:textbox>
+			</div>
+			<div>
+				<label for="textBoxDataInicio">Data de Início</label>
+			</div>
+			<div>
+				<asp:textbox id="textBoxDataInicio" runat="server" textmode="Date"></asp:textbox>
+			</div>
+			<div>
+				<label for="textBoxDataFim">Data de Término</label>
+			</div>
+			<div>
+				<asp:textbox id="textBoxDataFim" runat="server" textmode="Date"></asp:textbox>
+			</div>
+
+			<div>
+				<label for="labelTimes">Times</label>
+			</div>
+
+			<div>
+				<label for="textBoxTime01">1</label>
+				<asp:textbox id="textBoxTime01" runat="server"></asp:textbox>
+			</div>
+			<div>
+				<label for="textBoxTime02">2</label>
+				<asp:textbox id="textBoxTime02" runat="server"></asp:textbox>
+			</div>
+			<div>
+				<label for="textBoxTime03">3</label>
+				<asp:textbox id="textBoxTime03" runat="server"></asp:textbox>
+			</div>
+			<div>
+				<label for="textBoxTime04">4</label>
+				<asp:textbox id="textBoxTime04" runat="server"></asp:textbox>
+			</div>
+			<div>
+				<label for="textBoxTime05">5</label>
+				<asp:textbox id="textBoxTime05" runat="server"></asp:textbox>
+			</div>
+			<div>
+				<label for="textBoxTime06">6</label>
+				<asp:textbox id="textBoxTime06" runat="server"></asp:textbox>
+			</div>
+			<div>
+				<label for="textBoxTime07">7</label>
+				<asp:textbox id="textBoxTime07" runat="server"></asp:textbox>
+			</div>
+			<div>
+				<label for="textBoxTime08">8</label>
+				<asp:textbox id="textBoxTime08" runat="server"></asp:textbox>
+			</div>
+			<div>
+				<asp:Button ID="Button1" runat="server" Text="Sortear Times" />
+			</div>
 		</div>
-		<div>
-			<label for="textBoxNomeGerente">Nome</label>
-		</div>
-		<div>
-			<asp:TextBox ID="textBoxNomeGerente" runat="server"></asp:TextBox>
-		</div>
-		<div>
-			<label for="textBoxDataInicio">Data de Início</label>
-		</div>
-		<div>
-			<asp:TextBox ID="textBoxDataInicio" runat="server" TextMode="Date"></asp:TextBox>
-		</div>
-		<div>
-			<label for="textBoxDataFim">Data de Término</label>
-		</div>
-		<div>
-			<asp:TextBox ID="textBoxDataFim" runat="server" TextMode="Date"></asp:TextBox>
-		</div>
 
-		<div>
-			<label for="labelTimes">Times</label>
-		</div>
-
-		<div>
-			<label for="textBoxTime01">1</label>
-			<asp:TextBox ID="textBoxTime01" runat="server"></asp:TextBox>
-		</div>
-		<div>
-			<label for="textBoxTime02">2</label>
-			<asp:TextBox ID="textBoxTime02" runat="server"></asp:TextBox>
-		</div>
-		<div>
-			<label for="textBoxTime03">3</label>
-			<asp:TextBox ID="textBoxTime03" runat="server"></asp:TextBox>
-		</div>
-		<div>
-			<label for="textBoxTime04">4</label>
-			<asp:TextBox ID="textBoxTime04" runat="server"></asp:TextBox>
-		</div>
-		<div>
-			<label for="textBoxTime05">5</label>
-			<asp:TextBox ID="textBoxTime05" runat="server"></asp:TextBox>
-		</div>
-		<div>
-			<label for="textBoxTime06">6</label>
-			<asp:TextBox ID="textBoxTime06" runat="server"></asp:TextBox>
-		</div>
-		<div>
-			<label for="textBoxTime07">7</label>
-			<asp:TextBox ID="textBoxTime07" runat="server"></asp:TextBox>
-		</div>
-		<div>
-			<label for="textBoxTime08">8</label>
-			<asp:TextBox ID="textBoxTime08" runat="server"></asp:TextBox>
-		</div>
-</div>
-
-        <%-- Tabela de edição Partida --%>
-        <div class="container">
-            <div>
-                <asp:Label ID="labelPartida" runat="server" Text="Partida"></asp:Label>
-            </div>
-            <div>
-                <div>
-                    <asp:Label ID="labelTimeCasa" runat="server" Text="Time Casa"></asp:Label>
-                </div>
-                <div class="row">
-                    <asp:TextBox ID="textBoxTimeCasa" runat="server" ReadOnly="true"></asp:TextBox>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <asp:Label ID="labelTimeCasaGols" runat="server" Text="Gols"></asp:Label>
-                </div>
-                <div>
-                    <asp:TextBox ID="textBoxTimeCasaGols" runat="server"></asp:TextBox>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <asp:Label ID="labelTimeVisitante" runat="server" Text="Time Visitante"></asp:Label>
-                </div>
-                <div>
-                    <asp:TextBox ID="textBoxTimeVisitante" runat="server" ReadOnly="true"></asp:TextBox>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <asp:Label ID="labelTimeVisitanteGols" runat="server" Text="Gols"></asp:Label>
-                </div>
-                <div>
-                    <asp:TextBox ID="textBoxTimeVisitanteGols" runat="server"></asp:TextBox>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <asp:Label ID="labelEndereco" runat="server" Text="Endereço da partida"></asp:Label>
-                </div>
-                <div>
-                    <asp:TextBox ID="textBoxEndereco" runat="server"></asp:TextBox>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <asp:Label ID="labelData" runat="server" Text="Data"></asp:Label>
-                </div>
-                <div>
-                    <asp:TextBox ID="textBoxData" runat="server" TextMode="DateTime"></asp:TextBox>
-                </div>
-                <div>
-                    <asp:Label ID="labelFinalizada" runat="server" Text="Finalizada?"></asp:Label>
-                </div>
-            </div>
-        </div>
-	    <%-- Fim Tabela de edição partida --%>
-		
-        <%-- Tabela Mata-mata --%>
-			<div class="knockoutTree recur r_7538138 clearfix" style="width: 731px;">
-				<div class="knockoutMatch round_grouper rg_2 match_holder " style="margin-top: 178.5px;">
-
-					<div class="single-bracket">&nbsp;</div>
-
-					<table class="competitorPerMatch   " rel="0">
-
-						<tbody>
-							<tr class="competitorCont  match-winner comp-first">
-
-								<td class="competitorName  " rel="0">&nbsp;
-			
-								</td>
-
-								<td class="competitorRes first-res">
-									<%--<a href="/tournaments/df80193451/matches/27096448" rel="nofollow"></a>--%>
-								</td>
-							</tr>
-
-							<tr class="competitorCont  match-winner ">
-
-								<td class="competitorName  " rel="0">&nbsp;
-			
-								</td>
-
-
-								<td class="competitorRes first-res">
-									<a href="/tournaments/df80193451/matches/27096448" rel="nofollow"></a>
-
-								</td>
-
-
-							</tr>
-
-
-						</tbody>
-					</table>
-
-
+		<%-- Tabela de edição Partida --%>
+		<div class="container">
+			<div>
+				<asp:label id="labelPartida" runat="server" text="Partida"></asp:label>
+			</div>
+			<div>
+				<div>
+					<asp:label id="labelTimeCasa" runat="server" text="Time Casa"></asp:label>
 				</div>
+				<div class="row">
+					<asp:textbox id="textBoxTimeCasa" runat="server" readonly="true"></asp:textbox>
+				</div>
+			</div>
+			<div>
+				<div>
+					<asp:label id="labelTimeCasaGols" runat="server" text="Gols"></asp:label>
+				</div>
+				<div>
+					<asp:textbox id="textBoxTimeCasaGols" runat="server"></asp:textbox>
+				</div>
+			</div>
+			<div>
+				<div>
+					<asp:label id="labelTimeVisitante" runat="server" text="Time Visitante"></asp:label>
+				</div>
+				<div>
+					<asp:textbox id="textBoxTimeVisitante" runat="server" readonly="true"></asp:textbox>
+				</div>
+			</div>
+			<div>
+				<div>
+					<asp:label id="labelTimeVisitanteGols" runat="server" text="Gols"></asp:label>
+				</div>
+				<div>
+					<asp:textbox id="textBoxTimeVisitanteGols" runat="server"></asp:textbox>
+				</div>
+			</div>
+			<div>
+				<div>
+					<asp:label id="labelEndereco" runat="server" text="Endereço da partida"></asp:label>
+				</div>
+				<div>
+					<asp:textbox id="textBoxEndereco" runat="server"></asp:textbox>
+				</div>
+			</div>
+			<div>
+				<div>
+					<asp:label id="labelData" runat="server" text="Data"></asp:label>
+				</div>
+				<div>
+					<asp:textbox id="textBoxData" runat="server" textmode="DateTime"></asp:textbox>
+				</div>
+				<div>
+					<asp:label id="labelFinalizada" runat="server" text="Finalizada?"></asp:label>
+				</div>
+			</div>
+		</div>
+		<%-- Fim Tabela de edição partida --%>
+
+		<%-- Tabela Mata-mata --%>
+		<div class="knockoutTree recur r_7538138 clearfix" style="width: 731px;">
+			<div class="knockoutMatch round_grouper rg_2 match_holder " style="margin-top: 178.5px;">
+
+				<div class="single-bracket">&nbsp;</div>
+
+				<table class="competitorPerMatch   " rel="0">
+
+					<tbody>
+						<tr class="competitorCont  match-winner comp-first">
+
+							<td class="competitorName  " rel="0">&nbsp;
+			
+								</td>
+
+							<td class="competitorRes first-res">
+								<%--<a href="/tournaments/df80193451/matches/27096448" rel="nofollow"></a>--%>
+								</td>
+						</tr>
+
+						<tr class="competitorCont  match-winner ">
+
+							<td class="competitorName  " rel="0">&nbsp;
+			
+								</td>
+
+
+							<td class="competitorRes first-res">
+								<a href="/tournaments/df80193451/matches/27096448" rel="nofollow"></a>
+
+							</td>
+
+
+						</tr>
+
+
+					</tbody>
+				</table>
+
+
+			</div>
 
 
 
-				<div class="knockoutBranches">
+			<div class="knockoutBranches">
 
-					<div class="brackets" style="height: 228px; top: 112px;">&nbsp;</div>
-
-
-
-
-
-					<div class="knockoutTree recur r_7538137 clearfix">
-						<div class="knockoutMatch round_grouper rg_1 match_holder " style="margin-top: 59.5px;">
-
-
-
-							<div class="single-bracket">&nbsp;</div>
+				<div class="brackets" style="height: 228px; top: 112px;">&nbsp;</div>
 
 
 
 
 
-							<!-- SCHEDULE KNOCKOUT -->
+				<div class="knockoutTree recur r_7538137 clearfix">
+					<div class="knockoutMatch round_grouper rg_1 match_holder " style="margin-top: 59.5px;">
 
 
-							<table class="competitorPerMatch   " rel="0">
 
-								<tbody>
-									<tr class="competitorCont  match-winner comp-first">
+						<div class="single-bracket">&nbsp;</div>
 
-										<td class="competitorName  " rel="0">&nbsp;
+
+
+
+
+						<!-- SCHEDULE KNOCKOUT -->
+
+
+						<table class="competitorPerMatch   " rel="0">
+
+							<tbody>
+								<tr class="competitorCont  match-winner comp-first">
+
+									<td class="competitorName  " rel="0">&nbsp;
 			
 										</td>
 
 
-										<td class="competitorRes first-res">
-											<a href="/tournaments/df80193451/matches/27096449" rel="nofollow"></a>
+									<td class="competitorRes first-res">
+										<a href="/tournaments/df80193451/matches/27096449" rel="nofollow"></a>
 
-										</td>
+									</td>
 
 
-									</tr>
+								</tr>
 
-									<tr class="competitorCont  match-winner ">
+								<tr class="competitorCont  match-winner ">
 
-										<td class="competitorName  " rel="0">&nbsp;
+									<td class="competitorName  " rel="0">&nbsp;
 			
 										</td>
 
 
-										<td class="competitorRes first-res">
-											<a href="/tournaments/df80193451/matches/27096449" rel="nofollow"></a>
+									<td class="competitorRes first-res">
+										<a href="/tournaments/df80193451/matches/27096449" rel="nofollow"></a>
 
-										</td>
-
-
-									</tr>
+									</td>
 
 
-								</tbody>
-							</table>
+								</tr>
 
 
-						</div>
+							</tbody>
+						</table>
 
 
-
-						<div class="knockoutBranches">
-
-							<div class="brackets" style="height: 109px; top: 52.5px;">&nbsp;</div>
+					</div>
 
 
 
+					<div class="knockoutBranches">
 
-
-							<div class="knockoutTree  r_7538136 clearfix">
-								<div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
+						<div class="brackets" style="height: 109px; top: 52.5px;">&nbsp;</div>
 
 
 
 
 
+						<div class="knockoutTree  r_7538136 clearfix">
+							<div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
 
 
-									<!-- SCHEDULE KNOCKOUT -->
 
 
-									<table class="competitorPerMatch   to-hover to-link" rel="/tournaments/df80193451/matches/27096450">
-
-										<tbody>
-											<tr class="competitorCont  comp-first">
-
-												<td class="competitorName 8938869 " rel="1">
-
-													<span class="placeholder">#7</span>
-
-												</td>
 
 
-												<td class="competitorRes first-res">
-													<a href="/tournaments/df80193451/matches/27096450" rel="nofollow"></a>
 
-												</td>
+								<!-- SCHEDULE KNOCKOUT -->
 
 
-											</tr>
+								<table class="competitorPerMatch   to-hover to-link" rel="/tournaments/df80193451/matches/27096450">
 
-											<tr class="competitorCont  ">
+									<tbody>
+										<tr class="competitorCont  comp-first">
 
-												<td class="competitorName 8938867 " rel="1">
+											<td class="competitorName 8938869 " rel="1">
 
-													<span class="placeholder">#5</span>
+												<span class="placeholder">#7</span>
 
-												</td>
-
-
-												<td class="competitorRes first-res">
-													<a href="/tournaments/df80193451/matches/27096450" rel="nofollow"></a>
-
-												</td>
+											</td>
 
 
-											</tr>
+											<td class="competitorRes first-res">
+												<a href="/tournaments/df80193451/matches/27096450" rel="nofollow"></a>
+
+											</td>
 
 
-										</tbody>
-									</table>
+										</tr>
+
+										<tr class="competitorCont  ">
+
+											<td class="competitorName 8938867 " rel="1">
+
+												<span class="placeholder">#5</span>
+
+											</td>
 
 
-								</div>
+											<td class="competitorRes first-res">
+												<a href="/tournaments/df80193451/matches/27096450" rel="nofollow"></a>
 
+											</td>
+
+
+										</tr>
+
+
+									</tbody>
+								</table>
 
 
 							</div>
-							<div class="clear-match"></div>
-
-
-
-
-
-							<div class="knockoutTree  r_7538136 clearfix">
-								<div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
-
-
-
-
-
-
-
-									<!-- SCHEDULE KNOCKOUT -->
-
-
-									<table class="competitorPerMatch   to-hover to-link" rel="/tournaments/df80193451/matches/27096451">
-
-										<tbody>
-											<tr class="competitorCont  comp-first">
-
-												<td class="competitorName 8938868 " rel="1">
-
-													<span class="placeholder">#6</span>
-
-												</td>
-
-
-												<td class="competitorRes first-res">
-													<a href="/tournaments/df80193451/matches/27096451" rel="nofollow"></a>
-
-												</td>
-
-
-											</tr>
-
-											<tr class="competitorCont  ">
-
-												<td class="competitorName 8938864 " rel="1">
-
-													<span class="placeholder">#2</span>
-
-												</td>
-
-
-												<td class="competitorRes first-res">
-													<a href="/tournaments/df80193451/matches/27096451" rel="nofollow"></a>
-
-												</td>
-
-
-											</tr>
-
-
-										</tbody>
-									</table>
-
-
-								</div>
-
-
-
-							</div>
-							<div class="clear-match"></div>
 
 
 
 						</div>
+						<div class="clear-match"></div>
+
+
+
+
+
+						<div class="knockoutTree  r_7538136 clearfix">
+							<div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
+
+
+
+
+
+
+
+								<!-- SCHEDULE KNOCKOUT -->
+
+
+								<table class="competitorPerMatch   to-hover to-link" rel="/tournaments/df80193451/matches/27096451">
+
+									<tbody>
+										<tr class="competitorCont  comp-first">
+
+											<td class="competitorName 8938868 " rel="1">
+
+												<span class="placeholder">#6</span>
+
+											</td>
+
+
+											<td class="competitorRes first-res">
+												<a href="/tournaments/df80193451/matches/27096451" rel="nofollow"></a>
+
+											</td>
+
+
+										</tr>
+
+										<tr class="competitorCont  ">
+
+											<td class="competitorName 8938864 " rel="1">
+
+												<span class="placeholder">#2</span>
+
+											</td>
+
+
+											<td class="competitorRes first-res">
+												<a href="/tournaments/df80193451/matches/27096451" rel="nofollow"></a>
+
+											</td>
+
+
+										</tr>
+
+
+									</tbody>
+								</table>
+
+
+							</div>
+
+
+
+						</div>
+						<div class="clear-match"></div>
 
 
 
 					</div>
-					<div class="clear-match"></div>
-
-
-
-
-
-					<div class="knockoutTree recur r_7538137 clearfix">
-						<div class="knockoutMatch round_grouper rg_1 match_holder " style="margin-top: 59.5px;">
-
-
-
-							<div class="single-bracket">&nbsp;</div>
-
-
-
-
-
-							<!-- SCHEDULE KNOCKOUT -->
-
-
-							<table class="competitorPerMatch   " rel="0">
-
-								<tbody>
-									<tr class="competitorCont  match-winner comp-first">
-
-										<td class="competitorName  " rel="0">&nbsp;
-			
-										</td>
-
-
-										<td class="competitorRes first-res">
-											<a href="/tournaments/df80193451/matches/27096452" rel="nofollow"></a>
-
-										</td>
-
-
-									</tr>
-
-									<tr class="competitorCont  match-winner ">
-
-										<td class="competitorName  " rel="0">&nbsp;
-			
-										</td>
-
-
-										<td class="competitorRes first-res">
-											<a href="/tournaments/df80193451/matches/27096452" rel="nofollow"></a>
-
-										</td>
-
-
-									</tr>
-
-
-								</tbody>
-							</table>
-
-
-						</div>
-
-
-
-						<div class="knockoutBranches">
-
-							<div class="brackets" style="height: 109px; top: 52.5px;">&nbsp;</div>
-
-
-
-
-
-							<div class="knockoutTree  r_7538136 clearfix">
-								<div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
-
-
-
-
-
-
-
-									<!-- SCHEDULE KNOCKOUT -->
-
-
-									<table class="competitorPerMatch   to-hover to-link" rel="/tournaments/df80193451/matches/27096453">
-
-										<tbody>
-											<tr class="competitorCont  comp-first">
-
-												<td class="competitorName 8938863 " rel="1">
-
-													<span class="placeholder">#1</span>
-
-												</td>
-
-
-												<td class="competitorRes first-res">
-													<a href="/tournaments/df80193451/matches/27096453" rel="nofollow"></a>
-
-												</td>
-
-
-											</tr>
-
-											<tr class="competitorCont  ">
-
-												<td class="competitorName 8938865 " rel="1">
-
-													<span class="placeholder">#3</span>
-
-												</td>
-
-
-												<td class="competitorRes first-res">
-													<a href="/tournaments/df80193451/matches/27096453" rel="nofollow"></a>
-
-												</td>
-
-
-											</tr>
-
-
-										</tbody>
-									</table>
-
-
-								</div>
-
-
-
-							</div>
-							<div class="clear-match"></div>
-
-
-
-
-
-							<div class="knockoutTree  r_7538136 clearfix">
-								<div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
-
-
-
-
-
-
-
-									<!-- SCHEDULE KNOCKOUT -->
-
-
-									<table class="competitorPerMatch   to-hover to-link" rel="/tournaments/df80193451/matches/27096454">
-
-										<tbody>
-											<tr class="competitorCont  comp-first">
-
-												<td class="competitorName 8938870 " rel="1">
-
-													<span class="placeholder">#8</span>
-
-												</td>
-
-
-												<td class="competitorRes first-res">
-													<a href="/tournaments/df80193451/matches/27096454" rel="nofollow"></a>
-
-												</td>
-
-
-											</tr>
-
-											<tr class="competitorCont  ">
-
-												<td class="competitorName 8938866 " rel="1">
-
-													<span class="placeholder">#4</span>
-
-												</td>
-
-
-												<td class="competitorRes first-res">
-													<a href="/tournaments/df80193451/matches/27096454" rel="nofollow"></a>
-
-												</td>
-
-
-											</tr>
-
-
-										</tbody>
-									</table>
-
-
-								</div>
-
-
-
-							</div>
-							<div class="clear-match"></div>
-
-
-
-						</div>
-
-
-
-					</div>
-					<div class="clear-match"></div>
 
 
 
 				</div>
+				<div class="clear-match"></div>
+
+
+
+
+
+				<div class="knockoutTree recur r_7538137 clearfix">
+					<div class="knockoutMatch round_grouper rg_1 match_holder " style="margin-top: 59.5px;">
+
+
+
+						<div class="single-bracket">&nbsp;</div>
+
+
+
+
+
+						<!-- SCHEDULE KNOCKOUT -->
+
+
+						<table class="competitorPerMatch   " rel="0">
+
+							<tbody>
+								<tr class="competitorCont  match-winner comp-first">
+
+									<td class="competitorName  " rel="0">&nbsp;
+			
+										</td>
+
+
+									<td class="competitorRes first-res">
+										<a href="/tournaments/df80193451/matches/27096452" rel="nofollow"></a>
+
+									</td>
+
+
+								</tr>
+
+								<tr class="competitorCont  match-winner ">
+
+									<td class="competitorName  " rel="0">&nbsp;
+			
+										</td>
+
+
+									<td class="competitorRes first-res">
+										<a href="/tournaments/df80193451/matches/27096452" rel="nofollow"></a>
+
+									</td>
+
+
+								</tr>
+
+
+							</tbody>
+						</table>
+
+
+					</div>
+
+
+
+					<div class="knockoutBranches">
+
+						<div class="brackets" style="height: 109px; top: 52.5px;">&nbsp;</div>
+
+
+
+
+
+						<div class="knockoutTree  r_7538136 clearfix">
+							<div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
+
+
+
+
+
+
+
+								<!-- SCHEDULE KNOCKOUT -->
+
+
+								<table class="competitorPerMatch   to-hover to-link" rel="/tournaments/df80193451/matches/27096453">
+
+									<tbody>
+										<tr class="competitorCont  comp-first">
+
+											<td class="competitorName 8938863 " rel="1">
+
+												<span class="placeholder">#1</span>
+
+											</td>
+
+
+											<td class="competitorRes first-res">
+												<a href="/tournaments/df80193451/matches/27096453" rel="nofollow"></a>
+
+											</td>
+
+
+										</tr>
+
+										<tr class="competitorCont  ">
+
+											<td class="competitorName 8938865 " rel="1">
+
+												<span class="placeholder">#3</span>
+
+											</td>
+
+
+											<td class="competitorRes first-res">
+												<a href="/tournaments/df80193451/matches/27096453" rel="nofollow"></a>
+
+											</td>
+
+
+										</tr>
+
+
+									</tbody>
+								</table>
+
+
+							</div>
+
+
+
+						</div>
+						<div class="clear-match"></div>
+
+
+
+
+
+						<div class="knockoutTree  r_7538136 clearfix">
+							<div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
+
+
+
+
+
+
+
+								<!-- SCHEDULE KNOCKOUT -->
+
+
+								<table class="competitorPerMatch   to-hover to-link" rel="/tournaments/df80193451/matches/27096454">
+
+									<tbody>
+										<tr class="competitorCont  comp-first">
+
+											<td class="competitorName 8938870 " rel="1">
+
+												<span class="placeholder">#8</span>
+
+											</td>
+
+
+											<td class="competitorRes first-res">
+												<a href="/tournaments/df80193451/matches/27096454" rel="nofollow"></a>
+
+											</td>
+
+
+										</tr>
+
+										<tr class="competitorCont  ">
+
+											<td class="competitorName 8938866 " rel="1">
+
+												<span class="placeholder">#4</span>
+
+											</td>
+
+
+											<td class="competitorRes first-res">
+												<a href="/tournaments/df80193451/matches/27096454" rel="nofollow"></a>
+
+											</td>
+
+
+										</tr>
+
+
+									</tbody>
+								</table>
+
+
+							</div>
+
+
+
+						</div>
+						<div class="clear-match"></div>
+
+
+
+					</div>
+
+
+
+				</div>
+				<div class="clear-match"></div>
 
 
 
 			</div>
+
+
+
+		</div>
 		<%-- Fim tabela Mata-mata --%>
-
-
-    </form>
+	</form>
 </body>
 </html>

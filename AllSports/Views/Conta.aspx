@@ -18,6 +18,7 @@
 </head>
 <body>
 	<form id="form1" runat="server">
+		<div id="fullscreen_conta" class="fullscreen_conta" />
 		<!-- navbar -->
 		<div>
 			<nav class="navbar navbar-inverse">
@@ -37,7 +38,9 @@
 							<li><a href="#">Sobre</a></li>
 							<li><a href="#">Contato</a></li>
 							<li class="active"><a href="#">Conta</a></li>
-							<li><asp:LinkButton ID="linkLogout" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton></li>
+							<li>
+								<asp:linkbutton id="linkLogout" runat="server" onclick="linkLogout_Click">Logout</asp:linkbutton>
+							</li>
 						</ul>
 					</div>
 					<!--/.nav-collapse -->
@@ -46,50 +49,56 @@
 		</div>
 		<!-- end navbar -->
 
-		<div>
-			<label>Configurações de Conta</label>
-		</div>
-		<div>
-			<label>Nome</label>
-		</div>
-		<div>
-			<asp:textbox runat="server" id="textBoxNome"></asp:textbox>
-		</div>
-		<div>
-			<label>Apelido</label>
-		</div>
-		<div>
-			<asp:textbox runat="server" id="textBoxApelido"></asp:textbox>
-		</div>
-		<div>
-			<label>E-mail</label>
-		</div>
-		<div>
-			<asp:textbox runat="server" id="textBoxEmail"></asp:textbox>
-		</div>
-		<div>
-			<div style="border: thin solid black; align-self: center; width: 20%">
-				<div>
-					<label>Senha atual</label>
-				</div>
-				<div>
-					<asp:textbox runat="server" id="textBoxSenhaAtual" textmode="Password"></asp:textbox>
-				</div>
-                <div>
-                    <label>Nova senha</label>
-                </div>
-                <div>
-                    <asp:TextBox ID="textBoxSenhaNova" runat="server" textmode="Password"></asp:TextBox>
-                </div>
-				<asp:button runat="server" text="Alterar senha" id="buttonAlterarSenha" OnClick="buttonAlterarSenha_Click"/>
+		<div class="panel-body mainbox painel_daora col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+			<div>
+				<label>Configurações de Conta</label>
+			</div>
+			<div>
+				<label>Nome</label>
+			</div>
+			<div>
+				<asp:textbox runat="server" id="textBoxNome"></asp:textbox>
+			</div>
+			<div>
+				<label>Apelido</label>
+			</div>
+			<div>
+				<asp:textbox runat="server" id="textBoxApelido"></asp:textbox>
+			</div>
+			<div>
+				<label>E-mail</label>
+			</div>
+			<div>
+				<asp:textbox runat="server" id="textBoxEmail"></asp:textbox>
+			</div>
+			<br />
+			<div>
+				<asp:button runat="server" text="Alterar informações" id="buttonAlterarTudo" onclick="buttonAlterarTudo_Click" />
+			</div>
+			<br />
+			<div style="border-top: solid;">
+				<label>Alterar Senha</label>
+			</div>
+			<div>
+				<label>Senha atual</label>
+			</div>
+			<div>
+				<asp:textbox runat="server" id="textBoxSenhaAtual" textmode="Password"></asp:textbox>
+			</div>
+			<div>
+				<label>Nova senha</label>
+			</div>
+			<div>
+				<asp:textbox id="textBoxSenhaNova" runat="server" textmode="Password"></asp:textbox>
+			</div>
+			<br />
+			<div>
+				<asp:button runat="server" text="Alterar senha" id="buttonAlterarSenha" onclick="buttonAlterarSenha_Click" />
+			</div>
+			<div>
+				<asp:label id="labelResultado" runat="server" text=""></asp:label>
 			</div>
 		</div>
-		<div>
-			<asp:button runat="server" text="Alterar informações" id="buttonAlterarTudo" OnClick="buttonAlterarTudo_Click"/>
-		</div>
-        <div>
-            <asp:Label ID="labelResultado" runat="server" Text=""></asp:Label>
-        </div>
 	</form>
 </body>
 </html>

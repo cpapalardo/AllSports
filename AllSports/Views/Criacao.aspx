@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Criacao.aspx.cs" Inherits="AllSports.Views.Criacao" %>
+﻿<%@ page language="C#" autoeventwireup="true" codebehind="Criacao.aspx.cs" inherits="AllSports.Views.Criacao" %>
 
 <!DOCTYPE html>
 
@@ -17,6 +17,7 @@
 </head>
 <body>
 	<form id="form1" runat="server">
+		<div id="fullscreen_criacao" class="fullscreen_criacao" />
 		<div>
 			<div class="navbar navbar-inverse">
 				<div class="container">
@@ -34,7 +35,9 @@
 							<li class="active"><a href="#">Gerenciar Campeonato</a></li>
 							<li><a href="#">Sobre</a></li>
 							<li><a href="#">Contato</a></li>
-							<li><asp:LinkButton ID="linkLogout" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton></li>
+							<li>
+								<asp:linkbutton id="linkLogout" runat="server" onclick="linkLogout_Click">Logout</asp:linkbutton>
+							</li>
 						</ul>
 					</div>
 					<!--/.nav-collapse -->
@@ -43,73 +46,71 @@
 		</div>
 		<!-- end navbar -->
 
-		<div>
-			<label for="txtNomeCampeonato">Nome do Campeonato</label>
-		</div>
-		<div>
-			<asp:TextBox runat="server" ID="txtNomeCampeonato" />
-		</div>
-		<div>
-			<label for="txtDt_Inicio">Data de Início</label>
-		</div>
-		<div>
-			<asp:TextBox runat="server" ID="txtDt_Inicio" />
-		</div>
-		<div>
-			<label for="txtDt_Fim">Data de Término</label>
-		</div>
-		<div>
-			<asp:TextBox runat="server" ID="txtDt_Fim" />
-		</div>
+		<div class="panel-body mainbox painel_daora col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+			<div>
+				<label for="txtNomeCampeonato">Nome do Campeonato</label>
+			</div>
+			<div>
+				<asp:textbox CssClass="form-control" runat="server" id="txtNomeCampeonato" />
+			</div>
+			<div>
+				<label for="txtDt_Inicio">Data de Início</label>
+			</div>
+			<div>
+				<asp:textbox CssClass="form-control" runat="server" id="txtDt_Inicio" />
+			</div>
+			<div>
+				<label for="txtDt_Fim">Data de Término</label>
+			</div>
+			<div>
+				<asp:textbox CssClass="form-control" runat="server" id="txtDt_Fim" />
+			</div>
 
-		<div>
 			<div>
 				<label for="labelTimes">Times</label>
 			</div>
 
 			<div>
 				<label for="textBoxTime01">1</label>
-				<asp:TextBox ID="textBoxTime01" runat="server"></asp:TextBox>
+				<asp:textbox id="textBoxTime01" runat="server"></asp:textbox>
 			</div>
 			<div>
 				<label for="textBoxTime02">2</label>
-				<asp:TextBox ID="textBoxTime02" runat="server"></asp:TextBox>
+				<asp:textbox id="textBoxTime02" runat="server"></asp:textbox>
 			</div>
 			<div>
 				<label for="textBoxTime03">3</label>
-				<asp:TextBox ID="textBoxTime03" runat="server"></asp:TextBox>
+				<asp:textbox id="textBoxTime03" runat="server"></asp:textbox>
 			</div>
 			<div>
 				<label for="textBoxTime04">4</label>
-				<asp:TextBox ID="textBoxTime04" runat="server"></asp:TextBox>
+				<asp:textbox id="textBoxTime04" runat="server"></asp:textbox>
 			</div>
 			<div>
 				<label for="textBoxTime05">5</label>
-				<asp:TextBox ID="textBoxTime05" runat="server"></asp:TextBox>
+				<asp:textbox id="textBoxTime05" runat="server"></asp:textbox>
 			</div>
 			<div>
 				<label for="textBoxTime06">6</label>
-				<asp:TextBox ID="textBoxTime06" runat="server"></asp:TextBox>
+				<asp:textbox id="textBoxTime06" runat="server"></asp:textbox>
 			</div>
 			<div>
 				<label for="textBoxTime07">7</label>
-				<asp:TextBox ID="textBoxTime07" runat="server"></asp:TextBox>
+				<asp:textbox id="textBoxTime07" runat="server"></asp:textbox>
 			</div>
 			<div>
 				<label for="textBoxTime08">8</label>
-				<asp:TextBox ID="textBoxTime08" runat="server"></asp:TextBox>
+				<asp:textbox id="textBoxTime08" runat="server"></asp:textbox>
 			</div>
-		</div>
-
-
-		<div>
-			<asp:Button Text="Criar Campeonato e Gerar Partidas" ID="buttonCriar" runat="server" OnClick="buttonCriar_Click" />
-		</div>
-        <div>
-            <asp:Label ID="labelErro" runat="server" Text=""></asp:Label>
-        </div>
-		<div>
-			<asp:Label ID="lblMensagem" Text="" runat="server" />
+			<div>
+				<asp:button text="Criar Campeonato e Gerar Partidas" id="buttonCriar" runat="server" onclick="buttonCriar_Click" />
+			</div>
+			<div>
+				<asp:label id="labelErro" runat="server" text=""></asp:label>
+			</div>
+			<div>
+				<asp:label id="lblMensagem" text="" runat="server" />
+			</div>
 		</div>
 	</form>
 </body>
