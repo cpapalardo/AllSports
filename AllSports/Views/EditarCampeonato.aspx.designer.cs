@@ -247,13 +247,13 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.Label labelData;
         
         /// <summary>
-        /// textBoxData control.
+        /// textBoxDataPartida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxData;
+        protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida;
         
         /// <summary>
         /// labelFinalizada control.

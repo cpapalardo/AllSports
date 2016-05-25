@@ -33,7 +33,13 @@ namespace AllSports.Views
 
             if (int.TryParse(Request.QueryString["id"], out id))
             {
+                Campeonato campeonato = Campeonato.ObterPorId(id);
                 List<Time> times = Time.ObterPorCampeonato(id);
+
+                string teste = campeonato.Data_Inicio.Date.ToString();
+
+                textBoxDataInicio.Text = campeonato.Data_Inicio.ToShortDateString();
+                textBoxDataFim.Text = campeonato.Data_Fim.ToShortDateString();
 
                 textBoxTime01.Text = times[0].Nome;
                 textBoxTime02.Text = times[1].Nome;

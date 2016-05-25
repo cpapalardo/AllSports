@@ -57,7 +57,7 @@ namespace AllSports.Views
                 Time.Criar(campeonato, time7);
                 Time.Criar(campeonato, time8);
 
-                Response.Redirect("EditarCampeonato.aspx");
+                Response.Redirect("EditarCampeonato.aspx?id=" + campeonato.Id);
              
             }
             catch(ValidationException ex)

@@ -55,7 +55,7 @@
 				<label for="textBoxNomeGerente">Nome</label>
 			</div>
 			<div>
-				<asp:textbox id="textBoxNomeGerente" runat="server"></asp:textbox>
+				<asp:textbox id="textBoxNomeGerente" ReadOnly="true" runat="server"></asp:textbox>
 			</div>
 			<div>
 				<label for="textBoxDataInicio">Data de Início</label>
@@ -161,7 +161,7 @@
 					<asp:label id="labelData" runat="server" text="Data"></asp:label>
 				</div>
 				<div>
-					<asp:textbox id="textBoxData" runat="server" textmode="DateTime"></asp:textbox>
+					<asp:textbox id="textBoxDataPartida" runat="server" textmode="DateTime"></asp:textbox>
 				</div>
 				<div>
 					<asp:label id="labelFinalizada" runat="server" text="Finalizada?"></asp:label>

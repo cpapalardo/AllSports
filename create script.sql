@@ -25,7 +25,7 @@ create table tbTime(
 	nome nvarchar (52) not null
 
 	constraint pk_time_id primary key clustered (id asc)
-	constraint fk_campeonato_time_id foreign key (id_campeonato) references tbJogador (id)
+	constraint fk_campeonato_time_id foreign key (id_campeonato) references tbCampeonato (id)
 )
 
 
