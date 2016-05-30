@@ -131,5 +131,39 @@ namespace AllSports.Models
             }
         }
 
+        public static void SortearPartidas(int id, int[] id_times)
+        {
+            Random rnd = new Random();
+
+            for (int i = 0; i < id_times.Length; i++)
+            {
+                int a = rnd.Next(id_times.Length);
+                int temp = id_times[i];
+                id_times[i] = id_times[a];
+                id_times[a] = temp;
+            }
+
+            using (SqlConnection conn = Sql.Open())
+            {
+                for (int i = 0; i < id_times.Length; i++)
+                {
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO tbPartida (id_campeonato, id_time_casa, id_time_visitante, gol_casa,"
+                    + " gol_visitante, endereco, data, finalizada) VALUES (@id_campeonato, @id_time_casa, @id_time_visitante, @gol_casa,"
+                    + " @gol_visitante, @endereco, @data, @finalizada)", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id_campeonato", id);
+                        cmd.Parameters.AddWithValue("@id_time_casa", id_times[i]);
+                        cmd.Parameters.AddWithValue("@id_time_visitante", id_times[++i]);
+                        cmd.Parameters.AddWithValue("@gol_casa", 0);
+                        cmd.Parameters.AddWithValue("@gol_visitante", 0);
+                        cmd.Parameters.AddWithValue("@endereco", "");
+                        cmd.Parameters.AddWithValue("@data", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@finalizada", false);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
     }
 }
