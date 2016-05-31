@@ -9,15 +9,15 @@ namespace AllSports.Models
 {
     public class Partida
     {
-        private int Id { get; set; }
-        private Campeonato Campeonato { get; set; }
-        private Time TimeCasa { get; set; }
-        private Time TimeVisitante { get; set; }
-        private int GolCasa { get; set; }
-        private int GolVisitante { get; set; }
-        private string Endereco { get; set; }
-        private DateTime Data { get; set; }
-        private bool Finalizada { get; set; }
+        public int Id { get; set; }
+        public Campeonato Campeonato { get; set; }
+        public Time TimeCasa { get; set; }
+        public Time TimeVisitante { get; set; }
+        public int GolCasa { get; set; }
+        public int GolVisitante { get; set; }
+        public string Endereco { get; set; }
+        public DateTime Data { get; set; }
+        public bool Finalizada { get; set; }
 
         public Partida(int id, Campeonato campeonato, Time timeCasa, Time timeVisitante, int golCasa, int golVisitante, string endereco,
             DateTime data, bool finalizada)
