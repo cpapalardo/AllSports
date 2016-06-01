@@ -14,7 +14,7 @@ namespace AllSports.Models
         public string Nome { get; set; }
         public DateTime Data_Inicio { get; set; }
         public DateTime Data_Fim { get; set; }
-        
+
         public Campeonato(int id, Jogador gerente, string nome, DateTime data_inicio, DateTime data_fim)
         {
             Id = id;
@@ -84,7 +84,7 @@ namespace AllSports.Models
         {
             using (SqlConnection conn = Sql.Open())
             {
-				Jogador jogador = Jogador.ObterPorId(id, conn);
+                Jogador jogador = Jogador.ObterPorId(id, conn);
 
                 using (SqlCommand cmd = new SqlCommand(
                     "select id, id_gerente, nome, data_inicio, data_fim " +

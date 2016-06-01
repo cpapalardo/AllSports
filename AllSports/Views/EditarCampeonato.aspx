@@ -30,7 +30,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">All Sports</a>
+                        <a class="navbar-brand" href="GerenciarCampeonato.aspx">All Sports</a>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
@@ -49,301 +49,165 @@
         <!-- end navbar -->
 
         <div class="container painel_daora">
-            <div>
-                <ul class="tabs nav-tabs">
-                    <li class="active" style="list-style-type: none;">
-                        <a class="active" href="#panel1" data-toggle="tab">
-                            <i class="fa fa-lock"></i>
-                            <span>Tabela</span>
-                        </a>
-                    </li>
-                    <li style="list-style-type: none;">
-                        <a href="#panel2" data-toggle="tab">
-                            <i class="fa fa-user"></i>
-                            <span>Editar Campeonato</span>
-                        </a>
-                    </li>
-                </ul>
+            <%--Abas--%>
+            <div class="span10 offset1">
+                <div class="tabbable tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#panel1" data-toggle="tab" class="active">
+                                <span>Tabela</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#panel2" data-toggle="tab">
+                                <span>Editar Campeonato</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="tab-content">
+                <%--Abas - Conteúdo--%>
                 <div id="panel1" class="tab-pane active">
-                    <%--		<%-- Tabela Mata-mata --%>
+                    <%-- Tabela Mata-mata --%>
                     <div class="container">
-                    <div class="knockoutTree recur r_7538138 clearfix" style="width: 731px;">
-                        <div class="knockoutMatch round_grouper rg_2 match_holder " style="margin-top: 178.5px;">
-
-                            <div class="single-bracket">&nbsp;</div>
-
-                            <table id="tabelaPartida7" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida">
-                                <tbody>
-                                    <tr class="competitorCont  comp-first">
-                                        <td class="competitorName"><span class="placeholder">#Partida7Time1<asp:Label runat="server" ID="lblPartida7Time01Id" /></span><asp:Label runat="server" ID="lblPartida7Time01Nome" /></td>
-                                        <td class="competitorRes first-res">
-                                            <asp:Label runat="server" ID="lblPartida7Time01Pontos" /></td>
-                                    </tr>
-                                    <tr class="competitorCont">
-                                        <td class="competitorName"><span class="placeholder">#Partida7Time2<asp:Label runat="server" ID="lblPartida7Time02Id" /></span><asp:Label runat="server" ID="lblPartida7Time02Nome" /></td>
-                                        <td class="competitorRes first-res">
-                                            <asp:Label runat="server" ID="lblPartida7Time02Pontos" /></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                        </div>
-
-
-
-                        <div class="knockoutBranches">
-
-                            <div class="brackets" style="height: 228px; top: 112px;">&nbsp;</div>
-
-
-
-
-
-                            <div class="knockoutTree recur r_7538137 clearfix">
-                                <div class="knockoutMatch round_grouper rg_1 match_holder " style="margin-top: 59.5px;">
-
-
-
-                                    <div class="single-bracket">&nbsp;</div>
-
-
-
-
-
-                                    <!-- SCHEDULE KNOCKOUT -->
-                                    <table id="tabelaPartida5" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida">
-                                        <tbody>
-                                            <tr class="competitorCont  comp-first">
-                                                <td class="competitorName"><span class="placeholder">#Partida5Time1<asp:Label runat="server" ID="lblPartida5Time01Id" /></span><asp:Label runat="server" ID="lblPartida5Time01Nome" /></td>
-                                                <td class="competitorRes first-res">
-                                                    <asp:Label runat="server" ID="lblPartida5Time01Pontos" /></td>
-                                            </tr>
-                                            <tr class="competitorCont">
-                                                <td class="competitorName"><span class="placeholder">#Partida5Time2<asp:Label runat="server" ID="lblPartida5Time02Id" /></span><asp:Label runat="server" ID="lblPartida5Time02Nome" /></td>
-                                                <td class="competitorRes first-res">
-                                                    <asp:Label runat="server" ID="lblPartida5Time02Pontos" /></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
-
-
-                                <div class="knockoutBranches">
-
-                                    <div class="brackets" style="height: 109px; top: 52.5px;">&nbsp;</div>
-
-
-
-
-
-                                    <div class="knockoutTree  r_7538136 clearfix">
-                                        <div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
-
-
-
-
-
-
-
-                                            <!-- SCHEDULE KNOCKOUT -->
-                                            <table id="tabelaPartida1" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida">
-                                                <tbody>
-                                                    <tr class="competitorCont  comp-first">
-                                                        <td class="competitorName"><span class="placeholder">#Partida1Time1<asp:Label runat="server" ID="lblPartida1Time01Id" /></span><asp:Label runat="server" ID="lblPartida1Time01Nome" /></td>
-                                                        <td class="competitorRes first-res">
-                                                            <asp:Label runat="server" ID="lblPartida1Time01Pontos" /></td>
-                                                    </tr>
-                                                    <tr class="competitorCont">
-                                                        <td class="competitorName"><span class="placeholder">#Partida1Time2<asp:Label runat="server" ID="lblPartida1Time02Id" /></span><asp:Label runat="server" ID="lblPartida1Time02Nome" /></td>
-                                                        <td class="competitorRes first-res">
-                                                            <asp:Label runat="server" ID="lblPartida1Time02Pontos" /></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-
-
-                                    </div>
-                                    <div class="clear-match"></div>
-
-
-
-
-
-                                    <div class="knockoutTree  r_7538136 clearfix">
-                                        <div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
-
-
-
-
-
-
-
-                                            <!-- SCHEDULE KNOCKOUT -->
-                                            <table id="tabelaPartida2" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida">
-                                                <tbody>
-                                                    <tr class="competitorCont  comp-first">
-                                                        <td class="competitorName"><span class="placeholder">#Partida2Time1<asp:Label runat="server" ID="lblPartida2Time01Id" /></span><asp:Label runat="server" ID="lblPartida2Time01Nome" /></td>
-                                                        <td class="competitorRes first-res">
-                                                            <asp:Label runat="server" ID="lblPartida2Time01Pontos" /></td>
-                                                    </tr>
-                                                    <tr class="competitorCont">
-                                                        <td class="competitorName"><span class="placeholder">#Partida2Time2<asp:Label runat="server" ID="lblPartida2Time02Id" /></span><asp:Label runat="server" ID="lblPartida2Time02Nome" /></td>
-                                                        <td class="competitorRes first-res">
-                                                            <asp:Label runat="server" ID="lblPartida2Time02Pontos" /></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-
-
-                                    </div>
-                                    <div class="clear-match"></div>
-
-
-
-                                </div>
-
-
-
+                        <div class="knockoutTree recur clearfix" style="width: 719px;">
+                            <div class="knockoutMatch round_grouper match_holder" style="margin-top: 178.5px;">
+                                <div class="single-bracket">&nbsp;</div>
+                                <table id="tabelaPartida7" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida07">
+                                    <tbody>
+                                        <tr class="competitorCont  comp-first">
+                                            <td class="competitorName"><span class="placeholder">#Partida7Time1<asp:Label runat="server" ID="lblPartida7Time01Id" /></span><asp:Label runat="server" ID="lblPartida7Time01Nome" /></td>
+                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida7Time01Pontos" /></td>
+                                        </tr>
+                                        <tr class="competitorCont">
+                                            <td class="competitorName"><span class="placeholder">#Partida7Time2<asp:Label runat="server" ID="lblPartida7Time02Id" /></span><asp:Label runat="server" ID="lblPartida7Time02Nome" /></td>
+                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida7Time02Pontos" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="clear-match"></div>
-
-
-
-
-
-                            <div class="knockoutTree recur r_7538137 clearfix">
-                                <div class="knockoutMatch round_grouper rg_1 match_holder " style="margin-top: 59.5px;">
-
-
-
-                                    <div class="single-bracket">&nbsp;</div>
-
-
-
-
-
-                                    <!-- SCHEDULE KNOCKOUT -->
-                                    <table id="tabelaPartida6" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida">
-                                        <tbody>
-                                            <tr class="competitorCont  comp-first">
-                                                <td class="competitorName"><span class="placeholder">#Partida6Time1<asp:Label runat="server" ID="lblPartida6Time01Id" /></span><asp:Label runat="server" ID="lblPartida6Time01Nome" /></td>
-                                                <td class="competitorRes first-res">
-                                                    <asp:Label runat="server" ID="lblPartida6Time01Pontos" /></td>
-                                            </tr>
-                                            <tr class="competitorCont">
-                                                <td class="competitorName"><span class="placeholder">#Partida6Time2<asp:Label runat="server" ID="lblPartida6Time02Id" /></span><asp:Label runat="server" ID="lblPartida6Time02Nome" /></td>
-                                                <td class="competitorRes first-res">
-                                                    <asp:Label runat="server" ID="lblPartida6Time02Pontos" /></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-
-
-                                <div class="knockoutBranches">
-
-                                    <div class="brackets" style="height: 109px; top: 52.5px;">&nbsp;</div>
-
-
-
-
-
-                                    <div class="knockoutTree  r_7538136 clearfix">
-                                        <div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round" data-toggle="modal" data-target="#modalEditarPartida">
-
-
-
-
-
-
-
-                                            <!-- SCHEDULE KNOCKOUT -->
-                                            <table id="tabelaPartida3" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida">
-                                                <tbody>
-                                                    <tr class="competitorCont  comp-first">
-                                                        <td class="competitorName"><span class="placeholder">#Partida3Time1<asp:Label runat="server" ID="lblPartida3Time01Id" /></span><asp:Label runat="server" ID="lblPartida3Time01Nome" /></td>
-                                                        <td class="competitorRes first-res">
-                                                            <asp:Label runat="server" ID="lblPartida3Time01Pontos" /></td>
-                                                    </tr>
-                                                    <tr class="competitorCont">
-                                                        <td class="competitorName"><span class="placeholder">#Partida3Time2<asp:Label runat="server" ID="lblPartida3Time02Id" /></span><asp:Label runat="server" ID="lblPartida3Time02Nome" /></td>
-                                                        <td class="competitorRes first-res">
-                                                            <asp:Label runat="server" ID="lblPartida3Time02Pontos" /></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-
-
-
+                            <div class="knockoutBranches">
+                                <div class="brackets" style="height: 228px; top: 112px;">&nbsp;</div>
+                                <div class="knockoutTree recur clearfix">
+                                    <div class="knockoutMatch round_grouper match_holder " style="margin-top: 59.5px;">
+                                        <div class="single-bracket">&nbsp;</div>
+                                        <!-- SCHEDULE KNOCKOUT -->
+                                        <table id="tabelaPartida5" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida05">
+                                            <tbody>
+                                                <tr class="competitorCont  comp-first">
+                                                    <td class="competitorName"><span class="placeholder">#Partida5Time1<asp:Label runat="server" ID="lblPartida5Time01Id" /></span><asp:Label runat="server" ID="lblPartida5Time01Nome" /></td>
+                                                    <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida5Time01Pontos" /></td>
+                                                </tr>
+                                                <tr class="competitorCont">
+                                                    <td class="competitorName"><span class="placeholder">#Partida5Time2<asp:Label runat="server" ID="lblPartida5Time02Id" /></span><asp:Label runat="server" ID="lblPartida5Time02Nome" /></td>
+                                                    <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida5Time02Pontos" /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <div class="clear-match"></div>
-
-
-
-
-
-                                    <div class="knockoutTree  r_7538136 clearfix">
-                                        <div class="knockoutMatch round_grouper rg_0 match_holder first-knockout-round">
-
-
-
-
-
-
-
-                                            <!-- SCHEDULE KNOCKOUT -->
-                                            <table id="tabelaPartida4" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida">
-                                                <tbody>
-                                                    <tr class="competitorCont  comp-first">
-                                                        <td class="competitorName"><span class="placeholder">#Partida4Time1<asp:Label runat="server" ID="lblPartida4Time01Id" /></span><asp:Label runat="server" ID="lblPartida4Time01Nome" /></td>
-                                                        <td class="competitorRes first-res">
-                                                            <asp:Label runat="server" ID="lblPartida4Time01Pontos" /></td>
-                                                    </tr>
-                                                    <tr class="competitorCont">
-                                                        <td class="competitorName"><span class="placeholder">#Partida4Time2<asp:Label runat="server" ID="lblPartida4Time02Id" /></span><asp:Label runat="server" ID="lblPartida4Time02Nome" /></td>
-                                                        <td class="competitorRes first-res">
-                                                            <asp:Label runat="server" ID="lblPartida4Time02Pontos" /></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-
-
+                                    <div class="knockoutBranches">
+                                        <div class="brackets" style="height: 109px; top: 52.5px;">&nbsp;</div>
+                                        <div class="knockoutTree clearfix">
+                                            <div class="knockoutMatch round_grouper match_holder first-knockout-round">
+                                                <!-- SCHEDULE KNOCKOUT -->
+                                                <table id="tabelaPartida1" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida01">
+                                                    <tbody>
+                                                        <tr class="competitorCont  comp-first">
+                                                            <td class="competitorName"><span class="placeholder">#Partida1Time1<asp:Label runat="server" ID="lblPartida1Time01Id" /></span><asp:Label runat="server" ID="lblPartida1Time01Nome" /></td>
+                                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida1Time01Pontos" /></td>
+                                                        </tr>
+                                                        <tr class="competitorCont">
+                                                            <td class="competitorName"><span class="placeholder">#Partida1Time2<asp:Label runat="server" ID="lblPartida1Time02Id" /></span><asp:Label runat="server" ID="lblPartida1Time02Nome" /></td>
+                                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida1Time02Pontos" /></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-
-
-
+                                        <div class="clear-match"></div>
+                                        <div class="knockoutTree clearfix">
+                                            <div class="knockoutMatch round_grouper match_holder first-knockout-round">
+                                                <!-- SCHEDULE KNOCKOUT -->
+                                                <table id="tabelaPartida2" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida02">
+                                                    <tbody>
+                                                        <tr class="competitorCont  comp-first">
+                                                            <td class="competitorName"><span class="placeholder">#Partida2Time1<asp:Label runat="server" ID="lblPartida2Time01Id" /></span><asp:Label runat="server" ID="lblPartida2Time01Nome" /></td>
+                                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida2Time01Pontos" /></td>
+                                                        </tr>
+                                                        <tr class="competitorCont">
+                                                            <td class="competitorName"><span class="placeholder">#Partida2Time2<asp:Label runat="server" ID="lblPartida2Time02Id" /></span><asp:Label runat="server" ID="lblPartida2Time02Nome" /></td>
+                                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida2Time02Pontos" /></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="clear-match"></div>
                                     </div>
-                                    <div class="clear-match"></div>
-
-
-
                                 </div>
-
-
-
+                                <div class="clear-match"></div>
+                                <div class="knockoutTree recur clearfix">
+                                    <div class="knockoutMatch round_grouper match_holder" style="margin-top: 59.5px;">
+                                        <div class="single-bracket">&nbsp;</div>
+                                        <!-- SCHEDULE KNOCKOUT -->
+                                        <table id="tabelaPartida6" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida06">
+                                            <tbody>
+                                                <tr class="competitorCont  comp-first">
+                                                    <td class="competitorName"><span class="placeholder">#Partida6Time1<asp:Label runat="server" ID="lblPartida6Time01Id" /></span><asp:Label runat="server" ID="lblPartida6Time01Nome" /></td>
+                                                    <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida6Time01Pontos" /></td>
+                                                </tr>
+                                                <tr class="competitorCont">
+                                                    <td class="competitorName"><span class="placeholder">#Partida6Time2<asp:Label runat="server" ID="lblPartida6Time02Id" /></span><asp:Label runat="server" ID="lblPartida6Time02Nome" /></td>
+                                                    <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida6Time02Pontos" /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="knockoutBranches">
+                                        <div class="brackets" style="height: 109px; top: 52.5px;">&nbsp;</div>
+                                        <div class="knockoutTree clearfix">
+                                            <div class="knockoutMatch round_grouper match_holder first-knockout-round">
+                                                <!-- SCHEDULE KNOCKOUT -->
+                                                <table id="tabelaPartida3" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida03">
+                                                    <tbody>
+                                                        <tr class="competitorCont  comp-first">
+                                                            <td class="competitorName"><span class="placeholder">#Partida3Time1<asp:Label runat="server" ID="lblPartida3Time01Id" /></span><asp:Label runat="server" ID="lblPartida3Time01Nome" /></td>
+                                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida3Time01Pontos" /></td>
+                                                        </tr>
+                                                        <tr class="competitorCont">
+                                                            <td class="competitorName"><span class="placeholder">#Partida3Time2<asp:Label runat="server" ID="lblPartida3Time02Id" /></span><asp:Label runat="server" ID="lblPartida3Time02Nome" /></td>
+                                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida3Time02Pontos" /></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="clear-match"></div>
+                                        <div class="knockoutTree clearfix">
+                                            <div class="knockoutMatch round_grouper match_holder first-knockout-round">
+                                                <!-- SCHEDULE KNOCKOUT -->
+                                                <table id="tabelaPartida4" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida04">
+                                                    <tbody>
+                                                        <tr class="competitorCont  comp-first">
+                                                            <td class="competitorName"><span class="placeholder">#Partida4Time1<asp:Label runat="server" ID="lblPartida4Time01Id" /></span><asp:Label runat="server" ID="lblPartida4Time01Nome" /></td>
+                                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida4Time01Pontos" /></td>
+                                                        </tr>
+                                                        <tr class="competitorCont">
+                                                            <td class="competitorName"><span class="placeholder">#Partida4Time2<asp:Label runat="server" ID="lblPartida4Time02Id" /></span><asp:Label runat="server" ID="lblPartida4Time02Nome" /></td>
+                                                            <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida4Time02Pontos" /></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="clear-match"></div>
+                                    </div>
+                                </div>
+                                <div class="clear-match"></div>
                             </div>
-                            <div class="clear-match"></div>
-
-
-
                         </div>
-
-
-
-                    </div>
                     </div>
                     <div>
                         <button id="buttonSortearPartidas" type="button" class="btn btn-default" data-toggle="modal" data-target="#modalConfirmarSorteio" runat="server">Sortear Partidas</button>
@@ -351,6 +215,7 @@
                     <div>
                         <asp:Label ID="labelWarning" runat="server" Text=""></asp:Label>
                     </div>
+                    <br />
                     <%-- Fim tabela Mata-mata --%>
                 </div>
                 <div id="panel2" class="tab-pane">
@@ -423,15 +288,15 @@
                         <div>
                             <asp:Button ID="buttonCancelar" runat="server" Text="Cancelar" />
                         </div>
+                        <br />
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modal Editar Partida-->
-        <div class="modal fade" id="modalEditarPartida" role="dialog">
+        <!-- Modal Editar Partida 01-->
+        <div class="modal fade" id="modalEditarPartida01" role="dialog">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -439,74 +304,503 @@
                         <h4 class="modal-title">Alterar Partida</h4>
                     </div>
                     <div class="modal-body">
-
-                        <%-- Tabela de edição Partida --%>
+                        <%--Tabela de edição Partida--%>
                         <div>
                             <div>
-                                <asp:Label ID="labelTimeCasa" runat="server" Text="Time Casa"></asp:Label>
+                                <label for="textBoxTimeCasa01">Time Casa</label>
                             </div>
                             <div class="row">
-                                <asp:TextBox ID="textBoxTimeCasa" runat="server" ReadOnly="true"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeCasa01" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <asp:Label ID="labelTimeCasaGols" runat="server" Text="Gols"></asp:Label>
+                                <label for="textBoxTimeCasaGols01">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeCasaGols" runat="server"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <asp:Label ID="labelTimeVisitante" runat="server" Text="Time Visitante"></asp:Label>
-                            </div>
-                            <div>
-                                <asp:TextBox ID="textBoxTimeVisitante" runat="server" ReadOnly="true"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeCasaGols01" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <asp:Label ID="labelTimeVisitanteGols" runat="server" Text="Gols"></asp:Label>
+                                <label for="textBoxTimeVisitante01">Time Visitante</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeVisitanteGols" runat="server"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <asp:Label ID="labelEndereco" runat="server" Text="Endereço da partida"></asp:Label>
-                            </div>
-                            <div>
-                                <asp:TextBox ID="textBoxEndereco" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeVisitante01" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <asp:Label ID="labelData" runat="server" Text="Data"></asp:Label>
+                                <label for="textBoxTimeVisitanteGols01">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxDataPartida" runat="server" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols01" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxEndereco01">Endereço da Partida</label>
                             </div>
                             <div>
-                                <asp:Label ID="labelFinalizada" runat="server" Text="Finalizada?"></asp:Label>
+                                <asp:TextBox ID="textBoxEndereco01" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxDataPartida01">Data</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxDataPartida01" runat="server" TextMode="DateTime"></asp:TextBox>
+                            </div>
+                            <div>
+                                <asp:Label ID="labelFinalizada01" runat="server" Text="Finalizada?"></asp:Label>
                             </div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
-                        <button type="button" id="btnCancelarPartida" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <asp:Button ID="btnSalvar01" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
+                        <button type="button" id="btnCancelarPartida01" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
+            </div>
+        </div>
 
+        <!-- Modal Editar Partida 02-->
+        <div class="modal fade" id="modalEditarPartida02" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Alterar Partida</h4>
+                    </div>
+                    <div class="modal-body">
+                        <%--Tabela de edição Partida--%>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasa02">Time Casa</label>
+                            </div>
+                            <div class="row">
+                                <asp:TextBox ID="textBoxTimeCasa02" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasaGols02">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeCasaGols02" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitante02">Time Visitante</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitante02" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitanteGols02">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols02" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxEndereco02">Endereço da Partida</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxEndereco02" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxDataPartida02">Data</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxDataPartida02" runat="server" TextMode="DateTime"></asp:TextBox>
+                            </div>
+                            <div>
+                                <asp:Label ID="labelFinalizada02" runat="server" Text="Finalizada?"></asp:Label>
+                            </div>
+                        </div>
+                        <%-- Fim Tabela de edição partida --%>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnSalvar02" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
+                        <button type="button" id="btnCancelarPartida02" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Editar Partida 03-->
+        <div class="modal fade" id="modalEditarPartida03" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Alterar Partida</h4>
+                    </div>
+                    <div class="modal-body">
+                        <%--Tabela de edição Partida--%>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasa03">Time Casa</label>
+                            </div>
+                            <div class="row">
+                                <asp:TextBox ID="textBoxTimeCasa03" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasaGols03">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeCasaGols03" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitante03">Time Visitante</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitante03" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitanteGols03">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols03" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxEndereco03">Endereço da Partida</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxEndereco03" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxDataPartida03">Data</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxDataPartida03" runat="server" TextMode="DateTime"></asp:TextBox>
+                            </div>
+                            <div>
+                                <asp:Label ID="labelFinalizada03" runat="server" Text="Finalizada?"></asp:Label>
+                            </div>
+                        </div>
+                        <%-- Fim Tabela de edição partida --%>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnSalvar03" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
+                        <button type="button" id="btnCancelarPartida03" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Editar Partida 04-->
+        <div class="modal fade" id="modalEditarPartida04" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Alterar Partida</h4>
+                    </div>
+                    <div class="modal-body">
+                        <%--Tabela de edição Partida--%>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasa04">Time Casa</label>
+                            </div>
+                            <div class="row">
+                                <asp:TextBox ID="textBoxTimeCasa04" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasaGols04">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeCasaGols04" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitante04">Time Visitante</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitante04" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitanteGols04">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols04" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxEndereco04">Endereço da Partida</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxEndereco04" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxDataPartida04">Data</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxDataPartida04" runat="server" TextMode="DateTime"></asp:TextBox>
+                            </div>
+                            <div>
+                                <asp:Label ID="labelFinalizada04" runat="server" Text="Finalizada?"></asp:Label>
+                            </div>
+                        </div>
+                        <%-- Fim Tabela de edição partida --%>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnSalvar04" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
+                        <button type="button" id="btnCancelarPartida04" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Editar Partida 05-->
+        <div class="modal fade" id="modalEditarPartida05" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Alterar Partida</h4>
+                    </div>
+                    <div class="modal-body">
+                        <%--Tabela de edição Partida--%>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasa05">Time Casa</label>
+                            </div>
+                            <div class="row">
+                                <asp:TextBox ID="textBoxTimeCasa05" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasaGols05">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeCasaGols05" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitante05">Time Visitante</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitante05" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitanteGols05">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols05" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxEndereco05">Endereço da Partida</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxEndereco05" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxDataPartida05">Data</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxDataPartida05" runat="server" TextMode="DateTime"></asp:TextBox>
+                            </div>
+                            <div>
+                                <asp:Label ID="labelFinalizada05" runat="server" Text="Finalizada?"></asp:Label>
+                            </div>
+                        </div>
+                        <%-- Fim Tabela de edição partida --%>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnSalvar05" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
+                        <button type="button" id="btnCancelarPartida05" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Editar Partida 06-->
+        <div class="modal fade" id="modalEditarPartida06" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Alterar Partida</h4>
+                    </div>
+                    <div class="modal-body">
+                        <%--Tabela de edição Partida--%>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasa06">Time Casa</label>
+                            </div>
+                            <div class="row">
+                                <asp:TextBox ID="textBoxTimeCasa06" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasaGols06">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeCasaGols06" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitante06">Time Visitante</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitante06" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitanteGols06">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols06" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxEndereco06">Endereço da Partida</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxEndereco06" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxDataPartida06">Data</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxDataPartida06" runat="server" TextMode="DateTime"></asp:TextBox>
+                            </div>
+                            <div>
+                                <asp:Label ID="labelFinalizada06" runat="server" Text="Finalizada?"></asp:Label>
+                            </div>
+                        </div>
+                        <%-- Fim Tabela de edição partida --%>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnSalvar06" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
+                        <button type="button" id="btnCancelarPartida06" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Editar Partida 07-->
+        <div class="modal fade" id="modalEditarPartida07" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Alterar Partida</h4>
+                    </div>
+                    <div class="modal-body">
+                        <%--Tabela de edição Partida--%>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasa07">Time Casa</label>
+                            </div>
+                            <div class="row">
+                                <asp:TextBox ID="textBoxTimeCasa07" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeCasaGols07">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeCasaGols07" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitante07">Time Visitante</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitante07" runat="server" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxTimeVisitanteGols07">Gols</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols07" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxEndereco07">Endereço da Partida</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxEndereco07" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="textBoxDataPartida07">Data</label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="textBoxDataPartida07" runat="server" TextMode="DateTime"></asp:TextBox>
+                            </div>
+                            <div>
+                                <asp:Label ID="labelFinalizada07" runat="server" Text="Finalizada?"></asp:Label>
+                            </div>
+                        </div>
+                        <%-- Fim Tabela de edição partida --%>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnSalvar07" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
+                        <button type="button" id="btnCancelarPartida07" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Modal Confirmação Sorteiar Partidas -->
         <div class="modal fade" id="modalConfirmarSorteio" role="dialog">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -514,14 +808,13 @@
                         <h4 class="modal-title">Sortear Partidas</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Deseja sortear as partidas iniciais? Caso já existam times na tabela, eles serão sobreescritos.</p>
+                        <p>Deseja sortear as partidas iniciais? Caso já existam times na tabela, eles serão sobrescritos.</p>
                     </div>
                     <div class="modal-footer">
                         <asp:Button ID="btnConfirmar" runat="server" Text="Sim" CssClass="btn btn-default" OnClick="buttonSortearPartidas_Click" />
                         <button type="button" id="btnSortearNao" class="btn btn-default" data-dismiss="modal">Não</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </form>

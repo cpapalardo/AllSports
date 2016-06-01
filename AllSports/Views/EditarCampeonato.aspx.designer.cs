@@ -553,130 +553,508 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.Button buttonCancelar;
         
         /// <summary>
-        /// labelTimeCasa control.
+        /// textBoxTimeCasa01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelTimeCasa;
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasa01;
         
         /// <summary>
-        /// textBoxTimeCasa control.
+        /// textBoxTimeCasaGols01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasa;
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasaGols01;
         
         /// <summary>
-        /// labelTimeCasaGols control.
+        /// textBoxTimeVisitante01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelTimeCasaGols;
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitante01;
         
         /// <summary>
-        /// textBoxTimeCasaGols control.
+        /// textBoxTimeVisitanteGols01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasaGols;
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitanteGols01;
         
         /// <summary>
-        /// labelTimeVisitante control.
+        /// textBoxEndereco01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelTimeVisitante;
+        protected global::System.Web.UI.WebControls.TextBox textBoxEndereco01;
         
         /// <summary>
-        /// textBoxTimeVisitante control.
+        /// textBoxDataPartida01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitante;
+        protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida01;
         
         /// <summary>
-        /// labelTimeVisitanteGols control.
+        /// labelFinalizada01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelTimeVisitanteGols;
+        protected global::System.Web.UI.WebControls.Label labelFinalizada01;
         
         /// <summary>
-        /// textBoxTimeVisitanteGols control.
+        /// btnSalvar01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitanteGols;
+        protected global::System.Web.UI.WebControls.Button btnSalvar01;
         
         /// <summary>
-        /// labelEndereco control.
+        /// textBoxTimeCasa02 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelEndereco;
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasa02;
         
         /// <summary>
-        /// textBoxEndereco control.
+        /// textBoxTimeCasaGols02 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxEndereco;
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasaGols02;
         
         /// <summary>
-        /// labelData control.
+        /// textBoxTimeVisitante02 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelData;
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitante02;
         
         /// <summary>
-        /// textBoxDataPartida control.
+        /// textBoxTimeVisitanteGols02 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida;
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitanteGols02;
         
         /// <summary>
-        /// labelFinalizada control.
+        /// textBoxEndereco02 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelFinalizada;
+        protected global::System.Web.UI.WebControls.TextBox textBoxEndereco02;
         
         /// <summary>
-        /// btnSalvar control.
+        /// textBoxDataPartida02 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvar;
+        protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida02;
+        
+        /// <summary>
+        /// labelFinalizada02 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelFinalizada02;
+        
+        /// <summary>
+        /// btnSalvar02 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalvar02;
+        
+        /// <summary>
+        /// textBoxTimeCasa03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasa03;
+        
+        /// <summary>
+        /// textBoxTimeCasaGols03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasaGols03;
+        
+        /// <summary>
+        /// textBoxTimeVisitante03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitante03;
+        
+        /// <summary>
+        /// textBoxTimeVisitanteGols03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitanteGols03;
+        
+        /// <summary>
+        /// textBoxEndereco03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxEndereco03;
+        
+        /// <summary>
+        /// textBoxDataPartida03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida03;
+        
+        /// <summary>
+        /// labelFinalizada03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelFinalizada03;
+        
+        /// <summary>
+        /// btnSalvar03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalvar03;
+        
+        /// <summary>
+        /// textBoxTimeCasa04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasa04;
+        
+        /// <summary>
+        /// textBoxTimeCasaGols04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasaGols04;
+        
+        /// <summary>
+        /// textBoxTimeVisitante04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitante04;
+        
+        /// <summary>
+        /// textBoxTimeVisitanteGols04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitanteGols04;
+        
+        /// <summary>
+        /// textBoxEndereco04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxEndereco04;
+        
+        /// <summary>
+        /// textBoxDataPartida04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida04;
+        
+        /// <summary>
+        /// labelFinalizada04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelFinalizada04;
+        
+        /// <summary>
+        /// btnSalvar04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalvar04;
+        
+        /// <summary>
+        /// textBoxTimeCasa05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasa05;
+        
+        /// <summary>
+        /// textBoxTimeCasaGols05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasaGols05;
+        
+        /// <summary>
+        /// textBoxTimeVisitante05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitante05;
+        
+        /// <summary>
+        /// textBoxTimeVisitanteGols05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitanteGols05;
+        
+        /// <summary>
+        /// textBoxEndereco05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxEndereco05;
+        
+        /// <summary>
+        /// textBoxDataPartida05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida05;
+        
+        /// <summary>
+        /// labelFinalizada05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelFinalizada05;
+        
+        /// <summary>
+        /// btnSalvar05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalvar05;
+        
+        /// <summary>
+        /// textBoxTimeCasa06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasa06;
+        
+        /// <summary>
+        /// textBoxTimeCasaGols06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasaGols06;
+        
+        /// <summary>
+        /// textBoxTimeVisitante06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitante06;
+        
+        /// <summary>
+        /// textBoxTimeVisitanteGols06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitanteGols06;
+        
+        /// <summary>
+        /// textBoxEndereco06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxEndereco06;
+        
+        /// <summary>
+        /// textBoxDataPartida06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida06;
+        
+        /// <summary>
+        /// labelFinalizada06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelFinalizada06;
+        
+        /// <summary>
+        /// btnSalvar06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalvar06;
+        
+        /// <summary>
+        /// textBoxTimeCasa07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasa07;
+        
+        /// <summary>
+        /// textBoxTimeCasaGols07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeCasaGols07;
+        
+        /// <summary>
+        /// textBoxTimeVisitante07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitante07;
+        
+        /// <summary>
+        /// textBoxTimeVisitanteGols07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTimeVisitanteGols07;
+        
+        /// <summary>
+        /// textBoxEndereco07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxEndereco07;
+        
+        /// <summary>
+        /// textBoxDataPartida07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida07;
+        
+        /// <summary>
+        /// labelFinalizada07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelFinalizada07;
+        
+        /// <summary>
+        /// btnSalvar07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalvar07;
         
         /// <summary>
         /// btnConfirmar control.

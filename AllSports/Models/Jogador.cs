@@ -5,50 +5,55 @@ using System.Data.SqlClient;
 using System.Data;
 using AllSports.Utils;
 
-namespace AllSports.Models {
-	public class Jogador {
-		public int Id { get; set; }
-		public string Nome { get; set; }
-		public string Apelido { get; set; }
-		public string Email { get; set; }
+namespace AllSports.Models
+{
+    public class Jogador
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Apelido { get; set; }
+        public string Email { get; set; }
 
-		public Jogador(int id, string nome, string apelido, string email) {
-			Id = id;
-			Nome = nome;
-			Apelido = apelido;
-			Email = email;
-		}
+        public Jogador(int id, string nome, string apelido, string email)
+        {
+            Id = id;
+            Nome = nome;
+            Apelido = apelido;
+            Email = email;
+        }
 
-		public override string ToString() {
-			return Nome;
-		}
+        public override string ToString()
+        {
+            return Nome;
+        }
 
-		private static void Validar(ref string nome, ref string apelido, ref string email) {
+        private static void Validar(ref string nome, ref string apelido, ref string email)
+        {
             RegexUtilities regex = new RegexUtilities();
             if (string.IsNullOrWhiteSpace(nome))
-				throw new ValidationException("Nome vazio");
+                throw new ValidationException("Nome vazio");
 
-			if (string.IsNullOrWhiteSpace(apelido))
-				throw new ValidationException("Apelido vazio");
+            if (string.IsNullOrWhiteSpace(apelido))
+                throw new ValidationException("Apelido vazio");
 
-			if (string.IsNullOrWhiteSpace(email))
-				throw new ValidationException("Email vazio");
+            if (string.IsNullOrWhiteSpace(email))
+                throw new ValidationException("Email vazio");
 
-			nome = nome.Trim();
-			if (nome.Length > 52)
-				throw new ValidationException("Nome muito longo");
+            nome = nome.Trim();
+            if (nome.Length > 52)
+                throw new ValidationException("Nome muito longo");
 
-			apelido = apelido.Trim();
-			if (apelido.Length > 52)
-				throw new ValidationException("Apelido muito longo");
+            apelido = apelido.Trim();
+            if (apelido.Length > 52)
+                throw new ValidationException("Apelido muito longo");
 
-			email = email.Trim();
-			if (email.Length > 52)
-				throw new ValidationException("Email muito longo");
+            email = email.Trim();
+            if (email.Length > 52)
+                throw new ValidationException("Email muito longo");
 
             if (!regex.IsValidEmail(email))
                 throw new ValidationException("Email inválido.");
-		}
+        }
 
         public static int AtualizarJogador(Jogador jogador)
         {
@@ -100,28 +105,32 @@ namespace AllSports.Models {
             }
         }
 
-		public static Jogador ObterPorId(int id, SqlConnection conn) {
-			using (SqlCommand cmd = new SqlCommand("SELECT nome, apelido, email FROM tbJogador WHERE id=@id", conn)) {
-				cmd.Parameters.AddWithValue("@id", id);
-				//return new Jogador(id, leitor.GetString(0), leitor.GetString(1), leitor.GetString(2));
+        public static Jogador ObterPorId(int id, SqlConnection conn)
+        {
+            using (SqlCommand cmd = new SqlCommand("SELECT nome, apelido, email FROM tbJogador WHERE id=@id", conn))
+            {
+                cmd.Parameters.AddWithValue("@id", id);
+                //return new Jogador(id, leitor.GetString(0), leitor.GetString(1), leitor.GetString(2));
 
-				using (SqlDataReader leitor = cmd.ExecuteReader())
-				{
-					if (leitor.Read() == false)
-					{
-						return null;
-					}
-					return new Jogador(id, leitor.GetString(0), leitor.GetString(1), leitor.GetString(2));
-				}
-			}
+                using (SqlDataReader leitor = cmd.ExecuteReader())
+                {
+                    if (leitor.Read() == false)
+                    {
+                        return null;
+                    }
+                    return new Jogador(id, leitor.GetString(0), leitor.GetString(1), leitor.GetString(2));
+                }
+            }
 
-		}
+        }
 
-		public static Jogador ObterPorId(int id) {
-			using (SqlConnection conn = Sql.Open()) {
-				return ObterPorId(id, conn);
-			}
-		}
+        public static Jogador ObterPorId(int id)
+        {
+            using (SqlConnection conn = Sql.Open())
+            {
+                return ObterPorId(id, conn);
+            }
+        }
 
         public static Jogador ObterPorEmail(string email, SqlConnection conn)
         {
@@ -174,67 +183,81 @@ namespace AllSports.Models {
             }
         }
 
-        public static List<Jogador> ObterTodos() {
-			using (SqlConnection conn = Sql.Open()) {
-				using (SqlCommand cmd = new SqlCommand("SELECT id, nome, apelido, email, senha FROM tbJogador ORDER BY nome ASC", conn)) {
-					using (SqlDataReader reader = cmd.ExecuteReader()) {
-						List<Jogador> jogadores = new List<Jogador>();
+        public static List<Jogador> ObterTodos()
+        {
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT id, nome, apelido, email, senha FROM tbJogador ORDER BY nome ASC", conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        List<Jogador> jogadores = new List<Jogador>();
 
-						while (reader.Read() == true) {
-							jogadores.Add(new Jogador(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
-						}
-						return jogadores;
-					}
-				}
-			}
-		}
+                        while (reader.Read() == true)
+                        {
+                            jogadores.Add(new Jogador(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
+                        }
+                        return jogadores;
+                    }
+                }
+            }
+        }
 
-		public static Jogador Criar(string nome, string apelido, string email, string senha) {
-			Validar(ref nome, ref apelido, ref email);
+        public static Jogador Criar(string nome, string apelido, string email, string senha)
+        {
+            Validar(ref nome, ref apelido, ref email);
 
-			using (SqlConnection conn = Sql.Open()) {
-				using (SqlCommand cmd = new SqlCommand("INSERT INTO tbJogador (nome, apelido, email, senha) OUTPUT INSERTED.id VALUES (@nome, @apelido, @email, @senha)", conn)) {
-					cmd.Parameters.AddWithValue("@nome", nome);
-					cmd.Parameters.AddWithValue("@apelido", apelido);
-					cmd.Parameters.AddWithValue("@email", email);
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbJogador (nome, apelido, email, senha) OUTPUT INSERTED.id VALUES (@nome, @apelido, @email, @senha)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@apelido", apelido);
+                    cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@senha", senha);
 
-					int id = (int)cmd.ExecuteScalar();
+                    int id = (int)cmd.ExecuteScalar();
 
-					return new Jogador(id, nome, apelido, email);
-				}
-			}
-		}
+                    return new Jogador(id, nome, apelido, email);
+                }
+            }
+        }
 
-		public void Alterar(string nome, string apelido, string email) {
-			Validar(ref nome, ref apelido, ref email);
+        public void Alterar(string nome, string apelido, string email)
+        {
+            Validar(ref nome, ref apelido, ref email);
 
-			using (SqlConnection conn = Sql.Open()) {
-				using (SqlCommand cmd = new SqlCommand("UPDATE tbJogador SET nome=@nome, apelido=@apelido, email=@email WHERE id=@id", conn)) {
-					cmd.Parameters.AddWithValue("@nome", nome);
-					cmd.Parameters.AddWithValue("@apelido", apelido);
-					cmd.Parameters.AddWithValue("@email", email);
-					cmd.Parameters.AddWithValue("@id", Id);
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE tbJogador SET nome=@nome, apelido=@apelido, email=@email WHERE id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@apelido", apelido);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@id", Id);
 
-					if (cmd.ExecuteNonQuery() == 0)
-						throw new ValidationException("Jogador inexistente");
+                    if (cmd.ExecuteNonQuery() == 0)
+                        throw new ValidationException("Jogador inexistente");
 
-					Nome = nome;
-					Apelido = apelido;
-					Email = email;
-				}
-			}
-		}
+                    Nome = nome;
+                    Apelido = apelido;
+                    Email = email;
+                }
+            }
+        }
 
-		public void Excluir() {
-			using (SqlConnection conn = Sql.Open()) {
-				using (SqlCommand cmd = new SqlCommand("DELETE FROM tbJogador WHERE id=@id", conn)) {
-					cmd.Parameters.AddWithValue("@id", Id);
+        public void Excluir()
+        {
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM tbJogador WHERE id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", Id);
 
-					if (cmd.ExecuteNonQuery() == 0)
-						throw new ValidationException("Jogador inexistente");
-				}
-			}
-		}
-	}
+                    if (cmd.ExecuteNonQuery() == 0)
+                        throw new ValidationException("Jogador inexistente");
+                }
+            }
+        }
+    }
 }

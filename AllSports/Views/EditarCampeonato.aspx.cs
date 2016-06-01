@@ -23,7 +23,7 @@ namespace AllSports.Views
             }
             id = int.Parse(cookie.Values["id"]);
 
-            labelGerente.Text = Jogador.ObterPorId(id).Nome;
+            //labelGerente.Text = Jogador.ObterPorId(id).Nome;
             CarregaInformacoesCampeonato();
             CarregarPartidas();
         }
@@ -40,6 +40,7 @@ namespace AllSports.Views
                     labelWarning.Text = "Você ainda não criou nenhuma partida. Clique em Sortear Partidas.";
                     return;
                 }
+
                 //Partida 1
                 lblPartida1Time01Id.Text = partidas[0].TimeCasa.Id.ToString();
                 lblPartida1Time01Nome.Text = partidas[0].TimeCasa.Nome;
@@ -76,32 +77,35 @@ namespace AllSports.Views
                 lblPartida4Time02Nome.Text = partidas[3].TimeVisitante.Nome;
                 lblPartida4Time02Pontos.Text = partidas[3].GolVisitante.ToString();
 
-                //Partida 5
-                lblPartida5Time01Id.Text = partidas[4].TimeCasa.Id.ToString();
-                lblPartida5Time01Nome.Text = partidas[4].TimeCasa.Nome;
-                lblPartida5Time01Pontos.Text = partidas[4].GolCasa.ToString();
+                //As 4 partidas iniciais certamente existirão, mas a partir daqui tem que verificar os times que ganharam as partidas anteriores
+                //Estas não podem ser sorteadas
 
-                lblPartida5Time02Id.Text = partidas[4].TimeVisitante.Id.ToString();
-                lblPartida5Time02Nome.Text = partidas[4].TimeVisitante.Nome;
-                lblPartida5Time02Pontos.Text = partidas[4].GolVisitante.ToString();
+                //Partida 5
+                lblPartida4Time01Id.Text = partidas[4].TimeCasa.Id.ToString();
+                lblPartida4Time01Nome.Text = partidas[4].TimeCasa.Nome;
+                lblPartida4Time01Pontos.Text = partidas[4].GolCasa.ToString();
+
+                lblPartida4Time02Id.Text = partidas[4].TimeVisitante.Id.ToString();
+                lblPartida4Time02Nome.Text = partidas[4].TimeVisitante.Nome;
+                lblPartida4Time02Pontos.Text = partidas[4].GolVisitante.ToString();
 
                 //Partida 6
-                lblPartida6Time01Id.Text = partidas[5].TimeCasa.Id.ToString();
-                lblPartida6Time01Nome.Text = partidas[5].TimeCasa.Nome;
-                lblPartida6Time01Pontos.Text = partidas[5].GolCasa.ToString();
+                lblPartida4Time01Id.Text = partidas[5].TimeCasa.Id.ToString();
+                lblPartida4Time01Nome.Text = partidas[5].TimeCasa.Nome;
+                lblPartida4Time01Pontos.Text = partidas[5].GolCasa.ToString();
 
-                lblPartida6Time02Id.Text = partidas[5].TimeVisitante.Id.ToString();
-                lblPartida6Time02Nome.Text = partidas[5].TimeVisitante.Nome;
-                lblPartida6Time02Pontos.Text = partidas[5].GolVisitante.ToString();
+                lblPartida4Time02Id.Text = partidas[5].TimeVisitante.Id.ToString();
+                lblPartida4Time02Nome.Text = partidas[5].TimeVisitante.Nome;
+                lblPartida4Time02Pontos.Text = partidas[5].GolVisitante.ToString();
 
                 //Partida 7
-                lblPartida7Time01Id.Text = partidas[6].TimeCasa.Id.ToString();
-                lblPartida7Time01Nome.Text = partidas[6].TimeCasa.Nome;
-                lblPartida7Time01Pontos.Text = partidas[6].GolCasa.ToString();
+                lblPartida4Time01Id.Text = partidas[6].TimeCasa.Id.ToString();
+                lblPartida4Time01Nome.Text = partidas[6].TimeCasa.Nome;
+                lblPartida4Time01Pontos.Text = partidas[6].GolCasa.ToString();
 
-                lblPartida7Time02Id.Text = partidas[6].TimeVisitante.Id.ToString();
-                lblPartida7Time02Nome.Text = partidas[6].TimeVisitante.Nome;
-                lblPartida7Time02Pontos.Text = partidas[6].GolVisitante.ToString();
+                lblPartida4Time02Id.Text = partidas[6].TimeVisitante.Id.ToString();
+                lblPartida4Time02Nome.Text = partidas[6].TimeVisitante.Nome;
+                lblPartida4Time02Pontos.Text = partidas[6].GolVisitante.ToString();
             }
         }
 
@@ -129,8 +133,6 @@ namespace AllSports.Views
                 textBoxTime07.Text = times[6].Nome;
                 textBoxTime08.Text = times[7].Nome;
             }
-
-            //Time.ObterPorCampeonato
         }
 
 

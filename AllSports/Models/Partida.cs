@@ -9,15 +9,15 @@ namespace AllSports.Models
 {
     public class Partida
     {
-        public int Id { get; set; }
-        public Campeonato Campeonato { get; set; }
+        private int Id { get; set; }
+        private Campeonato Campeonato { get; set; }
         public Time TimeCasa { get; set; }
         public Time TimeVisitante { get; set; }
         public int GolCasa { get; set; }
         public int GolVisitante { get; set; }
-        public string Endereco { get; set; }
-        public DateTime Data { get; set; }
-        public bool Finalizada { get; set; }
+        private string Endereco { get; set; }
+        private DateTime Data { get; set; }
+        private bool Finalizada { get; set; }
 
         public Partida(int id, Campeonato campeonato, Time timeCasa, Time timeVisitante, int golCasa, int golVisitante, string endereco,
             DateTime data, bool finalizada)
@@ -78,14 +78,14 @@ namespace AllSports.Models
         {
             using (SqlConnection conn = Sql.Open())
             {
+                Time time_casa = null, time_visitante = null;
                 Campeonato campeonato = Campeonato.ObterPorId(id, conn);
+                List<Time> times = Time.ObterPorCampeonato(id);
 
                 using (SqlCommand cmd = new SqlCommand(
                     "select id, id_campeonato, id_time_casa, id_time_visitante, gol_casa, gol_visitante, endereco, data, finalizada " +
-                    "from tbPartida where id_campeonato = @id order by id",
-                    conn))
+                    "from tbPartida where id_campeonato = @id order by id", conn))
                 {
-
                     cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -93,10 +93,22 @@ namespace AllSports.Models
 
                         while (reader.Read() == true)
                         {
-                            partidas.Add(new Partida(reader.GetInt32(0), Campeonato.ObterPorId(reader.GetInt32(1)),Time.ObterPorId(reader.GetInt32(2)), 
-                                Time.ObterPorId(reader.GetInt32(3)), reader.GetInt32(4), reader.GetInt32(5), reader.GetString(6),
-                                reader.GetDateTime(7), reader.GetBoolean(8)));
+                            for (int i = 0; i < times.Count; i++)
+                            {
+                                if (times[i].Id == reader.GetInt32(2))
+                                {
+                                    time_casa = times[i];
+                                }
+
+                                if (times[i].Id == reader.GetInt32(3))
+                                {
+                                    time_visitante = times[i];
+                                }
+                            }
+
+                            partidas.Add(new Partida(reader.GetInt32(0), campeonato, time_casa, time_visitante, reader.GetInt32(4), reader.GetInt32(5), reader.GetString(6), reader.GetDateTime(7), reader.GetBoolean(8)));
                         }
+
                         return partidas;
                     }
                 }
@@ -105,7 +117,7 @@ namespace AllSports.Models
         }
 
 
-        public static Partida Criar(Campeonato campeonato, Time timeCasa, Time timeVisitante, 
+        public static Partida Criar(Campeonato campeonato, Time timeCasa, Time timeVisitante,
                                     int golCasa, int golVisitante, string endereco, DateTime data, bool finalizada)
         {
             Validar(campeonato, timeCasa, timeVisitante, ref golCasa, ref golVisitante, ref endereco, ref data);

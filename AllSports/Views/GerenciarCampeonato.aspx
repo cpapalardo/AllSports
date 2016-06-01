@@ -63,9 +63,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <%  int cont = 0;
-                            while (cont < campeonatoList.Count)
-                            {
+                        <%  
+                        int cont = 0;
+                        while (cont < campeonatoList.Count) {
                         %>
                         <tr>
                             <td scope="row"><%=cont+1 %></td>
@@ -78,11 +78,13 @@
                                 <button type="button" data-toggle="modal" onclick="javascript:window.open('../Views/EditarCampeonato.aspx?id=<%=campeonatoList[cont].Id %>', '_self');"><i class="fa fa-edit" style="font-size: 24px"></i></button>
                             </td>
                             <td>
-                                <button type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash-o" style="font-size: 24px"></i></button>
+                                <div>
+                                    <button type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash-o" style="font-size: 24px"></i></button>
+                                </div>
                             </td>
                         </tr>
-                        <%      cont = cont + 1;
-                            }
+                        <%
+                        cont = cont + 1; }
                         %>
                     </tbody>
                 </table>
