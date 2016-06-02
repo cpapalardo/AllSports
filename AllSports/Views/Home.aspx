@@ -59,13 +59,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">All Sports</a>
+                    <a class="navbar-brand" href="Home.aspx">All Sports</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="Sobre">Sobre</a></li>
+                        <li><a href="Contato.aspx">Contato</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
              </div>
@@ -79,7 +79,7 @@
             <div class="panel panel-info" >
                     <div class="panel-heading">
                         <div class="panel-title">Entrar</div>
-                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Esqueceu sua senha?</a></div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="ReenviarSenha.aspx">Esqueceu sua senha?</a></div>
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
@@ -103,7 +103,7 @@
                             <div class="input-group">
                                       <div class="checkbox">
                                         <label>
-                                          <input id="login-remember" type="checkbox" name="remember" value="1"/> Lembrar
+                                          <input id="login-remember" style="position:inherit" type="checkbox" name="remember" value="1"/>          Lembrar
                                         </label>
                                       </div>
                                     </div>

@@ -259,5 +259,25 @@ namespace AllSports.Models
                 }
             }
         }
+
+        public static string RecuperarSenha(string email)
+        {
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT senha from tbJogador where email=@email", conn))
+                {
+                    cmd.Parameters.AddWithValue("@email", email);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read() == true)
+                        {
+                            return reader.GetString(0);
+                        }
+                        return null;
+                    }
+                }
+            }
+        }
     }
 }

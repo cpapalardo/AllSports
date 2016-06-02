@@ -34,9 +34,9 @@
 					</div>
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#">Gerenciar Campeonato</a></li>
-							<li><a href="#">Sobre</a></li>
-							<li><a href="#">Contato</a></li>
+							<li><a href="GerenciarCampeonato.aspx">Gerenciar Campeonato</a></li>
+							<li><a href="Sobre.aspx">Sobre</a></li>
+							<li><a href="Contato.aspx">Contato</a></li>
 							<li class="active"><a href="#">Conta</a></li>
 							<li>
 								<asp:linkbutton id="linkLogout" runat="server" onclick="linkLogout_Click">Logout</asp:linkbutton>
