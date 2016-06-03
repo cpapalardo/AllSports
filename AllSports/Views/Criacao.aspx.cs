@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using AllSports.Models;
 using AllSports.Utils;
+using System.Globalization;
 
 namespace AllSports.Views
 {
@@ -42,11 +43,15 @@ namespace AllSports.Views
             string time7 = textBoxTime07.Text;
             string time8 = textBoxTime08.Text;
 
+            DateTime dataInicio = DateTime.ParseExact(txtDt_Inicio.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime dataFim = DateTime.ParseExact(txtDt_Fim.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string nomeCampeonato = txtNomeCampeonato.Text;
+
             try {
                 Jogador jogador = Jogador.ObterPorId(id);
 
-                Campeonato campeonato = Campeonato.Criar(jogador, txtNomeCampeonato.Text, DateTime.Parse(txtDt_Inicio.Text),
-                    DateTime.Parse(txtDt_Fim.Text));
+                Campeonato campeonato = Campeonato.Criar(jogador, nomeCampeonato, dataInicio,
+                    dataFim);
 
                 Time.Criar(campeonato, time1);
                 Time.Criar(campeonato, time2);
