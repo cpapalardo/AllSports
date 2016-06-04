@@ -96,6 +96,20 @@ namespace AllSports.Models {
 			}
 		}
 
+		public static void Alterar(int id, string nome)
+		{
+			using (SqlConnection conn = Sql.Open())
+			{
+				using (SqlCommand cmd = new SqlCommand("update tbTime set nome = @nome where id = @id", conn))
+				{
+					cmd.Parameters.AddWithValue("@nome", nome);
+					cmd.Parameters.AddWithValue("@id", id);
+
+					cmd.ExecuteNonQuery();
+				}
+			}
+		}
+
         public static void AdicionarJogadores(List<Jogador> jogadores, int id)
         {
             using (SqlConnection conn = Sql.Open())

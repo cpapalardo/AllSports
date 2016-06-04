@@ -31,6 +31,15 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.LinkButton linkLogout;
         
         /// <summary>
+        /// tabelaPartida7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable tabelaPartida7;
+        
+        /// <summary>
         /// lblPartida7Time01Id control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace AllSports.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPartida7Time02Pontos;
+        
+        /// <summary>
+        /// tabelaPartida5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable tabelaPartida5;
         
         /// <summary>
         /// lblPartida5Time01Id control.
@@ -245,6 +263,15 @@ namespace AllSports.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPartida2Time02Pontos;
+        
+        /// <summary>
+        /// tabelaPartida6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable tabelaPartida6;
         
         /// <summary>
         /// lblPartida6Time01Id control.
@@ -607,13 +634,13 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida01;
         
         /// <summary>
-        /// labelFinalizada01 control.
+        /// chkFinalizada01 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelFinalizada01;
+        protected global::System.Web.UI.WebControls.CheckBox chkFinalizada01;
         
         /// <summary>
         /// btnSalvar01 control.
@@ -679,13 +706,13 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida02;
         
         /// <summary>
-        /// labelFinalizada02 control.
+        /// chkFinalizada02 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelFinalizada02;
+        protected global::System.Web.UI.WebControls.CheckBox chkFinalizada02;
         
         /// <summary>
         /// btnSalvar02 control.
@@ -751,13 +778,13 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida03;
         
         /// <summary>
-        /// labelFinalizada03 control.
+        /// chkFinalizada03 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelFinalizada03;
+        protected global::System.Web.UI.WebControls.CheckBox chkFinalizada03;
         
         /// <summary>
         /// btnSalvar03 control.
@@ -823,13 +850,13 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida04;
         
         /// <summary>
-        /// labelFinalizada04 control.
+        /// chkFinalizada04 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelFinalizada04;
+        protected global::System.Web.UI.WebControls.CheckBox chkFinalizada04;
         
         /// <summary>
         /// btnSalvar04 control.
@@ -895,13 +922,13 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida05;
         
         /// <summary>
-        /// labelFinalizada05 control.
+        /// chkFinalizada05 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelFinalizada05;
+        protected global::System.Web.UI.WebControls.CheckBox chkFinalizada05;
         
         /// <summary>
         /// btnSalvar05 control.
@@ -967,13 +994,13 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida06;
         
         /// <summary>
-        /// labelFinalizada06 control.
+        /// chkFinalizada06 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelFinalizada06;
+        protected global::System.Web.UI.WebControls.CheckBox chkFinalizada06;
         
         /// <summary>
         /// btnSalvar06 control.
@@ -1039,13 +1066,13 @@ namespace AllSports.Views {
         protected global::System.Web.UI.WebControls.TextBox textBoxDataPartida07;
         
         /// <summary>
-        /// labelFinalizada07 control.
+        /// chkFinalizada07 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelFinalizada07;
+        protected global::System.Web.UI.WebControls.CheckBox chkFinalizada07;
         
         /// <summary>
         /// btnSalvar07 control.

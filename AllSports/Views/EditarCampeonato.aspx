@@ -75,7 +75,7 @@
                         <div class="knockoutTree recur clearfix" style="width: 719px;">
                             <div class="knockoutMatch round_grouper match_holder" style="margin-top: 178.5px;">
                                 <div class="single-bracket">&nbsp;</div>
-                                <table id="tabelaPartida7" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida07">
+                                <table id="tabelaPartida7" runat="server" class="competitorPerMatch" data-toggle="modal" data-target="#modalEditarPartida07">
                                     <tbody>
                                         <tr class="competitorCont  comp-first">
                                             <td class="competitorName"><span class="placeholder">#Partida7Time1<asp:Label runat="server" ID="lblPartida7Time01Id" /></span><asp:Label runat="server" ID="lblPartida7Time01Nome" /></td>
@@ -94,7 +94,7 @@
                                     <div class="knockoutMatch round_grouper match_holder " style="margin-top: 59.5px;">
                                         <div class="single-bracket">&nbsp;</div>
                                         <!-- SCHEDULE KNOCKOUT -->
-                                        <table id="tabelaPartida5" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida05">
+                                        <table id="tabelaPartida5" runat="server" class="competitorPerMatch" data-toggle="modal" data-target="#modalEditarPartida05">
                                             <tbody>
                                                 <tr class="competitorCont  comp-first">
                                                     <td class="competitorName"><span class="placeholder">#Partida5Time1<asp:Label runat="server" ID="lblPartida5Time01Id" /></span><asp:Label runat="server" ID="lblPartida5Time01Nome" /></td>
@@ -115,11 +115,11 @@
                                                 <table id="tabelaPartida1" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida01">
                                                     <tbody>
                                                         <tr class="competitorCont  comp-first">
-                                                            <td class="competitorName"><span class="placeholder">#Partida1Time1<asp:Label runat="server" ID="lblPartida1Time01Id" /></span><asp:Label runat="server" ID="lblPartida1Time01Nome" /></td>
+                                                            <td class="competitorName"><span class="placeholder">#<asp:Label runat="server" ID="lblPartida1Time01Id" /> </span><asp:Label runat="server" ID="lblPartida1Time01Nome" /></td>
                                                             <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida1Time01Pontos" /></td>
                                                         </tr>
                                                         <tr class="competitorCont">
-                                                            <td class="competitorName"><span class="placeholder">#Partida1Time2<asp:Label runat="server" ID="lblPartida1Time02Id" /></span><asp:Label runat="server" ID="lblPartida1Time02Nome" /></td>
+                                                            <td class="competitorName"><span class="placeholder">#<asp:Label runat="server" ID="lblPartida1Time02Id" /> </span><asp:Label runat="server" ID="lblPartida1Time02Nome" /></td>
                                                             <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida1Time02Pontos" /></td>
                                                         </tr>
                                                     </tbody>
@@ -133,11 +133,11 @@
                                                 <table id="tabelaPartida2" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida02">
                                                     <tbody>
                                                         <tr class="competitorCont  comp-first">
-                                                            <td class="competitorName"><span class="placeholder">#Partida2Time1<asp:Label runat="server" ID="lblPartida2Time01Id" /></span><asp:Label runat="server" ID="lblPartida2Time01Nome" /></td>
+                                                            <td class="competitorName"><span class="placeholder">#<asp:Label runat="server" ID="lblPartida2Time01Id" /> </span><asp:Label runat="server" ID="lblPartida2Time01Nome" /></td>
                                                             <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida2Time01Pontos" /></td>
                                                         </tr>
                                                         <tr class="competitorCont">
-                                                            <td class="competitorName"><span class="placeholder">#Partida2Time2<asp:Label runat="server" ID="lblPartida2Time02Id" /></span><asp:Label runat="server" ID="lblPartida2Time02Nome" /></td>
+                                                            <td class="competitorName"><span class="placeholder">#<asp:Label runat="server" ID="lblPartida2Time02Id" /> </span><asp:Label runat="server" ID="lblPartida2Time02Nome" /></td>
                                                             <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida2Time02Pontos" /></td>
                                                         </tr>
                                                     </tbody>
@@ -152,7 +152,7 @@
                                     <div class="knockoutMatch round_grouper match_holder" style="margin-top: 59.5px;">
                                         <div class="single-bracket">&nbsp;</div>
                                         <!-- SCHEDULE KNOCKOUT -->
-                                        <table id="tabelaPartida6" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida06">
+                                        <table id="tabelaPartida6" runat="server" class="competitorPerMatch" data-toggle="modal" data-target="#modalEditarPartida06">
                                             <tbody>
                                                 <tr class="competitorCont  comp-first">
                                                     <td class="competitorName"><span class="placeholder">#Partida6Time1<asp:Label runat="server" ID="lblPartida6Time01Id" /></span><asp:Label runat="server" ID="lblPartida6Time01Nome" /></td>
@@ -173,11 +173,11 @@
                                                 <table id="tabelaPartida3" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida03">
                                                     <tbody>
                                                         <tr class="competitorCont  comp-first">
-                                                            <td class="competitorName"><span class="placeholder">#Partida3Time1<asp:Label runat="server" ID="lblPartida3Time01Id" /></span><asp:Label runat="server" ID="lblPartida3Time01Nome" /></td>
+                                                            <td class="competitorName"><span class="placeholder">#<asp:Label runat="server" ID="lblPartida3Time01Id" /> </span><asp:Label runat="server" ID="lblPartida3Time01Nome" /></td>
                                                             <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida3Time01Pontos" /></td>
                                                         </tr>
                                                         <tr class="competitorCont">
-                                                            <td class="competitorName"><span class="placeholder">#Partida3Time2<asp:Label runat="server" ID="lblPartida3Time02Id" /></span><asp:Label runat="server" ID="lblPartida3Time02Nome" /></td>
+                                                            <td class="competitorName"><span class="placeholder">#<asp:Label runat="server" ID="lblPartida3Time02Id" /> </span><asp:Label runat="server" ID="lblPartida3Time02Nome" /></td>
                                                             <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida3Time02Pontos" /></td>
                                                         </tr>
                                                     </tbody>
@@ -191,11 +191,11 @@
                                                 <table id="tabelaPartida4" class="competitorPerMatch to-hover to-link" data-toggle="modal" data-target="#modalEditarPartida04">
                                                     <tbody>
                                                         <tr class="competitorCont  comp-first">
-                                                            <td class="competitorName"><span class="placeholder">#Partida4Time1<asp:Label runat="server" ID="lblPartida4Time01Id" /></span><asp:Label runat="server" ID="lblPartida4Time01Nome" /></td>
+                                                            <td class="competitorName"><span class="placeholder">#<asp:Label runat="server" ID="lblPartida4Time01Id" /> </span><asp:Label runat="server" ID="lblPartida4Time01Nome" /></td>
                                                             <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida4Time01Pontos" /></td>
                                                         </tr>
                                                         <tr class="competitorCont">
-                                                            <td class="competitorName"><span class="placeholder">#Partida4Time2<asp:Label runat="server" ID="lblPartida4Time02Id" /></span><asp:Label runat="server" ID="lblPartida4Time02Nome" /></td>
+                                                            <td class="competitorName"><span class="placeholder">#<asp:Label runat="server" ID="lblPartida4Time02Id" /> </span><asp:Label runat="server" ID="lblPartida4Time02Nome" /></td>
                                                             <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida4Time02Pontos" /></td>
                                                         </tr>
                                                     </tbody>
@@ -283,7 +283,7 @@
                             <asp:TextBox ID="textBoxTime08" runat="server"></asp:TextBox>
                         </div>
                         <div>
-                            <asp:Button ID="buttonSalvarCampeonato" runat="server" Text="Salvar" />
+                            <asp:Button ID="buttonSalvarCampeonato" runat="server" Text="Salvar" OnClick="buttonSalvarCampeonato_Click" />
                         </div>
                         <div>
                             <asp:Button ID="buttonCancelar" runat="server" Text="Cancelar" />
@@ -352,9 +352,9 @@
                             <div>
                                 <asp:TextBox ID="textBoxDataPartida01" runat="server" TextMode="DateTime"></asp:TextBox>
                             </div>
-                            <div>
-                                <asp:Label ID="labelFinalizada01" runat="server" Text="Finalizada?"></asp:Label>
-                            </div>
+							<div>
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada01" runat="server" />
+							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
@@ -424,9 +424,9 @@
                             <div>
                                 <asp:TextBox ID="textBoxDataPartida02" runat="server" TextMode="DateTime"></asp:TextBox>
                             </div>
-                            <div>
-                                <asp:Label ID="labelFinalizada02" runat="server" Text="Finalizada?"></asp:Label>
-                            </div>
+							<div>
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada02" runat="server" />
+							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
@@ -496,9 +496,9 @@
                             <div>
                                 <asp:TextBox ID="textBoxDataPartida03" runat="server" TextMode="DateTime"></asp:TextBox>
                             </div>
-                            <div>
-                                <asp:Label ID="labelFinalizada03" runat="server" Text="Finalizada?"></asp:Label>
-                            </div>
+							<div>
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada03" runat="server" />
+							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
@@ -568,9 +568,9 @@
                             <div>
                                 <asp:TextBox ID="textBoxDataPartida04" runat="server" TextMode="DateTime"></asp:TextBox>
                             </div>
-                            <div>
-                                <asp:Label ID="labelFinalizada04" runat="server" Text="Finalizada?"></asp:Label>
-                            </div>
+							<div>
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada04" runat="server" />
+							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
@@ -582,6 +582,8 @@
             </div>
         </div>
 
+		<%if (partidas.Count == 5)
+			{ %>
         <!-- Modal Editar Partida 05-->
         <div class="modal fade" id="modalEditarPartida05" role="dialog">
             <div class="modal-dialog">
@@ -640,9 +642,9 @@
                             <div>
                                 <asp:TextBox ID="textBoxDataPartida05" runat="server" TextMode="DateTime"></asp:TextBox>
                             </div>
-                            <div>
-                                <asp:Label ID="labelFinalizada05" runat="server" Text="Finalizada?"></asp:Label>
-                            </div>
+							<div>
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada05" runat="server" />
+							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
@@ -653,7 +655,10 @@
                 </div>
             </div>
         </div>
+		<%} %>
 
+		<%if (partidas.Count == 6)
+			{ %>
         <!-- Modal Editar Partida 06-->
         <div class="modal fade" id="modalEditarPartida06" role="dialog">
             <div class="modal-dialog">
@@ -712,9 +717,9 @@
                             <div>
                                 <asp:TextBox ID="textBoxDataPartida06" runat="server" TextMode="DateTime"></asp:TextBox>
                             </div>
-                            <div>
-                                <asp:Label ID="labelFinalizada06" runat="server" Text="Finalizada?"></asp:Label>
-                            </div>
+							<div>
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada06" runat="server" />
+							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
@@ -725,7 +730,10 @@
                 </div>
             </div>
         </div>
+		<% } %>
 
+		<%if (partidas.Count == 7)
+			{ %>
         <!-- Modal Editar Partida 07-->
         <div class="modal fade" id="modalEditarPartida07" role="dialog">
             <div class="modal-dialog">
@@ -785,8 +793,8 @@
                                 <asp:TextBox ID="textBoxDataPartida07" runat="server" TextMode="DateTime"></asp:TextBox>
                             </div>
                             <div>
-                                <asp:Label ID="labelFinalizada07" runat="server" Text="Finalizada?"></asp:Label>
-                            </div>
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada07" runat="server" />
+							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
@@ -797,6 +805,7 @@
                 </div>
             </div>
         </div>
+		<%} %>
 
         <!-- Modal Confirmação Sorteiar Partidas -->
         <div class="modal fade" id="modalConfirmarSorteio" role="dialog">
