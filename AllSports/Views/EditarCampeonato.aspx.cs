@@ -222,8 +222,14 @@ namespace AllSports.Views
 
         protected void btnSalvarPartida_Click(object sender, EventArgs e)
         {
+			Partida.EditarPartidaPorID(partidas[0].Id, int.Parse(textBoxTimeCasaGols01.Text), int.Parse(textBoxTimeVisitanteGols01.Text), textBoxEndereco01.Text, DateTime.Parse(textBoxDataPartida01.Text), chkFinalizada01.Checked);
+			Partida.EditarPartidaPorID(partidas[1].Id, int.Parse(textBoxTimeCasaGols02.Text), int.Parse(textBoxTimeVisitanteGols02.Text), textBoxEndereco02.Text, DateTime.Parse(textBoxDataPartida02.Text), chkFinalizada02.Checked);
+			Partida.EditarPartidaPorID(partidas[2].Id, int.Parse(textBoxTimeCasaGols03.Text), int.Parse(textBoxTimeVisitanteGols03.Text), textBoxEndereco03.Text, DateTime.Parse(textBoxDataPartida03.Text), chkFinalizada03.Checked);
+			Partida.EditarPartidaPorID(partidas[3].Id, int.Parse(textBoxTimeCasaGols04.Text), int.Parse(textBoxTimeVisitanteGols04.Text), textBoxEndereco04.Text, DateTime.Parse(textBoxDataPartida04.Text), chkFinalizada04.Checked);
 
-        }
+			Response.Redirect(Request.Url.AbsoluteUri);
+			//Partida.EditarPartidaPorID(partidas[4].Id, int.Parse(textBoxTimeCasaGols05.Text), int.Parse(textBoxTimeVisitanteGols05.Text), textBoxEndereco05.Text, DateTime.Parse(textBoxDataPartida05.Text), chkFinalizada05.Checked);
+		}
 
         protected void buttonSortearPartidas_Click(object sender, EventArgs e)
         {

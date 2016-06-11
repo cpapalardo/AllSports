@@ -11,7 +11,8 @@ namespace AllSports.Models {
 		public Campeonato Campeonato { get; set; }
 		public string Nome { get; set; }
 
-		public Time(int id, Campeonato campeonato, string nome) {
+		public Time(int id, Campeonato campeonato, string nome)
+		{
 			Id = id;
 			Campeonato = campeonato;
 			Nome = nome;
@@ -59,12 +60,13 @@ namespace AllSports.Models {
             {
                 Campeonato campeonato = Campeonato.ObterPorId(id, conn);
 
-                using (SqlCommand cmd = new SqlCommand(
-                    "SELECT DISTINCT id, id_campeonato, nome FROM tbTime " +
-                    "WHERE id_campeonato = @id_campeonato " +
-                    "ORDER BY tbTime.nome ASC",
-                    conn))
+                using (SqlCommand cmd = new SqlCommand(@"
+                    SELECT DISTINCT id, id_campeonato, nome FROM tbTime
+                    WHERE id_campeonato = @id_campeonato
+                    ORDER BY tbTime.nome ASC
+					", conn))
                 {
+					cmd.CommandTimeout = 300;
                     cmd.Parameters.AddWithValue("@id_campeonato", id);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {

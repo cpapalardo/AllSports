@@ -9,7 +9,7 @@ namespace AllSports.Models
 {
 	public class Partida
 	{
-		private int Id { get; set; }
+		public int Id { get; set; }
 		private Campeonato Campeonato { get; set; }
 		public Time TimeCasa { get; set; }
 		public Time TimeVisitante { get; set; }
@@ -82,9 +82,10 @@ namespace AllSports.Models
 				Campeonato campeonato = Campeonato.ObterPorId(id, conn);
 				List<Time> times = Time.ObterPorCampeonato(id);
 
-				using (SqlCommand cmd = new SqlCommand(
-					"select id, id_campeonato, id_time_casa, id_time_visitante, gol_casa, gol_visitante, endereco, data, finalizada " +
-					"from tbPartida where id_campeonato = @id order by id", conn))
+				using (SqlCommand cmd = new SqlCommand(@"
+					select id, id_campeonato, id_time_casa, id_time_visitante, gol_casa, gol_visitante, endereco, data, finalizada
+					from tbPartida
+					where id_campeonato = @id order by id", conn))
 				{
 					cmd.Parameters.AddWithValue("@id", id);
 					using (SqlDataReader reader = cmd.ExecuteReader())
@@ -210,6 +211,33 @@ namespace AllSports.Models
 
 						i++;
 					}
+				}
+			}
+		}
+
+		public static void EditarPartidaPorID(int id, int gol_casa, int gol_visitante, string endereco, DateTime data, bool finalizada)
+		{
+			using (SqlConnection conn = Sql.Open())
+			{
+				using (SqlCommand cmd = new SqlCommand(@"
+					update tbPartida 
+					set 
+					gol_casa = @gol_casa,
+					gol_visitante = @gol_visitante,
+					endereco = @endereco,
+					data = @data,
+					finalizada = @finalizada
+					where id = @id
+					", conn))
+				{
+					cmd.Parameters.AddWithValue("@id", id);
+					cmd.Parameters.AddWithValue("@gol_casa", gol_casa);
+					cmd.Parameters.AddWithValue("@gol_visitante", gol_visitante);
+					cmd.Parameters.AddWithValue("@endereco", endereco);
+					cmd.Parameters.AddWithValue("@data", data);
+					cmd.Parameters.AddWithValue("@finalizada", finalizada);
+
+					cmd.ExecuteNonQuery();
 				}
 			}
 		}
