@@ -128,5 +128,20 @@ namespace AllSports.Models
             }
         }
 
+        public static void EditarCampeonato(int id, string nomeCampeonato, DateTime dtInicio, DateTime dtFim)
+        {
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand(@"update tbCampeonato set nome = @nome, data_inicio = @data_inicio, data_fim = @data_fim where id = @id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@nome", nomeCampeonato);
+                    cmd.Parameters.AddWithValue("@data_inicio", dtInicio);
+                    cmd.Parameters.AddWithValue("@data_fim", dtFim);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

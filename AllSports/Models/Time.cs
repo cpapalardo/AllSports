@@ -102,7 +102,7 @@ namespace AllSports.Models {
 		{
 			using (SqlConnection conn = Sql.Open())
 			{
-				using (SqlCommand cmd = new SqlCommand("update tbTime set nome = @nome where id = @id", conn))
+				using (SqlCommand cmd = new SqlCommand(@"update tbTime set nome = @nome where id = @id", conn))
 				{
 					cmd.Parameters.AddWithValue("@nome", nome);
 					cmd.Parameters.AddWithValue("@id", id);
@@ -118,7 +118,7 @@ namespace AllSports.Models {
             {
                 foreach (Jogador jogador in jogadores)
                 {
-                    using (SqlCommand cmd = new SqlCommand("INSERT INTO tbJogadorTime (id_jogador, id_time) OUTPUT INSERTED.id VALUES (@id_jogador, @id_time)", conn))
+                    using (SqlCommand cmd = new SqlCommand(@"INSERT INTO tbJogadorTime (id_jogador, id_time) OUTPUT INSERTED.id VALUES (@id_jogador, @id_time)", conn))
                     {
                         cmd.Parameters.AddWithValue("@id_jogador", jogador.Id);
                         cmd.Parameters.AddWithValue("@id_time", ObterPorId(id));
