@@ -31,11 +31,27 @@
                     <a class="navbar-brand" href="Home.aspx">All Sports</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="Home.aspx">Home</a></li>
-                        <li><a href="Sobre.aspx">Sobre</a></li>
-                        <li><a href="Contato.aspx">Contato</a></li>
-                    </ul>
+                        <ul class="nav navbar-nav">
+                            <%if (logado)
+                                    {%>
+                                        <li><a href="GerenciarCampeonato.aspx">Gerenciar Campeonato</a></li>
+                                   <%}
+                              else {%>
+                                        <li><a href="Home.aspx">Home</a></li>
+                             <%} %>
+
+                            <li class="active"><a href="Sobre.aspx">Sobre</a></li>
+                            <li><a href="#">Contato</a></li>
+                            <%
+                                if (logado)
+                                {%>
+                                    <li><a href="Conta.aspx">Conta</a></li>
+                                    <li>
+                                        <asp:LinkButton ID="Linkbutton1" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton>
+                                    </li>
+                            <%
+                                }%>
+                        </ul>
                 </div>
                 <!--/.nav-collapse -->
             </div>
