@@ -271,5 +271,18 @@ namespace AllSports.Models
                 }
             }
         }
+
+        public static int DeletarPartida(int id)
+        {
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("DELETE from tbPartida where id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
     }
 }

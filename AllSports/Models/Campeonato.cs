@@ -143,5 +143,18 @@ namespace AllSports.Models
                 }
             }
         }
+
+        public static int DeletarCampeonato(int id)
+        {
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("DELETE from tbCampeonato where id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
     }
 }

@@ -128,5 +128,17 @@ namespace AllSports.Models {
                 }
             }
         }
+
+        public static int DeletarTime(int id)
+        {
+            using (SqlConnection conn = Sql.Open())
+            {
+                using (SqlCommand cmd = new SqlCommand("DELETE from tbTime where id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
 	}
 }

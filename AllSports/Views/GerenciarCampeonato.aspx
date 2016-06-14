@@ -80,7 +80,7 @@
                             </td>
                             <td>
                                 <div>
-                                    <button type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash-o" style="font-size: 24px"></i></button>
+                                    <button type="button" data-toggle="modal" onclick="javascript:window.open('../Views/DeletarCampeonato.aspx?id=<%=campeonatoList[cont].Id %>', '_self');"><i class="fa fa-trash-o" style="font-size: 24px"></i></button>
                                 </div>
                             </td>
                         </tr>
