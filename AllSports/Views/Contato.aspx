@@ -26,6 +26,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="Home.aspx">All Sports</a>
+
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
@@ -94,7 +95,7 @@
                     <asp:Button ID="buttonEnviar" runat="server" Text="Enviar" OnClick="buttonEnviar_Click" />
                 </div>
                 <div>
-                    <asp:Label runat="server" ID="labelEmail" Visible="false"></asp:Label>
+                    <asp:Label runat="server" ID="labelEmail"></asp:Label>
                 </div>
             </div>
         </div>

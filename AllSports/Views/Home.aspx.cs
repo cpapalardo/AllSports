@@ -62,7 +62,7 @@ namespace AllSports.Views
             {
                 Jogador jogador = Jogador.Criar(txtNome.Value, txtApelido.Value, txtEmail.Value, txtSenha.Value);
 
-                labelCadastroOk.Text = "Jogador com id " + jogador.Id + " criado com sucesso!";
+                labelCadastroOk.Text = "Cadastro efetuado com sucesso!";
             }
             catch (ValidationException ex)
             {
