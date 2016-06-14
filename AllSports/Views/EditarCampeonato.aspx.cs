@@ -10,6 +10,7 @@ namespace AllSports.Views
 {
     public partial class EditarCampeonato : System.Web.UI.Page
     {
+        public bool logado;
         public int id;
 		public List<Partida> partidas = new List<Partida>();
 		public List<Time> times = new List<Time>();
@@ -24,6 +25,7 @@ namespace AllSports.Views
                 return;
             }
             id = int.Parse(cookie.Values["id"]);
+            logado = true;
 
             //labelGerente.Text = Jogador.ObterPorId(id).Nome;
             if (IsPostBack == false)
@@ -41,11 +43,11 @@ namespace AllSports.Views
 
         public List<Partida> CarregarPartidas()
         {
-            int id;
+            int idCampeonato;
 
-            if (int.TryParse(Request.QueryString["id"], out id))
+            if (int.TryParse(Request.QueryString["id"], out idCampeonato))
             {
-                partidas = Partida.ObterPorCampeonato(id);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
 				if (partidas.Count == 0)
 				{
 					labelWarning.Text = "Você ainda não criou nenhuma partida. Clique em Sortear Partidas.";
@@ -194,14 +196,16 @@ namespace AllSports.Views
 
         public void CarregaInformacoesCampeonato()
         {
-            int id;
+            int idCampeonato;
 
-            if (int.TryParse(Request.QueryString["id"], out id))
+            if (int.TryParse(Request.QueryString["id"], out idCampeonato))
             {
-                Campeonato campeonato = Campeonato.ObterPorId(id);
-                times = Time.ObterPorCampeonato(id);
+                Campeonato campeonato = Campeonato.ObterPorId(idCampeonato);
+                times = Time.ObterPorCampeonato(idCampeonato);
 
                 string teste = campeonato.Data_Inicio.Date.ToString();
+
+                labelGerente.Text = Jogador.ObterPorId(id).Nome;
 
                 textBoxNomeCampeonato.Text = campeonato.Nome.ToString();
                 textBoxDataInicio.Text = campeonato.Data_Inicio.ToString("d");

@@ -37,9 +37,15 @@
                             <li class="active"><a href="GerenciarCampeonato.aspx">Gerenciar Campeonato</a></li>
                             <li><a href="Sobre.aspx">Sobre</a></li>
                             <li><a href="Contato.aspx">Contato</a></li>
-                            <li>
-                                <asp:LinkButton ID="linkLogout" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton>
-                            </li>
+                                                        <%
+                                if (logado)
+                                {%>
+                                    <li><a href="Conta.aspx">Conta</a></li>
+                                    <li>
+                                        <asp:LinkButton ID="Linkbutton1" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton>
+                                    </li>
+                            <%
+                                }%>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
@@ -224,7 +230,7 @@
                             <label></label>
                         </div>
                         <div>
-                            <label for="labelGerente">Criada por:</label>
+                            <label for="labelGerente">Criado por:</label>
                             <asp:Label ID="labelGerente" runat="server" Text="Gerente"></asp:Label>
                         </div>
                         <div>

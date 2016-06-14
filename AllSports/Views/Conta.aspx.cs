@@ -10,35 +10,40 @@ namespace AllSports.Views
 {
 	public partial class Conta : System.Web.UI.Page
 	{
-		private int id;
-		protected void Page_Load(object sender, EventArgs e)
-		{
-			HttpCookie cookie = Request.Cookies["allsports"];
+        private int id;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            HttpCookie cookie = Request.Cookies["allsports"];
 
-			if (cookie == null || cookie.Values["valor"].ToString() != "logado")
-			{
-				Response.Redirect("Home.aspx");
-				return;
-			}
-			id = int.Parse(cookie.Values["id"]);
+            if (cookie == null || cookie.Values["valor"].ToString() != "logado")
+            {
+                Response.Redirect("Home.aspx");
+                return;
+            }
 
-            Jogador jogador = Jogador.ObterPorId(id);
-            textBoxNome.Text = jogador.Nome;
-            textBoxApelido.Text = jogador.Apelido;
-            textBoxEmail.Text = jogador.Email;
-		}
+            id = int.Parse(cookie.Values["id"]);
+
+            if (!IsPostBack)
+            {
+                Jogador jogador = Jogador.ObterPorId(id);
+                textBoxNome.Text = jogador.Nome;
+                textBoxApelido.Text = jogador.Apelido;
+                textBoxEmail.Text = jogador.Email;
+            }
+
+        }
 
         protected void buttonAlterarTudo_Click(object sender, EventArgs e)
         {
             string nome = textBoxNome.Text;
-            string apelido = textBoxApelido.Text;
-            string email = textBoxEmail.Text;
+            String apelido = textBoxApelido.Text;
+            String email = textBoxEmail.Text;
 
             Jogador jogador = new Jogador(id, nome, apelido, email);
             try
             {
                 if (Jogador.AtualizarJogador(jogador) > 0)
-                    labelResultado.Text = "Informações atualizadas.";
+                    labelResultado.Text = "Informações atualizadas com sucesso!";
             }
             catch (ValidationException ex)
             {
