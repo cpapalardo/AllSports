@@ -158,62 +158,30 @@ namespace AllSports.Models
                 id_times[a] = temp;
             }
 
-            List<Partida> partidas = ObterPorCampeonato(id);
+            int contador = 1;
 
-            if (partidas.Count == 0)
+            DeletarTodasPartidasPorCampeonato(id);
+
+            using (SqlConnection conn = Sql.Open())
             {
-                using (SqlConnection conn = Sql.Open())
+                for (int i = 0; i < id_times.Length; i++)
                 {
-                    for (int i = 0; i < id_times.Length; i++)
+                    using (SqlCommand cmd = new SqlCommand(@"
+                        INSERT INTO tbPartida (id_campeonato, id_time_casa, id_time_visitante, gol_casa,
+                        gol_visitante, endereco, data, finalizada, partida) VALUES (@id_campeonato, @id_time_casa, @id_time_visitante, @gol_casa,
+                        @gol_visitante, @endereco, @data, @finalizada, @partida)", conn))
                     {
-                        using (SqlCommand cmd = new SqlCommand("INSERT INTO tbPartida (id_campeonato, id_time_casa, id_time_visitante, gol_casa,"
-                        + " gol_visitante, endereco, data, finalizada) VALUES (@id_campeonato, @id_time_casa, @id_time_visitante, @gol_casa,"
-                        + " @gol_visitante, @endereco, @data, @finalizada)", conn))
-                        {
-                            cmd.Parameters.AddWithValue("@id_campeonato", id);
-                            cmd.Parameters.AddWithValue("@id_time_casa", id_times[i]);
-                            cmd.Parameters.AddWithValue("@id_time_visitante", id_times[++i]);
-                            cmd.Parameters.AddWithValue("@gol_casa", 0);
-                            cmd.Parameters.AddWithValue("@gol_visitante", 0);
-                            cmd.Parameters.AddWithValue("@endereco", "");
-                            cmd.Parameters.AddWithValue("@data", DateTime.Now);
-                            cmd.Parameters.AddWithValue("@finalizada", false);
+                        cmd.Parameters.AddWithValue("@id_campeonato", id);
+                        cmd.Parameters.AddWithValue("@id_time_casa", id_times[i]);
+                        cmd.Parameters.AddWithValue("@id_time_visitante", id_times[++i]);
+                        cmd.Parameters.AddWithValue("@gol_casa", 0);
+                        cmd.Parameters.AddWithValue("@gol_visitante", 0);
+                        cmd.Parameters.AddWithValue("@endereco", "");
+                        cmd.Parameters.AddWithValue("@data", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@finalizada", false);
+                        cmd.Parameters.AddWithValue("@partida", contador++);
 
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                }
-            }
-            else
-            {
-                using (SqlConnection conn = Sql.Open())
-                {
-                    int i = 0;
-
-                    foreach (Partida item in partidas)
-                    {
-                        using (SqlCommand cmd = new SqlCommand(@"
-                            UPDATE tbPartida SET
-						    id_time_casa = @id_time_casa,
-						    id_time_visitante = @id_time_visitante,
-                            gol_casa = @gol_casa,
-                            gol_visitante = @gol_visitante,
-						    data = @data,
-						    finalizada = @finalizada
-						    where id = @id", conn))
-                        {
-                            cmd.Parameters.AddWithValue("@id", item.Id);
-                            cmd.Parameters.AddWithValue("@id_time_casa", id_times[i]);
-                            cmd.Parameters.AddWithValue("@id_time_visitante", id_times[++i]);
-                            cmd.Parameters.AddWithValue("@gol_casa", 0);
-                            cmd.Parameters.AddWithValue("@gol_visitante", 0);
-                            cmd.Parameters.AddWithValue("@data", DateTime.Now);
-                            cmd.Parameters.AddWithValue("@finalizada", false);
-
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        i++;
+                        cmd.ExecuteNonQuery();
                     }
                 }
             }
@@ -272,14 +240,14 @@ namespace AllSports.Models
             }
         }
 
-        public static int DeletarPartida(int id)
+        public static void DeletarTodasPartidasPorCampeonato(int id_campeonato)
         {
             using (SqlConnection conn = Sql.Open())
             {
-                using (SqlCommand cmd = new SqlCommand("DELETE from tbPartida where id=@id", conn))
+                using (SqlCommand cmd = new SqlCommand("DELETE from tbPartida where id_campeonato = @id_campeonato", conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    return cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@id_campeonato", id_campeonato);
+                    cmd.ExecuteNonQuery();
                 }
             }
 
