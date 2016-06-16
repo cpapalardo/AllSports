@@ -83,9 +83,9 @@ namespace AllSports.Models
                 List<Time> times = Time.ObterPorCampeonato(id);
 
                 using (SqlCommand cmd = new SqlCommand(@"
-					select top 4 id, id_campeonato, id_time_casa, id_time_visitante, gol_casa, gol_visitante, endereco, data, finalizada
+					select id, id_campeonato, id_time_casa, id_time_visitante, gol_casa, gol_visitante, endereco, data, finalizada
 					from tbPartida
-					where id_campeonato = @id order by id", conn))
+					where id_campeonato = @id order by partida", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -96,15 +96,30 @@ namespace AllSports.Models
                         {
                             for (int i = 0; i < times.Count; i++)
                             {
-                                if (times[i].Id == reader.GetInt32(2))
+                                try
                                 {
-                                    time_casa = times[i];
+                                    if (times[i].Id == reader.GetInt32(2))
+                                    {
+                                        time_casa = times[i];
+                                    }
+                                }
+                                catch(Exception e)
+                                {
+
                                 }
 
-                                if (times[i].Id == reader.GetInt32(3))
+                                try
                                 {
-                                    time_visitante = times[i];
+                                    if (times[i].Id == reader.GetInt32(3))
+                                    {
+                                        time_visitante = times[i];
+                                    }
                                 }
+                                catch(Exception ex)
+                                {
+
+                                }
+
                             }
 
                             partidas.Add(new Partida(reader.GetInt32(0), campeonato, time_casa, time_visitante, reader.GetInt32(4), reader.GetInt32(5), reader.GetString(6), reader.GetDateTime(7), reader.GetBoolean(8)));
@@ -187,7 +202,12 @@ namespace AllSports.Models
             }
         }
 
-        public static void EditarPartidaPorID(int id, int gol_casa, int gol_visitante, string endereco, DateTime data, bool finalizada, int id_time_casa, int id_time_visitante)
+        public static void EditarPartidaPorID(int id, int gol_casa, int gol_visitante, string endereco, DateTime data, bool finalizada)
+        {
+            EditarPartidaPorID(id, gol_casa, gol_visitante, endereco, data, finalizada, null, null);
+        }
+
+    public static void EditarPartidaPorID(int id, int gol_casa, int gol_visitante, string endereco, DateTime data, bool finalizada, int? id_time_casa, int? id_time_visitante)
         {
             using (SqlConnection conn = Sql.Open())
             {
@@ -214,28 +234,90 @@ namespace AllSports.Models
             }
         }
 
-        public static void ProximaPartida(int id_campeonato, int id_partida, int gols_casa, int gols_visitante, int id_time_casa, int id_time_visitante, int numeroPartida)
+        public static void EditarPartidaProximaFasePorID(int id, int gol_casa, int gol_visitante, string endereco, DateTime data, bool finalizada, int id_time_casa, int id_time_visitante)
         {
+            string comandoCasa = @"
+					update tbPartida 
+					set 
+					gol_casa = @gol_casa,
+					gol_visitante = @gol_visitante,
+					endereco = @endereco,                    
+					data = @data,
+					finalizada = @finalizada
+					where id = @id
+					";
+
             using (SqlConnection conn = Sql.Open())
             {
                 using (SqlCommand cmd = new SqlCommand(@"
-                    INSERT INTO tbPartida 
-                    (id_campeonato, id_time_casa, id_time_visitante, gol_casa, gol_visitante, endereco, data, finalizada, partida) 
-                    VALUES 
-                    (@id_campeonato, @id_time_casa, @id_time_visitante, @gol_casa, @gol_visitante, @endereco, @data, @finalizada, @partida)
-                    ", conn))
+					update tbPartida 
+					set 
+					gol_casa = @gol_casa,
+					gol_visitante = @gol_visitante,
+					endereco = @endereco,
+					data = @data,
+					finalizada = @finalizada
+					where id = @id
+					", conn))
                 {
-                    cmd.Parameters.AddWithValue("@id_campeonato", id_campeonato);
-                    cmd.Parameters.AddWithValue("@id_time_casa", id_time_casa);
-                    cmd.Parameters.AddWithValue("@id_time_visitante", id_time_visitante);
-                    cmd.Parameters.AddWithValue("@gol_casa", 0);
-                    cmd.Parameters.AddWithValue("@gol_visitante", 0);
-                    cmd.Parameters.AddWithValue("@endereco", "");
-                    cmd.Parameters.AddWithValue("@data", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@finalizada", false);
-                    cmd.Parameters.AddWithValue("@partida", numeroPartida);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@gol_casa", gol_casa);
+                    cmd.Parameters.AddWithValue("@gol_visitante", gol_visitante);
+                    cmd.Parameters.AddWithValue("@endereco", endereco);
+                    cmd.Parameters.AddWithValue("@data", data);
+                    cmd.Parameters.AddWithValue("@finalizada", finalizada);
 
                     cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void ProximaPartida(int id_campeonato, int gols_casa, int gols_visitante, int? id_time_casa, int? id_time_visitante, int numeroPartida)
+        {
+            string comandoCasa = @"
+                    INSERT INTO tbPartida 
+                    (id_campeonato, id_time_casa, gol_casa, gol_visitante, endereco, data, finalizada, partida) 
+                    VALUES 
+                    (@id_campeonato, @id_time_casa, @gol_casa, @gol_visitante, @endereco, @data, @finalizada, @partida)";
+            string comandoVisitante = @"
+                    INSERT INTO tbPartida 
+                    (id_campeonato, id_time_visitante, gol_casa, gol_visitante, endereco, data, finalizada, partida) 
+                    VALUES 
+                    (@id_campeonato, @id_time_visitante, @gol_casa, @gol_visitante, @endereco, @data, @finalizada, @partida)";
+
+            using (SqlConnection conn = Sql.Open())
+            {
+                if(id_time_casa != null)
+                {
+                    using (SqlCommand cmd = new SqlCommand(comandoCasa, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id_campeonato", id_campeonato);
+                        cmd.Parameters.AddWithValue("@id_time_casa", id_time_casa);
+                        cmd.Parameters.AddWithValue("@gol_casa", gols_casa);
+                        cmd.Parameters.AddWithValue("@gol_visitante", gols_visitante);
+                        cmd.Parameters.AddWithValue("@endereco", "");
+                        cmd.Parameters.AddWithValue("@data", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@finalizada", false);
+                        cmd.Parameters.AddWithValue("@partida", numeroPartida);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                if (id_time_visitante != null)
+                {
+                    using (SqlCommand cmd = new SqlCommand(comandoVisitante, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id_campeonato", id_campeonato);
+                        cmd.Parameters.AddWithValue("@id_time_visitante", id_time_visitante);
+                        cmd.Parameters.AddWithValue("@gol_casa", gols_casa);
+                        cmd.Parameters.AddWithValue("@gol_visitante", gols_visitante);
+                        cmd.Parameters.AddWithValue("@endereco", "");
+                        cmd.Parameters.AddWithValue("@data", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@finalizada", false);
+                        cmd.Parameters.AddWithValue("@partida", numeroPartida);
+
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
         }
