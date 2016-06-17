@@ -76,6 +76,9 @@
             <div class="tab-content">
                 <%--Abas - Conteúdo--%>
                 <div id="panel1" class="tab-pane active">
+                    <div class="panel-title" style="font-size: 30px">
+                        <asp:Label ID="labelVencedor" Text="" Visible="false" runat="server" />
+                    </div>
                     <%-- Tabela Mata-mata --%>
                     <div class="container">
                         <div class="knockoutTree recur clearfix" style="width: 719px;">
@@ -107,7 +110,7 @@
                                                     <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida5Time01Pontos" /></td>
                                                 </tr>
                                                 <tr class="competitorCont">
-                                                    <td class="competitorName"></span><asp:Label runat="server" ID="lblPartida5Time02Nome" /></td>
+                                                    <td class="competitorName"><asp:Label runat="server" ID="lblPartida5Time02Nome" /></td>
                                                     <td class="competitorRes first-res"><asp:Label runat="server" ID="lblPartida5Time02Pontos" /></td>
                                                 </tr>
                                             </tbody>

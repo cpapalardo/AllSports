@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AllSports.Models;
+using System.Globalization;
 
 namespace AllSports.Views
 {
@@ -54,11 +55,9 @@ namespace AllSports.Views
                 else
                 {
                     //Partida 1
-                    //lblPartida1Time01Id.Text = partidas[0].TimeCasa.Id.ToString();
                     lblPartida1Time01Nome.Text = partidas[0].TimeCasa.Nome;
                     lblPartida1Time01Pontos.Text = partidas[0].GolCasa.ToString();
 
-                    //lblPartida1Time02Id.Text = partidas[0].TimeVisitante.Id.ToString();
                     lblPartida1Time02Nome.Text = partidas[0].TimeVisitante.Nome;
                     lblPartida1Time02Pontos.Text = partidas[0].GolVisitante.ToString();
 
@@ -71,11 +70,9 @@ namespace AllSports.Views
                     chkFinalizada01.Checked = partidas[0].Finalizada;
 
                     //Partida 2
-                    //lblPartida2Time01Id.Text = partidas[1].TimeCasa.Id.ToString();
                     lblPartida2Time01Nome.Text = partidas[1].TimeCasa.Nome;
                     lblPartida2Time01Pontos.Text = partidas[1].GolCasa.ToString();
 
-                    //lblPartida2Time02Id.Text = partidas[1].TimeVisitante.Id.ToString();
                     lblPartida2Time02Nome.Text = partidas[1].TimeVisitante.Nome;
                     lblPartida2Time02Pontos.Text = partidas[1].GolVisitante.ToString();
 
@@ -88,11 +85,9 @@ namespace AllSports.Views
                     chkFinalizada02.Checked = partidas[1].Finalizada;
 
                     //Partida 3
-                    //lblPartida3Time01Id.Text = partidas[2].TimeCasa.Id.ToString();
                     lblPartida3Time01Nome.Text = partidas[2].TimeCasa.Nome;
                     lblPartida3Time01Pontos.Text = partidas[2].GolCasa.ToString();
 
-                    //lblPartida3Time02Id.Text = partidas[2].TimeVisitante.Id.ToString();
                     lblPartida3Time02Nome.Text = partidas[2].TimeVisitante.Nome;
                     lblPartida3Time02Pontos.Text = partidas[2].GolVisitante.ToString();
 
@@ -191,7 +186,7 @@ namespace AllSports.Views
                         {
                             partida06 = false;
                         }
-                        
+
                         textBoxTimeCasaGols06.Text = partidas[5].GolCasa.ToString();
                         textBoxTimeVisitanteGols06.Text = partidas[5].GolVisitante.ToString();
                         textBoxEndereco06.Text = partidas[5].Endereco;
@@ -241,6 +236,20 @@ namespace AllSports.Views
                         if (partida07 == true)
                         {
                             tabelaPartida7.Attributes["class"] = "competitorPerMatch to-hover to-link";
+                        }
+
+                        if (partidas[6].Finalizada == true && partidas[6].TimeCasa != null && partidas[6].TimeVisitante != null)
+                        {
+                            if (partidas[6].GolCasa > partidas[6].GolVisitante)
+                            {
+                                labelVencedor.Text = "Vencedor: " + partidas[6].TimeCasa.Nome;
+                            }
+                            else
+                            {
+                                labelVencedor.Text = "Vencedor: " + partidas[6].TimeVisitante.Nome;
+                            }
+
+                            labelVencedor.Visible = true;
                         }
                     }
                 }
@@ -294,7 +303,8 @@ namespace AllSports.Views
                 if (partidas[0].Finalizada == false)
                 {
                     Partida.EditarPartidaPorID(partidas[0].Id, int.Parse(textBoxTimeCasaGols01.Text), int.Parse(textBoxTimeVisitanteGols01.Text), textBoxEndereco01.Text, DateTime.Parse(textBoxDataPartida01.Text), chkFinalizada01.Checked, partidas[0].TimeCasa.Id, partidas[0].TimeVisitante.Id);
-                    if (chkFinalizada01.Checked == true)
+                    partidas = Partida.ObterPorCampeonato(idCampeonato);
+                    if (partidas[0].Finalizada == true)
                     {
                         SalvarPartida5Time1();
                     }
@@ -302,7 +312,8 @@ namespace AllSports.Views
                 if (partidas[1].Finalizada == false)
                 {
                     Partida.EditarPartidaPorID(partidas[1].Id, int.Parse(textBoxTimeCasaGols02.Text), int.Parse(textBoxTimeVisitanteGols02.Text), textBoxEndereco02.Text, DateTime.Parse(textBoxDataPartida02.Text), chkFinalizada02.Checked, partidas[1].TimeCasa.Id, partidas[1].TimeVisitante.Id);
-                    if (chkFinalizada01.Checked == true)
+                    partidas = Partida.ObterPorCampeonato(idCampeonato);
+                    if (partidas[1].Finalizada == true)
                     {
                         SalvarPartida5Time2();
                     }
@@ -311,7 +322,8 @@ namespace AllSports.Views
                 if (partidas[2].Finalizada == false)
                 {
                     Partida.EditarPartidaPorID(partidas[2].Id, int.Parse(textBoxTimeCasaGols03.Text), int.Parse(textBoxTimeVisitanteGols03.Text), textBoxEndereco03.Text, DateTime.Parse(textBoxDataPartida03.Text), chkFinalizada03.Checked, partidas[2].TimeCasa.Id, partidas[2].TimeVisitante.Id);
-                    if (chkFinalizada03.Checked == true)
+                    partidas = Partida.ObterPorCampeonato(idCampeonato);
+                    if (partidas[2].Finalizada == true)
                     {
                         SalvarPartida6Time1();
                     }
@@ -320,7 +332,8 @@ namespace AllSports.Views
                 if (partidas[3].Finalizada == false)
                 {
                     Partida.EditarPartidaPorID(partidas[3].Id, int.Parse(textBoxTimeCasaGols04.Text), int.Parse(textBoxTimeVisitanteGols04.Text), textBoxEndereco04.Text, DateTime.Parse(textBoxDataPartida04.Text), chkFinalizada04.Checked, partidas[3].TimeCasa.Id, partidas[3].TimeVisitante.Id);
-                    if (chkFinalizada04.Checked == true)
+                    partidas = Partida.ObterPorCampeonato(idCampeonato);
+                    if (partidas[3].Finalizada == true)
                     {
                         SalvarPartida6Time2();
                     }
@@ -328,8 +341,14 @@ namespace AllSports.Views
 
                 if (partidas[4].Finalizada == false && partidas[4].TimeCasa != null && partidas[4].TimeVisitante != null)
                 {
-                    Partida.EditarPartidaPorID(partidas[4].Id, int.Parse(textBoxTimeCasaGols05.Text), int.Parse(textBoxTimeVisitanteGols05.Text), textBoxEndereco05.Text, DateTime.Parse(textBoxDataPartida05.Text), chkFinalizada05.Checked, partidas[4].TimeCasa.Id, partidas[4].TimeVisitante.Id);
-                    if (chkFinalizada05.Checked == true)
+                    DateTime date = DateTime.Parse(textBoxDataPartida05.Text);
+                    String.Format("dd/mm/yyyy", date);
+                    int visitanteGol = 0;
+                    int.TryParse(textBoxTimeVisitanteGols05.Text, out visitanteGol);
+
+                    Partida.EditarPartidaPorID(partidas[4].Id, int.Parse(textBoxTimeCasaGols05.Text), visitanteGol, textBoxEndereco05.Text, date, chkFinalizada05.Checked, partidas[4].TimeCasa.Id, partidas[4].TimeVisitante.Id);
+                    partidas = Partida.ObterPorCampeonato(idCampeonato);
+                    if (partidas[4].Finalizada == true)
                     {
                         SalvarPartida7Time1();
                     }
@@ -337,19 +356,31 @@ namespace AllSports.Views
 
                 if (partidas[5].Finalizada == false && partidas[5].TimeCasa != null && partidas[5].TimeVisitante != null)
                 {
-                    Partida.EditarPartidaPorID(partidas[5].Id, int.Parse(textBoxTimeCasaGols06.Text), int.Parse(textBoxTimeVisitanteGols06.Text), textBoxEndereco06.Text, DateTime.Parse(textBoxDataPartida06.Text), chkFinalizada06.Checked, partidas[5].TimeCasa.Id, partidas[5].TimeVisitante.Id);
-                    if (chkFinalizada06.Checked == true)
+                    DateTime date = DateTime.Parse(textBoxDataPartida06.Text);
+                    String.Format("dd/mm/yyyy", date);
+                    int visitanteGol = 0;
+                    int.TryParse(textBoxTimeVisitanteGols06.Text, out visitanteGol);
+
+                    Partida.EditarPartidaPorID(partidas[5].Id, int.Parse(textBoxTimeCasaGols06.Text), visitanteGol, textBoxEndereco06.Text, date, chkFinalizada06.Checked, partidas[5].TimeCasa.Id, partidas[5].TimeVisitante.Id);
+                    partidas = Partida.ObterPorCampeonato(idCampeonato);
+                    if (partidas[5].Finalizada == true)
                     {
                         SalvarPartida7Time2();
                     }
                 }
 
-                if (partidas[5].Finalizada == false && partidas[6].TimeCasa != null && partidas[6].TimeVisitante != null)
+                if (partidas[6].Finalizada == false && partidas[6].TimeCasa != null && partidas[6].TimeVisitante != null)
                 {
-                    Partida.EditarPartidaPorID(partidas[6].Id, int.Parse(textBoxTimeCasaGols07.Text), int.Parse(textBoxTimeVisitanteGols07.Text), textBoxEndereco07.Text, DateTime.Parse(textBoxDataPartida07.Text), chkFinalizada07.Checked, partidas[6].TimeCasa.Id, partidas[6].TimeVisitante.Id);
+                    DateTime date = DateTime.Parse(textBoxDataPartida07.Text);
+                    String.Format("dd/mm/yyyy", date);
+                    int visitanteGol = 0;
+                    int.TryParse(textBoxTimeVisitanteGols07.Text, out visitanteGol);
+
+                    Partida.EditarPartidaPorID(partidas[6].Id, int.Parse(textBoxTimeCasaGols07.Text), visitanteGol, textBoxEndereco07.Text, date, chkFinalizada07.Checked, partidas[6].TimeCasa.Id, partidas[6].TimeVisitante.Id);
                 }
 
-                Response.Redirect(Request.Url.AbsoluteUri);
+                Response.Redirect("EditarCampeonato.aspx?id=" + idCampeonato);
+                //Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
 
@@ -548,7 +579,7 @@ namespace AllSports.Views
                     return;
                 }
 
-                times = Time.ObterPorCampeonato(idCampeonato);
+                times = Time.ObterPorCampeonato(id);
 
                 string time1 = textBoxTime01.Text;
                 string time2 = textBoxTime02.Text;

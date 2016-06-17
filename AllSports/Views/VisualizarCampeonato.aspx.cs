@@ -17,13 +17,13 @@ namespace AllSports.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //HttpCookie cookie = Request.Cookies["allsports"];
+            HttpCookie cookie = Request.Cookies["allsports"];
 
-            //if (cookie != null || cookie.Values["valor"].ToString() == "logado")
-            //{
-            //    id = int.Parse(cookie.Values["id"]);
-            //    logado = true;
-            //}
+            if (cookie != null || cookie.Values["valor"].ToString() == "logado")
+            {
+                id = int.Parse(cookie.Values["id"]);
+                logado = true;
+            }
 
             if (int.TryParse(Request.QueryString["id"], out idCampeonato))
             {
@@ -33,6 +33,8 @@ namespace AllSports.Views
             else
             {
                 //Tratamento para página sem o ID
+                Response.Redirect("Home.aspx");
+                return;
             }
         }
 
@@ -219,6 +221,20 @@ namespace AllSports.Views
                     if (partida07 == true)
                     {
                         tabelaPartida7.Attributes["class"] = "competitorPerMatch to-hover to-link";
+                    }
+
+                    if (partidas[6].Finalizada == true && partidas[6].TimeCasa != null && partidas[6].TimeVisitante != null)
+                    {
+                        if (partidas[6].GolCasa > partidas[6].GolVisitante)
+                        {
+                            labelVencedor.Text = "Vencedor: " + partidas[6].TimeCasa.Nome;
+                        }
+                        else
+                        {
+                            labelVencedor.Text = "Vencedor: " + partidas[6].TimeVisitante.Nome;
+                        }
+
+                        labelVencedor.Visible = true;
                     }
                 }
                 return partidas;

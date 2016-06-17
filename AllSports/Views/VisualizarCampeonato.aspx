@@ -66,7 +66,7 @@
                         </li>
                         <li>
                             <a href="#panel2" data-toggle="tab">
-                                <span>Editar Campeonato</span>
+                                <span>Informações do Campeonato</span>
                             </a>
                         </li>
                     </ul>
@@ -76,6 +76,9 @@
             <div class="tab-content">
                 <%--Abas - Conteúdo--%>
                 <div id="panel1" class="tab-pane active">
+                    <div class="panel-title" style="font-size: 30px">
+                        <asp:Label ID="labelVencedor" Text="" Visible="false" runat="server" />
+                    </div>
                     <%-- Tabela Mata-mata --%>
                     <div class="container">
                         <div class="knockoutTree recur clearfix" style="width: 719px;">
