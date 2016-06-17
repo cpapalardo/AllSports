@@ -73,7 +73,7 @@
                             <td><%=campeonatoList[cont].Nome %></td>
                             <td><%= GetStatus(campeonatoList[cont].Data_Fim) %></td>
                             <td>
-                                <button type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-search" style="font-size: 24px"></i></button>
+                                <button type="button" data-toggle="modal" onclick="javascript:window.open('../Views/VisualizarCampeonato.aspx?id=<%=campeonatoList[cont].Id %>', '_self');"><i class="fa fa-search" style="font-size: 24px"></i></button>
                             </td>
                             <td>
                                 <button type="button" data-toggle="modal" onclick="javascript:window.open('../Views/EditarCampeonato.aspx?id=<%=campeonatoList[cont].Id %>', '_self');"><i class="fa fa-edit" style="font-size: 24px"></i></button>

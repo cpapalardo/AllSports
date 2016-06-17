@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarCampeonato.aspx.cs" Inherits="AllSports.Views.EditarCampeonato" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VisualizarCampeonato.aspx.cs" Inherits="AllSports.Views.VisualizarCampeonato" %>
 
 <!DOCTYPE html>
 
@@ -216,9 +216,6 @@
                         </div>
                     </div>
                     <div>
-                        <button id="buttonSortearPartidas" type="button" class="btn btn-default" data-toggle="modal" data-target="#modalConfirmarSorteio" runat="server">Sortear Partidas</button>
-                    </div>
-                    <div>
                         <asp:Label ID="labelWarning" runat="server" Text=""></asp:Label>
                     </div>
                     <br />
@@ -237,19 +234,19 @@
                             <label for="textBoxNomeCampeonato">Nome do campeonato</label>
                         </div>
                         <div>
-                            <asp:TextBox ID="textBoxNomeCampeonato" ReadOnly="true" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxNomeCampeonato" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <label for="textBoxDataInicio">Data de Início</label>
                         </div>
                         <div>
-                            <asp:TextBox ID="textBoxDataInicio" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxDataInicio" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <label for="textBoxDataFim">Data de Término</label>
                         </div>
                         <div>
-                            <asp:TextBox ID="textBoxDataFim" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxDataFim" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
 
                         <div>
@@ -258,41 +255,35 @@
 
                         <div>
                             <label for="textBoxTime01">1</label>
-                            <asp:TextBox ID="textBoxTime01" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxTime01" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <label for="textBoxTime02">2</label>
-                            <asp:TextBox ID="textBoxTime02" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxTime02" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <label for="textBoxTime03">3</label>
-                            <asp:TextBox ID="textBoxTime03" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxTime03" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <label for="textBoxTime04">4</label>
-                            <asp:TextBox ID="textBoxTime04" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxTime04" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <label for="textBoxTime05">5</label>
-                            <asp:TextBox ID="textBoxTime05" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxTime05" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <label for="textBoxTime06">6</label>
-                            <asp:TextBox ID="textBoxTime06" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxTime06" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <label for="textBoxTime07">7</label>
-                            <asp:TextBox ID="textBoxTime07" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="textBoxTime07" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <label for="textBoxTime08">8</label>
-                            <asp:TextBox ID="textBoxTime08" runat="server"></asp:TextBox>
-                        </div>
-                        <div>
-                            <asp:Button ID="buttonSalvarCampeonato" runat="server" Text="Salvar" OnClick="buttonSalvarCampeonato_Click" />
-                        </div>
-                        <div>
-                            <asp:Button ID="buttonCancelar" runat="server" Text="Cancelar" />
+                            <asp:TextBox ID="textBoxTime08" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div>
                             <asp:Label Text="" Visible="false" ID="txtMensagemErro" runat="server" />
@@ -327,7 +318,7 @@
                                 <label for="textBoxTimeCasaGols01">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeCasaGols01" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeCasaGols01" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -343,7 +334,7 @@
                                 <label for="textBoxTimeVisitanteGols01">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeVisitanteGols01" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols01" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -351,7 +342,7 @@
                                 <label for="textBoxEndereco01">Endereço da Partida</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxEndereco01" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxEndereco01" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -359,20 +350,14 @@
                                 <label for="textBoxDataPartida01">Data</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxDataPartida01" runat="server" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox ID="textBoxDataPartida01" runat="server" TextMode="DateTime" ReadOnly="true"></asp:TextBox>
                             </div>
 							<div>
-								<asp:CheckBox Text="Finalizada" ID="chkFinalizada01" runat="server" />
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada01" runat="server" Enabled="false" />
 							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
-                    <%if (partidas[0].Finalizada == false) { %>
-                    <div class="modal-footer">
-                        <asp:Button ID="btnSalvar01" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
-                        <button type="button" id="btnCancelarPartida01" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    </div>
-                    <%} %>
                 </div>
             </div>
         </div>
@@ -401,7 +386,7 @@
                                 <label for="textBoxTimeCasaGols02">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeCasaGols02" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeCasaGols02" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -417,7 +402,7 @@
                                 <label for="textBoxTimeVisitanteGols02">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeVisitanteGols02" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols02" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -425,7 +410,7 @@
                                 <label for="textBoxEndereco02">Endereço da Partida</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxEndereco02" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxEndereco02" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -433,21 +418,14 @@
                                 <label for="textBoxDataPartida02">Data</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxDataPartida02" runat="server" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox ID="textBoxDataPartida02" runat="server" TextMode="DateTime" ReadOnly="true"></asp:TextBox>
                             </div>
 							<div>
-								<asp:CheckBox Text="Finalizada" ID="chkFinalizada02" runat="server" />
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada02" runat="server" Enabled="false" />
 							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
-                    <%if (partidas[1].Finalizada == false)
-                        { %>
-                    <div class="modal-footer">
-                        <asp:Button ID="btnSalvar02" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
-                        <button type="button" id="btnCancelarPartida02" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    </div>
-                    <%} %>
                 </div>
             </div>
         </div>
@@ -476,7 +454,7 @@
                                 <label for="textBoxTimeCasaGols03">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeCasaGols03" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeCasaGols03" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -492,7 +470,7 @@
                                 <label for="textBoxTimeVisitanteGols03">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeVisitanteGols03" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols03" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -500,7 +478,7 @@
                                 <label for="textBoxEndereco03">Endereço da Partida</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxEndereco03" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxEndereco03" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -508,21 +486,14 @@
                                 <label for="textBoxDataPartida03">Data</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxDataPartida03" runat="server" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox ID="textBoxDataPartida03" runat="server" TextMode="DateTime" ReadOnly="true"></asp:TextBox>
                             </div>
 							<div>
-								<asp:CheckBox Text="Finalizada" ID="chkFinalizada03" runat="server" />
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada03" runat="server" Enabled="false" />
 							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
-                    <%if (partidas[2].Finalizada == false)
-                        { %>
-                    <div class="modal-footer">
-                        <asp:Button ID="btnSalvar03" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
-                        <button type="button" id="btnCancelarPartida03" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    </div>
-                    <%} %>
                 </div>
             </div>
         </div>
@@ -551,7 +522,7 @@
                                 <label for="textBoxTimeCasaGols04">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeCasaGols04" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeCasaGols04" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -567,7 +538,7 @@
                                 <label for="textBoxTimeVisitanteGols04">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeVisitanteGols04" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols04" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -575,7 +546,7 @@
                                 <label for="textBoxEndereco04">Endereço da Partida</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxEndereco04" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxEndereco04" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -583,21 +554,14 @@
                                 <label for="textBoxDataPartida04">Data</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxDataPartida04" runat="server" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox ID="textBoxDataPartida04" runat="server" TextMode="DateTime" ReadOnly="true"></asp:TextBox>
                             </div>
 							<div>
-								<asp:CheckBox Text="Finalizada" ID="chkFinalizada04" runat="server" />
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada04" runat="server" Enabled="false" />
 							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
-                    <%if (partidas[3].Finalizada == false)
-                        { %>
-                    <div class="modal-footer">
-                        <asp:Button ID="btnSalvar04" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
-                        <button type="button" id="btnCancelarPartida04" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    </div>
-                    <%} %>
                 </div>
             </div>
         </div>
@@ -628,7 +592,7 @@
                                 <label for="textBoxTimeCasaGols05">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeCasaGols05" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeCasaGols05" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -644,7 +608,7 @@
                                 <label for="textBoxTimeVisitanteGols05">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeVisitanteGols05" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols05" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -652,7 +616,7 @@
                                 <label for="textBoxEndereco05">Endereço da Partida</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxEndereco05" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxEndereco05" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -660,21 +624,14 @@
                                 <label for="textBoxDataPartida05">Data</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxDataPartida05" runat="server" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox ID="textBoxDataPartida05" runat="server" TextMode="DateTime" ReadOnly="true"></asp:TextBox>
                             </div>
 							<div>
-								<asp:CheckBox Text="Finalizada" ID="chkFinalizada05" runat="server" />
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada05" runat="server" Enabled="false" />
 							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
-                    <%if (partidas[4].Finalizada == false)
-                        { %>
-                    <div class="modal-footer">
-                        <asp:Button ID="btnSalvar05" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
-                        <button type="button" id="btnCancelarPartida05" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    </div>
-                    <%} %>
                 </div>
             </div>
         </div>
@@ -706,7 +663,7 @@
                                 <label for="textBoxTimeCasaGols06">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeCasaGols06" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeCasaGols06" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -722,7 +679,7 @@
                                 <label for="textBoxTimeVisitanteGols06">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeVisitanteGols06" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols06" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -730,7 +687,7 @@
                                 <label for="textBoxEndereco06">Endereço da Partida</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxEndereco06" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxEndereco06" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -738,21 +695,14 @@
                                 <label for="textBoxDataPartida06">Data</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxDataPartida06" runat="server" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox ID="textBoxDataPartida06" runat="server" TextMode="DateTime" ReadOnly="true"></asp:TextBox>
                             </div>
 							<div>
-								<asp:CheckBox Text="Finalizada" ID="chkFinalizada06" runat="server" />
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada06" runat="server" Enabled="false" />
 							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
-                    <%if (partidas[5].Finalizada == false)
-                        { %>
-                    <div class="modal-footer">
-                        <asp:Button ID="btnSalvar06" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
-                        <button type="button" id="btnCancelarPartida06" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    </div>
-                    <%} %>
                 </div>
             </div>
         </div>
@@ -784,7 +734,7 @@
                                 <label for="textBoxTimeCasaGols07">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeCasaGols07" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeCasaGols07" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -800,7 +750,7 @@
                                 <label for="textBoxTimeVisitanteGols07">Gols</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxTimeVisitanteGols07" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxTimeVisitanteGols07" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -808,7 +758,7 @@
                                 <label for="textBoxEndereco07">Endereço da Partida</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxEndereco07" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="textBoxEndereco07" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div>
@@ -816,45 +766,19 @@
                                 <label for="textBoxDataPartida07">Data</label>
                             </div>
                             <div>
-                                <asp:TextBox ID="textBoxDataPartida07" runat="server" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox ID="textBoxDataPartida07" runat="server" TextMode="DateTime" ReadOnly="true"></asp:TextBox>
                             </div>
                             <div>
-								<asp:CheckBox Text="Finalizada" ID="chkFinalizada07" runat="server" />
+								<asp:CheckBox Text="Finalizada" ID="chkFinalizada07" runat="server" Enabled="false" />
 							</div>
                         </div>
                         <%-- Fim Tabela de edição partida --%>
                     </div>
-                    <%if (partidas[6].Finalizada == false)
-                        { %>
-                    <div class="modal-footer">
-                        <asp:Button ID="btnSalvar07" runat="server" Text="Salvar" CssClass="btn btn-default" OnClick="btnSalvarPartida_Click" />
-                        <button type="button" id="btnCancelarPartida07" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    </div>
-                    <%} %>
                 </div>
             </div>
         </div>
 		<%} %>
-
-        <!-- Modal Confirmação Sorteiar Partidas -->
-        <div class="modal fade" id="modalConfirmarSorteio" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Sortear Partidas</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Deseja sortear as partidas iniciais? Caso já existam times na tabela, eles serão sobrescritos.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <asp:Button ID="btnConfirmar" runat="server" Text="Sim" CssClass="btn btn-default" OnClick="buttonSortearPartidas_Click" />
-                        <button type="button" id="btnSortearNao" class="btn btn-default" data-dismiss="modal">Não</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </form>
 </body>
 </html>
+

@@ -123,6 +123,7 @@ namespace AllSports.Views
 
                     if (partidas.Count > 4)
                     {
+                        bool editavel05 = true;
                         //Partida 5
                         //lblPartida4Time01Id.Text = partidas[4].TimeCasa.Id.ToString();
                         if (partidas[4].TimeCasa != null)
@@ -135,8 +136,7 @@ namespace AllSports.Views
                         }
                         else
                         {
-                            textBoxTimeCasa05.ReadOnly = true;
-                            textBoxTimeCasaGols05.ReadOnly = true;
+                            editavel05 = false;
                         }
 
                         //lblPartida4Time02Id.Text = partidas[4].TimeVisitante.Id.ToString();
@@ -148,57 +148,100 @@ namespace AllSports.Views
                             textBoxTimeVisitante05.Text = partidas[4].TimeVisitante.Nome;
                             textBoxTimeVisitanteGols05.Text = partidas[4].GolVisitante.ToString();
                         }
-
+                        else
+                        {
+                            editavel05 = false;
+                        }
 
                         textBoxEndereco05.Text = partidas[4].Endereco;
-                        textBoxDataPartida05.Text = partidas[4].Data.ToString("d");
+                        textBoxDataPartida05.Text = partidas[4].Data.ToString();
                         chkFinalizada05.Checked = partidas[4].Finalizada;
 
-                        tabelaPartida5.Attributes["class"] = "competitorPerMatch to-hover to-link";
+                        if (editavel05 == true)
+                        {
+                            tabelaPartida5.Attributes["class"] = "competitorPerMatch to-hover to-link";
+                        }
                     }
 
                     if (partidas.Count >= 6)
                     {
+                        bool partida06 = true;
                         //Partida 6
-                        //lblPartida4Time01Id.Text = partidas[5].TimeCasa.Id.ToString();
-                        lblPartida4Time01Nome.Text = partidas[5].TimeCasa.Nome;
-                        lblPartida4Time01Pontos.Text = partidas[5].GolCasa.ToString();
 
-                        //lblPartida4Time02Id.Text = partidas[5].TimeVisitante.Id.ToString();
-                        lblPartida4Time02Nome.Text = partidas[5].TimeVisitante.Nome;
-                        lblPartida4Time02Pontos.Text = partidas[5].GolVisitante.ToString();
+                        if (partidas[5].TimeCasa != null)
+                        {
+                            lblPartida6Time01Nome.Text = partidas[5].TimeCasa.Nome;
+                            lblPartida6Time01Pontos.Text = partidas[5].GolCasa.ToString();
 
-                        textBoxTimeCasa06.Text = partidas[5].TimeCasa.Nome;
+                            textBoxTimeCasa06.Text = partidas[5].TimeCasa.Nome;
+                        }
+                        else
+                        {
+                            partida06 = false;
+                        }
+
+                        if (partidas[5].TimeVisitante != null)
+                        {
+                            lblPartida6Time02Nome.Text = partidas[5].TimeVisitante.Nome;
+                            lblPartida6Time02Pontos.Text = partidas[5].GolVisitante.ToString();
+
+                            textBoxTimeVisitante06.Text = partidas[5].TimeVisitante.Nome;
+                        }
+                        else
+                        {
+                            partida06 = false;
+                        }
+                        
                         textBoxTimeCasaGols06.Text = partidas[5].GolCasa.ToString();
-                        textBoxTimeVisitante06.Text = partidas[5].TimeVisitante.Nome;
                         textBoxTimeVisitanteGols06.Text = partidas[5].GolVisitante.ToString();
                         textBoxEndereco06.Text = partidas[5].Endereco;
-                        textBoxDataPartida06.Text = partidas[5].Data.ToString("d");
+                        textBoxDataPartida06.Text = partidas[5].Data.ToString();
                         chkFinalizada06.Checked = partidas[5].Finalizada;
 
-                        tabelaPartida6.Attributes["class"] = "competitorPerMatch to-hover to-link";
+                        if (partida06 == true)
+                        {
+                            tabelaPartida6.Attributes["class"] = "competitorPerMatch to-hover to-link";
+                        }
                     }
 
                     if (partidas.Count == 7)
                     {
+                        bool partida07 = true;
                         //Partida 7
-                        //lblPartida4Time01Id.Text = partidas[6].TimeCasa.Id.ToString();
-                        lblPartida4Time01Nome.Text = partidas[6].TimeCasa.Nome;
-                        lblPartida4Time01Pontos.Text = partidas[6].GolCasa.ToString();
+                        if (partidas[6].TimeCasa != null)
+                        {
+                            lblPartida7Time01Nome.Text = partidas[6].TimeCasa.Nome;
+                            lblPartida7Time01Pontos.Text = partidas[6].GolCasa.ToString();
 
-                        //lblPartida4Time02Id.Text = partidas[6].TimeVisitante.Id.ToString();
-                        lblPartida4Time02Nome.Text = partidas[6].TimeVisitante.Nome;
-                        lblPartida4Time02Pontos.Text = partidas[6].GolVisitante.ToString();
+                            textBoxTimeCasa07.Text = partidas[6].TimeCasa.Nome;
+                        }
+                        else
+                        {
+                            partida07 = false;
+                        }
 
-                        textBoxTimeCasa07.Text = partidas[6].TimeCasa.Nome;
+                        if (partidas[6].TimeVisitante != null)
+                        {
+                            lblPartida7Time02Nome.Text = partidas[6].TimeVisitante.Nome;
+                            lblPartida7Time02Pontos.Text = partidas[6].GolVisitante.ToString();
+
+                            textBoxTimeVisitante07.Text = partidas[6].TimeVisitante.Nome;
+                        }
+                        else
+                        {
+                            partida07 = false;
+                        }
+
                         textBoxTimeCasaGols07.Text = partidas[6].GolCasa.ToString();
-                        textBoxTimeVisitante07.Text = partidas[6].TimeVisitante.Nome;
                         textBoxTimeVisitanteGols07.Text = partidas[6].GolVisitante.ToString();
                         textBoxEndereco07.Text = partidas[6].Endereco;
-                        textBoxDataPartida07.Text = partidas[6].Data.ToString("d");
+                        textBoxDataPartida07.Text = partidas[6].Data.ToString();
                         chkFinalizada07.Checked = partidas[6].Finalizada;
 
-                        tabelaPartida7.Attributes["class"] = "competitorPerMatch to-hover to-link";
+                        if (partida07 == true)
+                        {
+                            tabelaPartida7.Attributes["class"] = "competitorPerMatch to-hover to-link";
+                        }
                     }
                 }
                 return partidas;
@@ -251,98 +294,212 @@ namespace AllSports.Views
                 if (partidas[0].Finalizada == false)
                 {
                     Partida.EditarPartidaPorID(partidas[0].Id, int.Parse(textBoxTimeCasaGols01.Text), int.Parse(textBoxTimeVisitanteGols01.Text), textBoxEndereco01.Text, DateTime.Parse(textBoxDataPartida01.Text), chkFinalizada01.Checked, partidas[0].TimeCasa.Id, partidas[0].TimeVisitante.Id);
-                    // Partida.ProximaPartida(id, partidas[0].Id, int.Parse(textBoxTimeCasa01.Text), int.Parse(textBoxTimeVisitante01.Text), partidas[0].TimeCasa.Id, partidas[0].TimeVisitante.Id, 1);
-                    SalvarPartida5Time1();
+                    if (chkFinalizada01.Checked == true)
+                    {
+                        SalvarPartida5Time1();
+                    }
                 }
                 if (partidas[1].Finalizada == false)
                 {
                     Partida.EditarPartidaPorID(partidas[1].Id, int.Parse(textBoxTimeCasaGols02.Text), int.Parse(textBoxTimeVisitanteGols02.Text), textBoxEndereco02.Text, DateTime.Parse(textBoxDataPartida02.Text), chkFinalizada02.Checked, partidas[1].TimeCasa.Id, partidas[1].TimeVisitante.Id);
-                    SalvarPartida5Time2();
+                    if (chkFinalizada01.Checked == true)
+                    {
+                        SalvarPartida5Time2();
+                    }
                 }
 
                 if (partidas[2].Finalizada == false)
                 {
                     Partida.EditarPartidaPorID(partidas[2].Id, int.Parse(textBoxTimeCasaGols03.Text), int.Parse(textBoxTimeVisitanteGols03.Text), textBoxEndereco03.Text, DateTime.Parse(textBoxDataPartida03.Text), chkFinalizada03.Checked, partidas[2].TimeCasa.Id, partidas[2].TimeVisitante.Id);
-                    SalvarPartida6Time1();
+                    if (chkFinalizada03.Checked == true)
+                    {
+                        SalvarPartida6Time1();
+                    }
                 }
 
                 if (partidas[3].Finalizada == false)
                 {
                     Partida.EditarPartidaPorID(partidas[3].Id, int.Parse(textBoxTimeCasaGols04.Text), int.Parse(textBoxTimeVisitanteGols04.Text), textBoxEndereco04.Text, DateTime.Parse(textBoxDataPartida04.Text), chkFinalizada04.Checked, partidas[3].TimeCasa.Id, partidas[3].TimeVisitante.Id);
-                    SalvarPartida6Time2();
+                    if (chkFinalizada04.Checked == true)
+                    {
+                        SalvarPartida6Time2();
+                    }
+                }
+
+                if (partidas[4].Finalizada == false && partidas[4].TimeCasa != null && partidas[4].TimeVisitante != null)
+                {
+                    Partida.EditarPartidaPorID(partidas[4].Id, int.Parse(textBoxTimeCasaGols05.Text), int.Parse(textBoxTimeVisitanteGols05.Text), textBoxEndereco05.Text, DateTime.Parse(textBoxDataPartida05.Text), chkFinalizada05.Checked, partidas[4].TimeCasa.Id, partidas[4].TimeVisitante.Id);
+                    if (chkFinalizada05.Checked == true)
+                    {
+                        SalvarPartida7Time1();
+                    }
+                }
+
+                if (partidas[5].Finalizada == false && partidas[5].TimeCasa != null && partidas[5].TimeVisitante != null)
+                {
+                    Partida.EditarPartidaPorID(partidas[5].Id, int.Parse(textBoxTimeCasaGols06.Text), int.Parse(textBoxTimeVisitanteGols06.Text), textBoxEndereco06.Text, DateTime.Parse(textBoxDataPartida06.Text), chkFinalizada06.Checked, partidas[5].TimeCasa.Id, partidas[5].TimeVisitante.Id);
+                    if (chkFinalizada06.Checked == true)
+                    {
+                        SalvarPartida7Time2();
+                    }
+                }
+
+                if (partidas[5].Finalizada == false && partidas[6].TimeCasa != null && partidas[6].TimeVisitante != null)
+                {
+                    Partida.EditarPartidaPorID(partidas[6].Id, int.Parse(textBoxTimeCasaGols07.Text), int.Parse(textBoxTimeVisitanteGols07.Text), textBoxEndereco07.Text, DateTime.Parse(textBoxDataPartida07.Text), chkFinalizada07.Checked, partidas[6].TimeCasa.Id, partidas[6].TimeVisitante.Id);
                 }
 
                 Response.Redirect(Request.Url.AbsoluteUri);
             }
-
-            //Partida.EditarPartidaPorID(partidas[4].Id, int.Parse(textBoxTimeCasaGols05.Text), int.Parse(textBoxTimeVisitanteGols05.Text), textBoxEndereco05.Text, DateTime.Parse(textBoxDataPartida05.Text), chkFinalizada05.Checked);
         }
 
         protected void SalvarPartida5Time1()
         {
+            partidas = Partida.ObterPorCampeonato(idCampeonato);
+            Partida partida = partidas[0];
+
             if (partidas[0].GolCasa > partidas[0].GolVisitante)
-                lblPartida5Time01Nome.Text = partidas[0].TimeCasa.Nome;
-            else
-                lblPartida5Time01Nome.Text = partidas[0].TimeVisitante.Nome;
+            {
+                if (partidas.Count < 5)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, partidas[0].TimeCasa.Id, null, 5);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[4].Id, 0, 0, partida.Endereco, partida.Data, partidas[4].Finalizada, partidas[0].TimeCasa.Id, 0);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida5Time01Nome.Text = partida.TimeVisitante.Nome;
+            }
+            else if (partidas[0].GolVisitante > partidas[0].GolCasa)
+            {
+                if (partidas.Count < 5)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, partidas[0].TimeVisitante.Id, null, 5);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[4].Id, 0, 0, partida.Endereco, partida.Data, partidas[4].Finalizada, partidas[0].TimeVisitante.Id, 0);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida5Time01Nome.Text = partida.TimeVisitante.Nome;
+            }
         }
 
         protected void SalvarPartida5Time2()
         {
+            partidas = Partida.ObterPorCampeonato(idCampeonato);
+            Partida partida = partidas[1];
 
             if (partidas[1].GolCasa > partidas[1].GolVisitante)
             {
                 if (partidas.Count < 5)
-                    Partida.ProximaPartida(idCampeonato, partidas[1].GolCasa, partidas[1].GolVisitante, partidas[1].TimeCasa.Id, null, 5);
+                    Partida.ProximaPartida(idCampeonato, 0, 0, null, partidas[1].TimeCasa.Id, 5);
                 else
-                    Partida.EditarPartidaPorID(partidas[4].Id, partidas[4].GolCasa, partidas[4].GolVisitante,
-                        partidas[4].Endereco, partidas[4].Data, partidas[4].Finalizada);
+                    Partida.EditarPartidaProximaFasePorID(partidas[4].Id, 0, 0, partida.Endereco, partida.Data, partidas[4].Finalizada, 0, partidas[1].TimeCasa.Id);
                 partidas = Partida.ObterPorCampeonato(idCampeonato);
-                lblPartida5Time02Nome.Text = partidas[4].TimeVisitante.Nome;
+                lblPartida5Time02Nome.Text = partida.TimeVisitante.Nome;
             }
-
-            else
+            else if (partidas[1].GolVisitante > partidas[1].GolCasa)
             {
                 if (partidas.Count < 5)
-                    Partida.ProximaPartida(idCampeonato, partidas[1].GolCasa, partidas[1].GolVisitante, null, partidas[1].TimeVisitante.Id, 5);
+                    Partida.ProximaPartida(idCampeonato, 0, 0, null, partidas[1].TimeVisitante.Id, 5);
                 else
-                    Partida.EditarPartidaPorID(partidas[4].Id, partidas[4].GolCasa, partidas[4].GolVisitante,
-                        partidas[4].Endereco, partidas[4].Data, partidas[4].Finalizada);
+                    Partida.EditarPartidaProximaFasePorID(partidas[4].Id, 0, 0, partida.Endereco, partida.Data, partidas[4].Finalizada, 0, partidas[1].TimeVisitante.Id);
                 partidas = Partida.ObterPorCampeonato(idCampeonato);
-                lblPartida5Time02Nome.Text = partidas[4].TimeVisitante.Nome;
             }
-
         }
 
         protected void SalvarPartida6Time1()
         {
+            partidas = Partida.ObterPorCampeonato(idCampeonato);
+            Partida partida = partidas[2];
+
             if (partidas[2].GolCasa > partidas[2].GolVisitante)
-                lblPartida6Time01Nome.Text = partidas[2].TimeCasa.Nome;
-            else
-                lblPartida6Time01Nome.Text = partidas[2].TimeVisitante.Nome;
+            {
+                if (partidas.Count < 6)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, partidas[2].TimeCasa.Id, null, 6);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[5].Id, 0, 0, partida.Endereco, partida.Data, partidas[5].Finalizada, partidas[2].TimeCasa.Id, 0);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida6Time01Nome.Text = partida.TimeVisitante.Nome;
+            }
+            else if (partidas[2].GolVisitante > partidas[2].GolCasa)
+            {
+                if (partidas.Count < 6)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, partidas[2].TimeVisitante.Id, null, 6);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[5].Id, 0, 0, partida.Endereco, partida.Data, partidas[5].Finalizada, partidas[2].TimeVisitante.Id, 0);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida6Time01Nome.Text = partida.TimeVisitante.Nome;
+            }
         }
 
         protected void SalvarPartida6Time2()
         {
+            partidas = Partida.ObterPorCampeonato(idCampeonato);
+            Partida partida = partidas[3];
+
             if (partidas[3].GolCasa > partidas[3].GolVisitante)
-                lblPartida6Time02Nome.Text = partidas[3].TimeCasa.Nome;
-            else
-                lblPartida6Time02Nome.Text = partidas[3].TimeVisitante.Nome;
+            {
+                if (partidas.Count < 6)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, null, partidas[3].TimeCasa.Id, 6);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[5].Id, 0, 0, partida.Endereco, partida.Data, partidas[5].Finalizada, 0, partidas[3].TimeCasa.Id);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida6Time02Nome.Text = partida.TimeVisitante.Nome;
+            }
+            else if (partidas[3].GolVisitante > partidas[3].GolCasa)
+            {
+                if (partidas.Count < 6)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, null, partidas[3].TimeVisitante.Id, 6);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[5].Id, 0, 0, partida.Endereco, partida.Data, partidas[5].Finalizada, 0, partidas[3].TimeVisitante.Id);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida6Time02Nome.Text = partida.TimeVisitante.Nome;
+            }
         }
 
         protected void SalvarPartida7Time1()
         {
+            partidas = Partida.ObterPorCampeonato(idCampeonato);
+            Partida partida = partidas[4];
+
             if (partidas[4].GolCasa > partidas[4].GolVisitante)
-                lblPartida7Time01Nome.Text = partidas[4].TimeCasa.Nome;
-            else
-                lblPartida7Time01Nome.Text = partidas[4].TimeVisitante.Nome;
+            {
+                if (partidas.Count < 7)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, partidas[4].TimeCasa.Id, null, 7);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[6].Id, 0, 0, partida.Endereco, partida.Data, partidas[6].Finalizada, partidas[4].TimeCasa.Id, 0);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida7Time01Nome.Text = partida.TimeVisitante.Nome;
+            }
+            else if (partidas[4].GolVisitante > partidas[4].GolCasa)
+            {
+                if (partidas.Count < 7)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, partidas[4].TimeVisitante.Id, null, 7);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[6].Id, 0, 0, partida.Endereco, partida.Data, partidas[6].Finalizada, partidas[4].TimeVisitante.Id, 0);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida7Time01Nome.Text = partida.TimeVisitante.Nome;
+            }
         }
 
         protected void SalvarPartida7Time2()
         {
+            partidas = Partida.ObterPorCampeonato(idCampeonato);
+            Partida partida = partidas[5];
+
             if (partidas[5].GolCasa > partidas[5].GolVisitante)
-                lblPartida7Time02Nome.Text = partidas[5].TimeCasa.Nome;
-            else
-                lblPartida7Time02Nome.Text = partidas[5].TimeVisitante.Nome;
+            {
+                if (partidas.Count < 7)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, null, partidas[5].TimeCasa.Id, 7);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[6].Id, 0, 0, partida.Endereco, partida.Data, partidas[6].Finalizada, 0, partidas[5].TimeCasa.Id);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida7Time02Nome.Text = partida.TimeVisitante.Nome;
+            }
+            else if (partidas[5].GolVisitante > partidas[5].GolCasa)
+            {
+                if (partidas.Count < 7)
+                    Partida.ProximaPartida(idCampeonato, 0, 0, null, partidas[5].TimeVisitante.Id, 7);
+                else
+                    Partida.EditarPartidaProximaFasePorID(partidas[6].Id, 0, 0, partida.Endereco, partida.Data, partidas[6].Finalizada, 0, partidas[5].TimeVisitante.Id);
+                partidas = Partida.ObterPorCampeonato(idCampeonato);
+                lblPartida7Time02Nome.Text = partida.TimeVisitante.Nome;
+            }
         }
 
         protected void buttonSortearPartidas_Click(object sender, EventArgs e)
